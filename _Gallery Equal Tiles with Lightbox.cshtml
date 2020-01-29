@@ -1,0 +1,48 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
+@using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
+@*
+  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
+*@
+@if(Connect.Koi.Koi.Is("bs3")) {
+  @RenderPage("bs3/_Gallery Equal Tiles with Lightbox.cshtml")
+  return;
+}
+@*
+  Bootstrap 4 or Unknown CSS Framework
+*@
+@RenderPage("shared/_Assets.cshtml", new { scripts = true})
+
+@{
+  var parts = CreateInstance("shared/_Parts.cshtml");
+  var albumInUrl = Request.QueryString["Album"];
+  var isDetailViewOfAlbum = Text.Has(albumInUrl);
+  @* If album QueryString is specified, take album from QueryString, else take "current" album *@
+  var album = isDetailViewOfAlbum
+    ? AsList(Data).FirstOrDefault(a => a.Path == albumInUrl)
+    : Content;
+
+  @* Hide the side navigation if the view is used as detail view *@
+  if (isDetailViewOfAlbum) {
+    <style>.ly-col-leftpane { display: none; }</style>
+  }
+
+  if (album != null) {
+    HtmlPage.Title = album.Title + " | " + HtmlPage.Title;
+
+    // Display Album Title or information that title is hidden
+    @parts.AlbumTitle(album)
+
+    // Display images with equal width and height
+    @parts.ImageList(album, false)
+  }
+  @* Show album not found notification *@
+  else {
+    parts.AlbumNotFound();
+  }
+
+  @* Show back button if the view is used as detail view *@
+  if(isDetailViewOfAlbum) {
+    parts.BackButton();
+  }
+}

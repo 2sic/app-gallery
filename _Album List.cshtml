@@ -1,0 +1,39 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
+@using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
+@*
+  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
+*@
+@if(Connect.Koi.Koi.Is("bs3")) {
+  @RenderPage("bs3/_Album List.cshtml")
+  return;
+}
+@*
+  Bootstrap 4 or Unknown CSS Framework
+*@
+@RenderPage("shared/_Assets.cshtml")
+
+<div class="ga-wrapper">
+  <div class="ga-albums row">
+    @foreach (var album in AsList(Data)) {
+      var images = AsAdam(album, "Images").Files as Dynlist;
+      var albumThumbUrl = Text.Has(album.AlbumThumbnail)
+        ? album.AlbumThumbnail
+        : images.Any()
+          ? images.First().Url
+          : App.Path + "/images/placeholder.jpg";
+
+      <div class="ga-album col-12 col-sm-6 col-md-6 col-lg-4" @Edit.TagToolbar(album)>
+        @Tag.A().Href(Link.To(parameters: "mid/" + Dnn.Module.ModuleID + "&album=" + album.Path)).TagStart
+          <div class="ga-img">
+            <div class="overlay">
+              <div class="ga-album-title"><h5 class="ga-title">@album.Title</h5></div>
+              <div class="ga-files-count"><span class="badge badge-pill badge-dark float-right">@images.Count()</span></div>
+            </div>
+            @Tag.Img().Class("img-fluid").Src(albumThumbUrl + "?w=720&h=500&mode=crop&scale=both&quality=80").Alt(album.Title)
+          </div>
+        @Tag.A().TagEnd
+      </div>
+    }
+  </div>
+</div>

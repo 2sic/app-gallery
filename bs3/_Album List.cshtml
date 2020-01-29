@@ -1,0 +1,36 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
+@using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
+
+@RenderPage("shared/_Assets.cshtml")
+
+<div class="ga-wrapper">
+  <div class="ga-albums row">
+    @foreach (var album in AsList(Data)) {
+      <div class="ga-album col-xs-12 col-sm-6 col-md-4 col-lg-4" @Edit.TagToolbar(album)>
+        @Tag.A().Href(Link.To(parameters: "mid/" + Dnn.Module.ModuleID + "&album=" + album.Path)).TagStart
+          <div class="ga-img">
+            <div class="overlay">
+              <div class="ga-album-title">
+                <h5 class="ga-title">@album.Title</h5>
+              </div>
+              <div class="ga-files-count"><span class="badge">@AsAdam(album, "Images").Files.Count</span></div>
+            </div>
+            @if (Text.Has(album.AlbumThumbnail)) {
+              @Tag.Img().Class("img-responsive").Src(album.AlbumThumbnail + "?w=720&h=500&mode=crop&scale=both&quality=80").Alt(album.Title)
+            } else if(AsAdam(album, "Images").Files.Count > 0) {
+              var images = AsAdam(album, "Images").Files as Dynlist;
+              foreach (var pic in images.Select((value,i) => new {i, value})) {
+                if(pic.i == 0) {
+                  @Tag.Img().Class("img-responsive").Src(pic.value.Url + "?w=720&h=500&mode=crop&scale=both&quality=80").Alt(album.Title)
+                }
+              }
+            } else {
+              @Tag.Img().Class("img-responsive").Src(App.Path + "/images/platzhalter.jpg?w=720&h=500&mode=crop&scale=both&quality=80").Alt(album.Title)
+            }
+          </div>
+        @Tag.A().TagEnd
+      </div>
+    }
+  </div>
+</div>

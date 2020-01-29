@@ -1,0 +1,40 @@
+@inherits ToSic.Sxc.Dnn.RazorComponent
+@using ToSic.Razor.Blade;
+@using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
+
+@RenderPage("shared/_Assets.cshtml", new { scripts = true})
+
+@{
+  var parts = CreateInstance("shared/_Parts.cshtml");
+  // Check whether album querryString is specified
+  var isDetailViewOfAlbum = Text.Has(Request.QueryString["Album"]);
+  // If album querryString is specified, take album from querryString, else take "current" album
+  var album = isDetailViewOfAlbum ? AsList(Data).FirstOrDefault(a => a.Path == Request.QueryString["Album"]) : Content;
+
+  // Hide the side navigation if the view is used as detail view
+  if (isDetailViewOfAlbum) {
+    <style>.ly-col-leftpane { display: none; }</style>
+  }
+
+  if (album != null) {
+    HtmlPage.Title = album.Title + " | " + HtmlPage.Title;
+
+    // Get Images and sort them by the configured setting
+    var images = AsAdam(album, "Images").Files as Dynlist;
+    images = parts.SortImagesAsNeeded(album.Presentation, images);
+
+    // Display Album Title or information that title is hidden
+    @parts.AlbumTitle(album)
+
+    // Display images with equal width and height
+    @parts.ImageList(album, images, false)
+  } else {
+    // Show album not found notification
+    @parts.AlbumNotFound()
+  }
+
+  // Show back button if the view is used as detail view
+  if(isDetailViewOfAlbum) {
+    @parts.BackButton()
+  }
+}
