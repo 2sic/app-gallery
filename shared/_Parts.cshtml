@@ -15,9 +15,9 @@
 }
 
 @* List the images in equal tiles or masonry style *@
-@helper ImageList(dynamic album, /* dynamic images, */ bool masonry) {
+@helper ImageList(dynamic album, bool masonry) {
   @* ImageResizer parameters depending by the style (equal or masonry) *@
-  var imageResizerParamsImage = "?w=560&scale=both&quality=80" + (masonry ? "&mode=max" : "&h=404&mode=crop");
+  var imageResizerParams = "?w=560&scale=both&quality=80" + (masonry ? "&mode=max" : "&h=404&mode=crop");
 
   var images = AsAdam(album, "Images").Files as Dynlist;
   images = SortImagesAsNeeded(album.Presentation, images);
@@ -43,7 +43,7 @@
                 .TagStart)
                 <div class="ga-img">
                   <div class="overlay"></div>
-                  @Tag.Img().Class("lazy img-fluid").Src(pic.Url + imageResizerParamsImage).Alt(pic.Metadata.Title)
+                  @Tag.Img().Class("lazy img-fluid").Src(pic.Url + imageResizerParams).Alt(pic.Metadata.Title)
                 </div>
                 @if(album.Presentation.ShowImageTitle && Text.Has(pic.Metadata.Title)) {
                   <figcaption>

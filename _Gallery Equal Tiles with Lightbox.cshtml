@@ -35,14 +35,13 @@
 
     // Display images with equal width and height
     @parts.ImageList(album, false)
-  }
-  @* Show album not found notification *@
-  else {
-    parts.AlbumNotFound();
+  } else {
+    @* Show album not found notification *@
+    @parts.AlbumNotFound()
   }
 
   @* Show back button if the view is used as detail view *@
   if(isDetailViewOfAlbum) {
-    parts.BackButton();
+    @parts.BackButton()
   }
 }

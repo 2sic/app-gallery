@@ -15,10 +15,12 @@
 }
 
 @* List the images in equal tiles or masonry style *@
-@helper ImageList(dynamic album, dynamic images, bool masonry) {
+@helper ImageList(dynamic album, bool masonry) {
   @* ImageResizer parameters depending on the style (equal or masonry) *@
-  var imageResizerParamsLink = masonry ? "?w=1200&mode=max" : "?w=1200&h=900&mode=max";
-  var imageResizerParamsImage = masonry ? "?w=560&mode=max&scale=both&quality=80" : "?w=560&h=404&mode=crop&scale=both&quality=80";
+  var imageResizerParams = "?w=560&scale=both&quality=80" + (masonry ? "&mode=max" : "&h=404&mode=crop");
+
+  var images = AsAdam(album, "Images").Files as Dynlist;
+  images = SortImagesAsNeeded(album.Presentation, images);
 
   <div class="ga-wrapper row auto-clear">
     @* Open masonry wrapper div if style is masonry *@
@@ -27,7 +29,7 @@
     }
 
       @foreach (var pic in images) {
-        @* Open additional div if style is equal *@
+        @* Open additional div if normal (not masonry) *@
         if (!masonry) {
           @Tag.Div().Class("ga-tiles col-6 col-sm-6 col-md-4 col-lg-3").TagStart
         }
@@ -36,12 +38,12 @@
             <figure>
               @(Tag.A()
                 .Class("ga-fancybox")
-                .Href(pic.Url + imageResizerParamsLink)
+                .Href(pic.Url + "w=1200&h=900&mode=max")
                 .Attr("data-fancybox", "album-" + Dnn.Module.ModuleID)
                 .TagStart)
                 <div class="ga-img">
                   <div class="overlay"></div>
-                  @Tag.Img().Class("lazy img-responsive").Src(pic.Url + imageResizerParamsImage).Alt(pic.Metadata.Title)
+                  @Tag.Img().Class("lazy img-responsive").Src(pic.Url + imageResizerParams).Alt(pic.Metadata.Title)
                 </div>
                 @if(album.Presentation.ShowImageTitle && Text.Has(pic.Metadata.Title)) {
                   <figcaption>
@@ -53,7 +55,7 @@
             </figure>
           </div>
 
-        @* Close additional div if style is equal *@
+        @* Close additional div if normal (not masonry) *@
         if (!masonry) {
           @Tag.Div().TagEnd
         }
@@ -68,6 +70,8 @@
 
 @* Displays album not found info *@
 @helper AlbumNotFound() {
+  // Tell browser & google that this page shouldn't be indexed
+  // Also make sure DNN doesn't inject a default 404 page, which it would when an error code is set
   Response.StatusCode = 404;
   Response.TrySkipIisCustomErrors = true;
   <h1>@App.Resources.AlbumNotFound</h1>

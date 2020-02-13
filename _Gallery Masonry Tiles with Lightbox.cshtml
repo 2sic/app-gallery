@@ -17,12 +17,12 @@
   var parts = CreateInstance("shared/_Parts.cshtml");
   var albumInUrl = Request.QueryString["Album"];
   var isDetailViewOfAlbum = Text.Has(albumInUrl);
-  // If album QueryString is specified, take album from QueryString, else take "current" album
-  var album = isDetailViewOfAlbum 
-    ? AsList(Data).FirstOrDefault(a => a.Path == albumInUrl) 
+  @* If album QueryString is specified, take album from QueryString, else take "current" album *@
+  var album = isDetailViewOfAlbum
+    ? AsList(Data).FirstOrDefault(a => a.Path == albumInUrl)
     : Content;
 
-  // Hide the side navigation if the view is used as detail view
+  @* Hide the side navigation if the view is used as detail view *@
   if (isDetailViewOfAlbum) {
     <style>.ly-col-leftpane { display: none; }</style>
   }
@@ -36,11 +36,11 @@
     // Display images with equal width and height
     @parts.ImageList(album, true)
   } else {
-    // Show album not found notification
+    @* Show album not found notification *@
     @parts.AlbumNotFound()
   }
 
-  // Show back button if the view is used as detail view
+  @* Show back button if the view is used as detail view *@
   if(isDetailViewOfAlbum) {
     @parts.BackButton()
   }
