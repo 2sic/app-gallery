@@ -30,11 +30,13 @@
   if (album != null) {
     HtmlPage.Title = album.Title + " | " + HtmlPage.Title;
 
-    // Display Album Title or information that title is hidden
-    @parts.AlbumTitle(album)
+    <div @Edit.TagToolbar(album)>
+      @* Display Album Title or information that title is hidden *@
+      @parts.AlbumTitle(album)
 
-    // Display images with equal width and height
-    @parts.ImageList(album, false)
+      @* Display images with equal width and height *@
+      @parts.ImageList(album, false)
+    </div>
   } else {
     @* Show album not found notification *@
     @parts.AlbumNotFound()

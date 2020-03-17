@@ -4,14 +4,12 @@
 
 @* Shows album title and introduction *@
 @helper AlbumTitle(dynamic album) {
-  <div @Edit.TagToolbar(album)>
-    @if (album.Presentation.HeadingType != "hidden") {
-      @Tag.Custom(album.Presentation.HeadingType).Wrap(album.Title)
-    } else if(Edit.Enabled) {
-      <h2>(@App.Resources.TitleNotDisplayed)</h2>
-    }
-    <div class="mb-4">@Html.Raw(album.Introduction)</div>
-  </div>
+  if (album.Presentation.HeadingType != "hidden") {
+    @Tag.Custom(album.Presentation.HeadingType).Wrap(album.Title)
+  } else if(Edit.Enabled) {
+    <h2>(@App.Resources.TitleNotDisplayed)</h2>
+  }
+  <div class="mb-4">@Html.Raw(album.Introduction)</div>
 }
 
 @* List the images in equal tiles or masonry style *@
