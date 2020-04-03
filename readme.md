@@ -6,7 +6,7 @@ A 2sxc / DNN App using the javascript lib [fancybox](https://github.com/fancyapp
 
 ## Installing the app
 
-You can install the app straight forward with [this checklist](https://azing.org/2sxc/r/A1Usfevs)
+You can install the app with [this checklist](https://azing.org/2sxc/r/A1Usfevs)
 
 ## Customizing the app
 
