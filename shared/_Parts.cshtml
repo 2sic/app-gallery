@@ -87,21 +87,10 @@
   * Will either offer to edit existing metadata, or create new metadata prefilled with the file ID
   */
   private object[] GetMetadataToolbar(int entityId, int fileId) {
-    var metadataToolbar = new object[] {
-      new {
-        showCondition = true,
-        command = new {
-          action = "metadata",
-          contentType = "ImageMetadata",
-          entityId = entityId,
-          metadata = new {
-            key = "file:" + fileId
-          }
-        }
-      }
+    return new [] {
+      "toolbar=empty",
+      "metadata?entityId=" + entityId + "&contentType=ImageMetadata&for=file:" + fileId
     };
-
-    return metadataToolbar;
   }
 
   /**
