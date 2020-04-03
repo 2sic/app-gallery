@@ -1,16 +1,10 @@
 @inherits ToSic.Sxc.Dnn.RazorComponent
 @using ToSic.Razor.Blade;
 @using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
-@*
-  Bootstrap 3 - read the readme.md section "CSS Framework Detection"
-*@
-@if(Connect.Koi.Koi.Is("bs3")) {
-  @RenderPage("bs3/_Album List.cshtml")
-  return;
-}
-@*
-  Bootstrap 4 or Unknown CSS Framework
-*@
+@* Bootstrap 3 - read the readme.md section "CSS Framework Detection" *@
+@if(Connect.Koi.Koi.Is("bs3")) { @RenderPage("bs3/_Album List.cshtml") return; }
+
+
 @RenderPage("shared/_Assets.cshtml")
 
 <div class="ga-wrapper">

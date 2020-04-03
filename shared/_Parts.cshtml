@@ -32,7 +32,10 @@
           @Tag.Div().Class("ga-tiles col-6 col-sm-6 col-md-4 col-lg-3").TagStart
         }
 
-          <div class="ga-image" @Edit.TagToolbar(toolbar: GetMetadataToolbar(pic.Metadata.EntityId, pic.FileId))>
+          <div class="ga-image" @Edit.TagToolbar(toolbar: new [] {
+            "toolbar=empty",
+            "metadata?entityId=" + pic.Metadata.EntityId + "&contentType=ImageMetadata&for=file:" + pic.FileId
+          };)>
             <figure>
               @(Tag.A()
                 .Class("ga-fancybox")
@@ -82,17 +85,6 @@
 }
 
 @functions {
-  /**
-  * Returns the metadata-toolbar for an image
-  * Will either offer to edit existing metadata, or create new metadata prefilled with the file ID
-  */
-  private object[] GetMetadataToolbar(int entityId, int fileId) {
-    return new [] {
-      "toolbar=empty",
-      "metadata?entityId=" + entityId + "&contentType=ImageMetadata&for=file:" + fileId
-    };
-  }
-
   /**
   * Returns the images, sorted by the passed setting
   */
