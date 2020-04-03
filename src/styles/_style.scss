@@ -128,13 +128,13 @@
       a {
         figcaption {
           display: none;
-          color: #666;
 
           h6,
           p {
             margin-bottom: 0;
             font-size: 0.8em;
             padding: 0 10px;
+            color: white;
           }
 
           h6 {
@@ -194,7 +194,12 @@
 
 /* ENDBootstrap Style Gallery Single Album*/
 
-/*  Bootstrap Clearfix auto-clear */
+.fancybox-caption__body {
+  p,
+  h6 {
+    color: white;
+  }
+}
 
 /*  Bootstrap Clearfix auto-clear */
 

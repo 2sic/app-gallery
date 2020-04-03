@@ -1,6 +1,6 @@
 {
   "name": "imagegallery-f3",
-  "version": "2.0.0",
+  "version": "05.00.00",
   "description": "A simple, easy to customize Gallery-App for DNN (DotNetNuke) based on the awesome fancybox 3",
   "main": "(none)",
   "scripts": {
@@ -25,18 +25,5 @@
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.1",
     "webpackbar": "^3.2.0"
-  },
-  "keywords": [
-    "dnn",
-    "dotnetnuke",
-    "fancybox",
-    "javascript",
-    "gallery",
-    "images",
-    "resize",
-    "thumbnail"
-  ],
-  "repository": {
-    "url": "https://github.com/2sic/app-gallery-f3"
   }
 }
