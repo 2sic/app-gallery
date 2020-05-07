@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="10.28.00" ExportDate="2020-04-03T16:14:15.2658236+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="11.00.00" ExportDate="2020-05-07T08:32:34.02718+02:00">
   <Header>
     <App Guid="46d319be-70f5-40c5-aaf1-a827e2d863bd" />
     <Language Default="en-US" />
@@ -870,7 +870,7 @@
       <Value Key="DisplayName" Value="Bildergalerie" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
       </Value>
-      <Value Key="Folder" Value="ImageGallery-F3" Type="String">
+      <Value Key="Folder" Value="Gallery-Fancybox3" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
@@ -886,7 +886,7 @@
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredVersion" Value="10.28.00" Type="String">
+      <Value Key="RequiredVersion" Value="11.00.00" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
@@ -894,7 +894,7 @@
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="05.00.00" Type="String">
+      <Value Key="Version" Value="05.01.00" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
@@ -1287,246 +1287,47 @@
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
     </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="3937fa17-ef2d-40a7-b089-64164eb10bab" AttributeSetName="2sxcPolymorphismConfiguration" EntityGUID="3b187ed6-aa4c-4076-8d3f-d64ea9a8866b">
+      <Value Key="Mode" Value="Koi?cssFramework" Type="String">
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
+    </Entity>
   </Entities>
   <PortalFiles>
-    <File Id="4332" RelativePath="adam\ImageGallery-F3\0jPONC8CT0i06sp3dybtCw\AlbumThumbnail\Platzhalterbild_Album.jpg" />
-    <File Id="1300" RelativePath="adam\ImageGallery-F3\0jPONC8CT0i06sp3dybtCw\Images\Platzhalterbild_Inhalt-1.jpg" />
-    <File Id="1301" RelativePath="adam\ImageGallery-F3\0jPONC8CT0i06sp3dybtCw\Images\Platzhalterbild_Inhalt-2.jpg" />
-    <File Id="1303" RelativePath="adam\ImageGallery-F3\0jPONC8CT0i06sp3dybtCw\Images\Platzhalterbild_Inhalt-4.jpg" />
-    <File Id="1295" RelativePath="adam\ImageGallery-F3\0jPONC8CT0i06sp3dybtCw\Images\Platzhalterbild_Inhalt-5.jpg" />
-    <File Id="1503" RelativePath="adam\ImageGallery-F3\96nZHkZDrUePN35gDg3pZg\Images\annie-spratt-439326-unsplash.jpg" />
-    <File Id="1505" RelativePath="adam\ImageGallery-F3\96nZHkZDrUePN35gDg3pZg\Images\austin-distel-675052-unsplash.jpg" />
-    <File Id="1502" RelativePath="adam\ImageGallery-F3\96nZHkZDrUePN35gDg3pZg\Images\maryna-yazbeck-1389581-unsplash.jpg" />
-    <File Id="1504" RelativePath="adam\ImageGallery-F3\96nZHkZDrUePN35gDg3pZg\Images\sylvie-tittel-726554-unsplash.jpg" />
-    <File Id="1446" RelativePath="adam\ImageGallery-F3\AD2DKJ4yC0mkY-uXlyTgcA\AlbumThumbnail\dino-reichmuth-84359-unsplash.jpg" />
-    <File Id="1447" RelativePath="adam\ImageGallery-F3\AD2DKJ4yC0mkY-uXlyTgcA\AlbumThumbnail\rawpixel-618756-unsplash.jpg" />
-    <File Id="1448" RelativePath="adam\ImageGallery-F3\AD2DKJ4yC0mkY-uXlyTgcA\Images\jeremy-galliani-567479-unsplash.jpg" />
-    <File Id="1449" RelativePath="adam\ImageGallery-F3\AD2DKJ4yC0mkY-uXlyTgcA\Images\joel-filipe-191372-unsplash.jpg" />
-    <File Id="1453" RelativePath="adam\ImageGallery-F3\AD2DKJ4yC0mkY-uXlyTgcA\Images\josiah-weiss-541633-unsplash.jpg" />
-    <File Id="1450" RelativePath="adam\ImageGallery-F3\AD2DKJ4yC0mkY-uXlyTgcA\Images\lux-interaction-248653-unsplash.jpg" />
-    <File Id="1451" RelativePath="adam\ImageGallery-F3\AD2DKJ4yC0mkY-uXlyTgcA\Images\madhu-shesharam-390606-unsplash.jpg" />
-    <File Id="1452" RelativePath="adam\ImageGallery-F3\AD2DKJ4yC0mkY-uXlyTgcA\Images\malte-wingen-381978-unsplash.jpg" />
-    <File Id="4360" RelativePath="adam\ImageGallery-F3\f5de-YkJ60yNI3nPwWouDQ\Images\Platzhalterbild_Inhalt-1.jpg" />
-    <File Id="4358" RelativePath="adam\ImageGallery-F3\f5de-YkJ60yNI3nPwWouDQ\Images\Platzhalterbild_Inhalt-2.jpg" />
-    <File Id="4359" RelativePath="adam\ImageGallery-F3\f5de-YkJ60yNI3nPwWouDQ\Images\Platzhalterbild_Inhalt-3.jpg" />
-    <File Id="4352" RelativePath="adam\ImageGallery-F3\f5de-YkJ60yNI3nPwWouDQ\Images\Platzhalterbild_Inhalt-4.jpg" />
-    <File Id="1443" RelativePath="adam\ImageGallery-F3\iiYt01tblEGHgOkMDVBWWQ\AlbumThumbnail\emese-selley-794021-unsplash.jpg" />
-    <File Id="1442" RelativePath="adam\ImageGallery-F3\iiYt01tblEGHgOkMDVBWWQ\Images\dino-reichmuth-84359-unsplash.jpg" />
-    <File Id="1441" RelativePath="adam\ImageGallery-F3\iiYt01tblEGHgOkMDVBWWQ\Images\emese-selley-794021-unsplash.jpg" />
-    <File Id="1437" RelativePath="adam\ImageGallery-F3\iiYt01tblEGHgOkMDVBWWQ\Images\lux-interaction-248653-unsplash.jpg" />
-    <File Id="1440" RelativePath="adam\ImageGallery-F3\iiYt01tblEGHgOkMDVBWWQ\Images\madhu-shesharam-390606-unsplash.jpg" />
-    <File Id="1439" RelativePath="adam\ImageGallery-F3\iiYt01tblEGHgOkMDVBWWQ\Images\malte-wingen-381978-unsplash.jpg" />
-    <File Id="1438" RelativePath="adam\ImageGallery-F3\iiYt01tblEGHgOkMDVBWWQ\Images\smile-1726471_1920.jpg" />
-    <File Id="1471" RelativePath="adam\ImageGallery-F3\I-NdUFcJZEyj3eA5hJUmaA\Images\Avatar.jpg" />
-    <File Id="1472" RelativePath="adam\ImageGallery-F3\I-NdUFcJZEyj3eA5hJUmaA\Images\b4-Headerimage.jpg" />
-    <File Id="1473" RelativePath="adam\ImageGallery-F3\I-NdUFcJZEyj3eA5hJUmaA\Images\rawpixel-724105-unsplash.jpg" />
-    <File Id="1474" RelativePath="adam\ImageGallery-F3\I-NdUFcJZEyj3eA5hJUmaA\Images\Schloss Werdenberg-3.jpg" />
-    <File Id="4351" RelativePath="adam\ImageGallery-F3\mUzRpNOLqEqZeyBElWRZEg\AlbumThumbnail\favicon500.png" />
-    <File Id="4346" RelativePath="adam\ImageGallery-F3\mUzRpNOLqEqZeyBElWRZEg\Images\contact.jpg" />
-    <File Id="4343" RelativePath="adam\ImageGallery-F3\mUzRpNOLqEqZeyBElWRZEg\Images\holding.jpg" />
-    <File Id="4341" RelativePath="adam\ImageGallery-F3\mUzRpNOLqEqZeyBElWRZEg\Images\me.jpg" />
-    <File Id="4349" RelativePath="adam\ImageGallery-F3\mUzRpNOLqEqZeyBElWRZEg\Images\neonbrand-8fDhgAN5zG0-unsplash.jpg" />
-    <File Id="4345" RelativePath="adam\ImageGallery-F3\mUzRpNOLqEqZeyBElWRZEg\Images\nigel-tadyanehondo-wny6Y4MbyhA-unsplash.jpg" />
-    <File Id="4342" RelativePath="adam\ImageGallery-F3\mUzRpNOLqEqZeyBElWRZEg\Images\organisation.jpg" />
-    <File Id="4350" RelativePath="adam\ImageGallery-F3\mUzRpNOLqEqZeyBElWRZEg\Images\Platzhalterbild_Album.jpg" />
-    <File Id="4344" RelativePath="adam\ImageGallery-F3\mUzRpNOLqEqZeyBElWRZEg\Images\Portrait 2az.jpg" />
-    <File Id="4348" RelativePath="adam\ImageGallery-F3\mUzRpNOLqEqZeyBElWRZEg\Images\profesional_profile-pic.png" />
-    <File Id="4347" RelativePath="adam\ImageGallery-F3\mUzRpNOLqEqZeyBElWRZEg\Images\Untitled-1.jpg" />
-    <File Id="1633" RelativePath="adam\ImageGallery-F3\nEE9bs8G4EKkPrvqGeVtkg\Images\alexander-pemberton-95212-unsplash.jpg" />
-    <File Id="1632" RelativePath="adam\ImageGallery-F3\nEE9bs8G4EKkPrvqGeVtkg\Images\michael-warf-1086610-unsplash.jpg" />
-    <File Id="1634" RelativePath="adam\ImageGallery-F3\nEE9bs8G4EKkPrvqGeVtkg\Images\Platzhalterbilder.jpg" />
-    <File Id="1635" RelativePath="adam\ImageGallery-F3\nEE9bs8G4EKkPrvqGeVtkg\Images\toa-heftiba-644507-unsplash.jpg" />
-    <File Id="1568" RelativePath="adam\ImageGallery-F3\SqUcDV1gZEuSODC5CEFSUA\AlbumThumbnail\Platzhalterbild_Inhalt-3.jpg" />
-    <File Id="1567" RelativePath="adam\ImageGallery-F3\SqUcDV1gZEuSODC5CEFSUA\Images\Platzhalterbild_Inhalt-2.jpg" />
-    <File Id="1309" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\AlbumThumbnail\george-kedenburg-iii-561935-unsplash.jpg" />
-    <File Id="1304" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\aaron-burson-242124-unsplash.jpg" />
-    <File Id="1305" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\alberto-restifo-4510-unsplash.jpg" />
-    <File Id="1307" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\efe-kurnaz-315384-unsplash.jpg" />
-    <File Id="1336" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\etienne-pauthenet-119992-unsplash.jpg" />
-    <File Id="1377" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001079221497.jpg" />
-    <File Id="1378" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001116000079.jpg" />
-    <File Id="1380" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001141038889.jpg" />
-    <File Id="1379" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001176452626.jpg" />
-    <File Id="1382" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001209214386.jpg" />
-    <File Id="1381" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001224117612.jpg" />
-    <File Id="1383" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001316404158.jpg" />
-    <File Id="1359" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000132701536.jpg" />
-    <File Id="1384" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001376718168.jpg" />
-    <File Id="1385" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001454659375.jpg" />
-    <File Id="1387" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001545806234.jpg" />
-    <File Id="1386" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001565782100.jpg" />
-    <File Id="1388" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001601969844.jpg" />
-    <File Id="1389" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001608482449.jpg" />
-    <File Id="1391" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001625591306.jpg" />
-    <File Id="1390" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001637922945.jpg" />
-    <File Id="1393" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001706961259.jpg" />
-    <File Id="1392" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001735386118.jpg" />
-    <File Id="1395" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001750264747.jpg" />
-    <File Id="1394" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001792779106.jpg" />
-    <File Id="1396" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001817248786.jpg" />
-    <File Id="1397" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001896291699.jpg" />
-    <File Id="1399" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001958769599.jpg" />
-    <File Id="1398" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001966720664.jpg" />
-    <File Id="1401" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0001971407787.jpg" />
-    <File Id="1400" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0002056219390.jpg" />
-    <File Id="1402" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0002063905655.jpg" />
-    <File Id="1404" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0002073981867.jpg" />
-    <File Id="1403" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file0002081215668.jpg" />
-    <File Id="1362" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000267747089.jpg" />
-    <File Id="1360" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000267804564.jpg" />
-    <File Id="1361" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000325161223.jpg" />
-    <File Id="1364" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000466623310.jpg" />
-    <File Id="1363" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000477760838.jpg" />
-    <File Id="1357" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file00053809264.jpg" />
-    <File Id="1366" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000541344089.jpg" />
-    <File Id="1365" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000555007525.jpg" />
-    <File Id="1367" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000615586116.jpg" />
-    <File Id="1369" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000626266718.jpg" />
-    <File Id="1368" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000656451307.jpg" />
-    <File Id="1370" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000693070568.jpg" />
-    <File Id="1371" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000698862236.jpg" />
-    <File Id="1372" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000738769552.jpg" />
-    <File Id="1374" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000741141463.jpg" />
-    <File Id="1373" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000844922903.jpg" />
-    <File Id="1375" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000855094214.jpg" />
-    <File Id="1376" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file000927030990.jpg" />
-    <File Id="1411" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file1301234046357.jpg" />
-    <File Id="1410" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file1561246251481.jpg" />
-    <File Id="1412" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file1651272386454.jpg" />
-    <File Id="1339" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file1821253941895.jpg" />
-    <File Id="1338" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file2231273355591.jpg" />
-    <File Id="1344" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file2961261953471.jpg" />
-    <File Id="1340" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file2961342149502.jpg" />
-    <File Id="1341" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file3181278525287.jpg" />
-    <File Id="1342" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file3251255366828.jpg" />
-    <File Id="1343" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file3811267338835.jpg" />
-    <File Id="1405" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file451264266022.jpg" />
-    <File Id="1346" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file4741298583098.jpg" />
-    <File Id="1345" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file4811312660912.jpg" />
-    <File Id="1347" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file4821300966298.jpg" />
-    <File Id="1348" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file5001258630705.jpg" />
-    <File Id="1350" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file5051300055797.jpg" />
-    <File Id="1349" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file5391259700152.jpg" />
-    <File Id="1353" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file5861288554715.jpg" />
-    <File Id="1406" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file621250696198.jpg" />
-    <File Id="1351" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file7561294493011.jpg" />
-    <File Id="1408" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file761244456443.jpg" />
-    <File Id="1352" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file7681334413913.jpg" />
-    <File Id="1407" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file801263247199.jpg" />
-    <File Id="1354" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file8081258144701.jpg" />
-    <File Id="1355" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file8261246814968.jpg" />
-    <File Id="1356" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file9221293737060.jpg" />
-    <File Id="1358" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file9241312063946.jpg" />
-    <File Id="1409" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\file991289430233.jpg" />
-    <File Id="1308" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\george-kedenburg-iii-561935-unsplash.jpg" />
-    <File Id="1310" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\jeremy-bishop-335002-unsplash.jpg" />
-    <File Id="1311" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\jeremy-galliani-567479-unsplash.jpg" />
-    <File Id="1332" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\jeremy-galliani-567479-unsplash-1.jpg" />
-    <File Id="1335" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\jeremy-galliani-697655-unsplash.jpg" />
-    <File Id="1313" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\joel-filipe-191372-unsplash.jpg" />
-    <File Id="1337" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\juli-moreira-1138349-unsplash.jpg" />
-    <File Id="1333" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\osman-rana-263708-unsplash.jpg" />
-    <File Id="1334" RelativePath="adam\ImageGallery-F3\Wgn113ghL0epylkAK8tfiw\Images\tyler-lastovich-720622-unsplash.jpg" />
+    <File Id="4332" RelativePath="adam\Gallery-Fancybox3\0jPONC8CT0i06sp3dybtCw\AlbumThumbnail\Platzhalterbild_Album.jpg" />
+    <File Id="1300" RelativePath="adam\Gallery-Fancybox3\0jPONC8CT0i06sp3dybtCw\Images\Platzhalterbild_Inhalt-1.jpg" />
+    <File Id="1301" RelativePath="adam\Gallery-Fancybox3\0jPONC8CT0i06sp3dybtCw\Images\Platzhalterbild_Inhalt-2.jpg" />
+    <File Id="1303" RelativePath="adam\Gallery-Fancybox3\0jPONC8CT0i06sp3dybtCw\Images\Platzhalterbild_Inhalt-4.jpg" />
+    <File Id="1295" RelativePath="adam\Gallery-Fancybox3\0jPONC8CT0i06sp3dybtCw\Images\Platzhalterbild_Inhalt-5.jpg" />
+    <File Id="4360" RelativePath="adam\Gallery-Fancybox3\f5de-YkJ60yNI3nPwWouDQ\Images\Platzhalterbild_Inhalt-1.jpg" />
+    <File Id="4358" RelativePath="adam\Gallery-Fancybox3\f5de-YkJ60yNI3nPwWouDQ\Images\Platzhalterbild_Inhalt-2.jpg" />
+    <File Id="4359" RelativePath="adam\Gallery-Fancybox3\f5de-YkJ60yNI3nPwWouDQ\Images\Platzhalterbild_Inhalt-3.jpg" />
+    <File Id="4352" RelativePath="adam\Gallery-Fancybox3\f5de-YkJ60yNI3nPwWouDQ\Images\Platzhalterbild_Inhalt-4.jpg" />
   </PortalFiles>
   <PortalFolders>
-    <Folder Id="7441" RelativePath="adam/ImageGallery-F3/0jPONC8CT0i06sp3dybtCw/AlbumThumbnail/" />
-    <Folder Id="2701" RelativePath="adam/ImageGallery-F3/0jPONC8CT0i06sp3dybtCw/Images/" />
-    <Folder Id="3067" RelativePath="adam/ImageGallery-F3/96nZHkZDrUePN35gDg3pZg/Images/" />
-    <Folder Id="2846" RelativePath="adam/ImageGallery-F3/AD2DKJ4yC0mkY-uXlyTgcA/AlbumThumbnail/" />
-    <Folder Id="2845" RelativePath="adam/ImageGallery-F3/AD2DKJ4yC0mkY-uXlyTgcA/Images/" />
-    <Folder Id="7544" RelativePath="adam/ImageGallery-F3/f5de-YkJ60yNI3nPwWouDQ/Images/" />
-    <Folder Id="2828" RelativePath="adam/ImageGallery-F3/iiYt01tblEGHgOkMDVBWWQ/AlbumThumbnail/" />
-    <Folder Id="2827" RelativePath="adam/ImageGallery-F3/iiYt01tblEGHgOkMDVBWWQ/Images/" />
-    <Folder Id="3012" RelativePath="adam/ImageGallery-F3/I-NdUFcJZEyj3eA5hJUmaA/Images/" />
-    <Folder Id="7540" RelativePath="adam/ImageGallery-F3/mUzRpNOLqEqZeyBElWRZEg/AlbumThumbnail/" />
-    <Folder Id="7539" RelativePath="adam/ImageGallery-F3/mUzRpNOLqEqZeyBElWRZEg/Images/" />
-    <Folder Id="3372" RelativePath="adam/ImageGallery-F3/nEE9bs8G4EKkPrvqGeVtkg/Images/" />
-    <Folder Id="3194" RelativePath="adam/ImageGallery-F3/SqUcDV1gZEuSODC5CEFSUA/AlbumThumbnail/" />
-    <Folder Id="3193" RelativePath="adam/ImageGallery-F3/SqUcDV1gZEuSODC5CEFSUA/Images/" />
-    <Folder Id="2706" RelativePath="adam/ImageGallery-F3/Wgn113ghL0epylkAK8tfiw/AlbumThumbnail/" />
-    <Folder Id="2705" RelativePath="adam/ImageGallery-F3/Wgn113ghL0epylkAK8tfiw/Images/" />
-    <Folder Id="2699" RelativePath="adam/ImageGallery-F3/" />
-    <Folder Id="7541" RelativePath="adam/ImageGallery-F3/__vCgBprxUqH2K4teDnFQA/" />
-    <Folder Id="7542" RelativePath="adam/ImageGallery-F3/__vCgBprxUqH2K4teDnFQA/Images/" />
-    <Folder Id="3071" RelativePath="adam/ImageGallery-F3/05z2UM1A3U6Au77cXahmNQ/" />
-    <Folder Id="3073" RelativePath="adam/ImageGallery-F3/05z2UM1A3U6Au77cXahmNQ/Images/" />
-    <Folder Id="2700" RelativePath="adam/ImageGallery-F3/0jPONC8CT0i06sp3dybtCw/" />
-    <Folder Id="7561" RelativePath="adam/ImageGallery-F3/5aKjYCYyckGqr8j81FR6-A/" />
-    <Folder Id="7562" RelativePath="adam/ImageGallery-F3/5aKjYCYyckGqr8j81FR6-A/Images/" />
-    <Folder Id="3065" RelativePath="adam/ImageGallery-F3/96nZHkZDrUePN35gDg3pZg/" />
-    <Folder Id="2992" RelativePath="adam/ImageGallery-F3/9JnQItGPjUKKxIfo7qjF3Q/" />
-    <Folder Id="2994" RelativePath="adam/ImageGallery-F3/9JnQItGPjUKKxIfo7qjF3Q/Images/" />
-    <Folder Id="2843" RelativePath="adam/ImageGallery-F3/AD2DKJ4yC0mkY-uXlyTgcA/" />
-    <Folder Id="7593" RelativePath="adam/ImageGallery-F3/aqJA3DjoI0SmL0zXH8uYSw/" />
-    <Folder Id="7594" RelativePath="adam/ImageGallery-F3/aqJA3DjoI0SmL0zXH8uYSw/Images/" />
-    <Folder Id="3080" RelativePath="adam/ImageGallery-F3/b_DlnNFqu0uwWrt_-bOVQQ/" />
-    <Folder Id="3082" RelativePath="adam/ImageGallery-F3/b_DlnNFqu0uwWrt_-bOVQQ/Images/" />
-    <Folder Id="3374" RelativePath="adam/ImageGallery-F3/c-4TgEI8JESpsyNZZjBt2g/" />
-    <Folder Id="3376" RelativePath="adam/ImageGallery-F3/c-4TgEI8JESpsyNZZjBt2g/Images/" />
-    <Folder Id="7545" RelativePath="adam/ImageGallery-F3/cH7Lzj5360SYqYbxqrJ1kQ/" />
-    <Folder Id="7546" RelativePath="adam/ImageGallery-F3/cH7Lzj5360SYqYbxqrJ1kQ/Images/" />
-    <Folder Id="7605" RelativePath="adam/ImageGallery-F3/cYGJMJl67E2OSJNxDCjBIg/" />
-    <Folder Id="7606" RelativePath="adam/ImageGallery-F3/cYGJMJl67E2OSJNxDCjBIg/Images/" />
-    <Folder Id="3039" RelativePath="adam/ImageGallery-F3/DAUC7_M1DEufglpG0WE21w/" />
-    <Folder Id="3041" RelativePath="adam/ImageGallery-F3/DAUC7_M1DEufglpG0WE21w/Images/" />
-    <Folder Id="7607" RelativePath="adam/ImageGallery-F3/DW1EAAAt_UOdnNC7R42o8g/" />
-    <Folder Id="7608" RelativePath="adam/ImageGallery-F3/DW1EAAAt_UOdnNC7R42o8g/Images/" />
-    <Folder Id="3380" RelativePath="adam/ImageGallery-F3/dxXbKW5WgUGuISbhGj5vwg/" />
-    <Folder Id="3382" RelativePath="adam/ImageGallery-F3/dxXbKW5WgUGuISbhGj5vwg/Images/" />
-    <Folder Id="7543" RelativePath="adam/ImageGallery-F3/f5de-YkJ60yNI3nPwWouDQ/" />
-    <Folder Id="7597" RelativePath="adam/ImageGallery-F3/FfJJGaQEKUy4Iy8W4VE4fA/" />
-    <Folder Id="7598" RelativePath="adam/ImageGallery-F3/FfJJGaQEKUy4Iy8W4VE4fA/Images/" />
-    <Folder Id="2825" RelativePath="adam/ImageGallery-F3/iiYt01tblEGHgOkMDVBWWQ/" />
-    <Folder Id="7595" RelativePath="adam/ImageGallery-F3/i-LuAivezEqhQ1CJ4Hcvbg/" />
-    <Folder Id="7596" RelativePath="adam/ImageGallery-F3/i-LuAivezEqhQ1CJ4Hcvbg/Images/" />
-    <Folder Id="3010" RelativePath="adam/ImageGallery-F3/I-NdUFcJZEyj3eA5hJUmaA/" />
-    <Folder Id="7588" RelativePath="adam/ImageGallery-F3/JkwglifamU6AoVrOcHX2dg/" />
-    <Folder Id="7589" RelativePath="adam/ImageGallery-F3/JkwglifamU6AoVrOcHX2dg/Images/" />
-    <Folder Id="7601" RelativePath="adam/ImageGallery-F3/k5hq-CX6l0ayodrfQybjMA/" />
-    <Folder Id="7602" RelativePath="adam/ImageGallery-F3/k5hq-CX6l0ayodrfQybjMA/Images/" />
-    <Folder Id="7425" RelativePath="adam/ImageGallery-F3/Krb2bkSiqEOs8ttPBTSFyA/" />
-    <Folder Id="7426" RelativePath="adam/ImageGallery-F3/Krb2bkSiqEOs8ttPBTSFyA/Images/" />
-    <Folder Id="7538" RelativePath="adam/ImageGallery-F3/mUzRpNOLqEqZeyBElWRZEg/" />
-    <Folder Id="7603" RelativePath="adam/ImageGallery-F3/N7kcal3HjEKNgenPnMF65g/" />
-    <Folder Id="7604" RelativePath="adam/ImageGallery-F3/N7kcal3HjEKNgenPnMF65g/Images/" />
-    <Folder Id="3371" RelativePath="adam/ImageGallery-F3/nEE9bs8G4EKkPrvqGeVtkg/" />
-    <Folder Id="7439" RelativePath="adam/ImageGallery-F3/Oe0arf6K_0KqG1grki1wsw/" />
-    <Folder Id="7440" RelativePath="adam/ImageGallery-F3/Oe0arf6K_0KqG1grki1wsw/Images/" />
-    <Folder Id="7563" RelativePath="adam/ImageGallery-F3/QipXU8JYqEmHWX4KPRLA1w/" />
-    <Folder Id="7564" RelativePath="adam/ImageGallery-F3/QipXU8JYqEmHWX4KPRLA1w/Images/" />
-    <Folder Id="7534" RelativePath="adam/ImageGallery-F3/QTCEcQD8iUi8hBLsrQUxeg/" />
-    <Folder Id="7535" RelativePath="adam/ImageGallery-F3/QTCEcQD8iUi8hBLsrQUxeg/Images/" />
-    <Folder Id="3195" RelativePath="adam/ImageGallery-F3/rLECB7RLIkmMIW4jv6Nerg/" />
-    <Folder Id="3197" RelativePath="adam/ImageGallery-F3/rLECB7RLIkmMIW4jv6Nerg/Images/" />
-    <Folder Id="6970" RelativePath="adam/ImageGallery-F3/sbZspcHN_0SqFOnZ11QXeA/" />
-    <Folder Id="6972" RelativePath="adam/ImageGallery-F3/sbZspcHN_0SqFOnZ11QXeA/AlbumThumbnail/" />
-    <Folder Id="6974" RelativePath="adam/ImageGallery-F3/sbZspcHN_0SqFOnZ11QXeA/Images/" />
-    <Folder Id="6973" RelativePath="adam/ImageGallery-F3/sbZspcHN_0SqFOnZ11QXeA/Introduction/" />
-    <Folder Id="3191" RelativePath="adam/ImageGallery-F3/SqUcDV1gZEuSODC5CEFSUA/" />
-    <Folder Id="7536" RelativePath="adam/ImageGallery-F3/Uc2OPdTCCk2eNQyjYlP-xA/" />
-    <Folder Id="7537" RelativePath="adam/ImageGallery-F3/Uc2OPdTCCk2eNQyjYlP-xA/Images/" />
-    <Folder Id="3042" RelativePath="adam/ImageGallery-F3/Uj167w_VEkuhqAg_zOccOw/" />
-    <Folder Id="3044" RelativePath="adam/ImageGallery-F3/Uj167w_VEkuhqAg_zOccOw/Images/" />
-    <Folder Id="3198" RelativePath="adam/ImageGallery-F3/v1WgIb2ocUCy-TpyS8AeFQ/" />
-    <Folder Id="3200" RelativePath="adam/ImageGallery-F3/v1WgIb2ocUCy-TpyS8AeFQ/Images/" />
-    <Folder Id="7423" RelativePath="adam/ImageGallery-F3/VtoAFROYcU-HuO_oY6Jagw/" />
-    <Folder Id="7424" RelativePath="adam/ImageGallery-F3/VtoAFROYcU-HuO_oY6Jagw/Images/" />
-    <Folder Id="2703" RelativePath="adam/ImageGallery-F3/Wgn113ghL0epylkAK8tfiw/" />
-    <Folder Id="3068" RelativePath="adam/ImageGallery-F3/WK72EJLzJUiFzOBBJVO5rA/" />
-    <Folder Id="3070" RelativePath="adam/ImageGallery-F3/WK72EJLzJUiFzOBBJVO5rA/Images/" />
-    <Folder Id="7586" RelativePath="adam/ImageGallery-F3/-wLafpRZrEaOoiLnDX3Rmw/" />
-    <Folder Id="7587" RelativePath="adam/ImageGallery-F3/-wLafpRZrEaOoiLnDX3Rmw/Images/" />
-    <Folder Id="3377" RelativePath="adam/ImageGallery-F3/WPaXyzqnQ0q2FINWzscBvQ/" />
-    <Folder Id="3379" RelativePath="adam/ImageGallery-F3/WPaXyzqnQ0q2FINWzscBvQ/Images/" />
-    <Folder Id="3074" RelativePath="adam/ImageGallery-F3/xX2BBmK6YE-LYZxsY6YBMQ/" />
-    <Folder Id="3076" RelativePath="adam/ImageGallery-F3/xX2BBmK6YE-LYZxsY6YBMQ/Images/" />
-    <Folder Id="3368" RelativePath="adam/ImageGallery-F3/xXVU3aME10yCjY_9pDHnrA/" />
-    <Folder Id="3370" RelativePath="adam/ImageGallery-F3/xXVU3aME10yCjY_9pDHnrA/Images/" />
-    <Folder Id="7407" RelativePath="adam/ImageGallery-F3/YWjVesYNK0K18gl7-0TRPw/" />
-    <Folder Id="7408" RelativePath="adam/ImageGallery-F3/YWjVesYNK0K18gl7-0TRPw/Images/" />
-    <Folder Id="7547" RelativePath="adam/ImageGallery-F3/yYykSI5U6kSVUFw61ohL5w/" />
-    <Folder Id="7548" RelativePath="adam/ImageGallery-F3/yYykSI5U6kSVUFw61ohL5w/Images/" />
-    <Folder Id="7599" RelativePath="adam/ImageGallery-F3/ZxpP1Bhg7Uy9fx-PJXXtbA/" />
-    <Folder Id="7600" RelativePath="adam/ImageGallery-F3/ZxpP1Bhg7Uy9fx-PJXXtbA/Images/" />
+    <Folder Id="7441" RelativePath="adam/Gallery-Fancybox3/0jPONC8CT0i06sp3dybtCw/AlbumThumbnail/" />
+    <Folder Id="2701" RelativePath="adam/Gallery-Fancybox3/0jPONC8CT0i06sp3dybtCw/Images/" />
+    <Folder Id="7544" RelativePath="adam/Gallery-Fancybox3/f5de-YkJ60yNI3nPwWouDQ/Images/" />
+    <Folder Id="2699" RelativePath="adam/Gallery-Fancybox3/" />
+    <Folder Id="2700" RelativePath="adam/Gallery-Fancybox3/0jPONC8CT0i06sp3dybtCw/" />
+    <Folder Id="7593" RelativePath="adam/Gallery-Fancybox3/aqJA3DjoI0SmL0zXH8uYSw/" />
+    <Folder Id="7594" RelativePath="adam/Gallery-Fancybox3/aqJA3DjoI0SmL0zXH8uYSw/Images/" />
+    <Folder Id="7605" RelativePath="adam/Gallery-Fancybox3/cYGJMJl67E2OSJNxDCjBIg/" />
+    <Folder Id="7606" RelativePath="adam/Gallery-Fancybox3/cYGJMJl67E2OSJNxDCjBIg/Images/" />
+    <Folder Id="7607" RelativePath="adam/Gallery-Fancybox3/DW1EAAAt_UOdnNC7R42o8g/" />
+    <Folder Id="7608" RelativePath="adam/Gallery-Fancybox3/DW1EAAAt_UOdnNC7R42o8g/Images/" />
+    <Folder Id="7543" RelativePath="adam/Gallery-Fancybox3/f5de-YkJ60yNI3nPwWouDQ/" />
+    <Folder Id="7597" RelativePath="adam/Gallery-Fancybox3/FfJJGaQEKUy4Iy8W4VE4fA/" />
+    <Folder Id="7598" RelativePath="adam/Gallery-Fancybox3/FfJJGaQEKUy4Iy8W4VE4fA/Images/" />
+    <Folder Id="7595" RelativePath="adam/Gallery-Fancybox3/i-LuAivezEqhQ1CJ4Hcvbg/" />
+    <Folder Id="7596" RelativePath="adam/Gallery-Fancybox3/i-LuAivezEqhQ1CJ4Hcvbg/Images/" />
+    <Folder Id="7588" RelativePath="adam/Gallery-Fancybox3/JkwglifamU6AoVrOcHX2dg/" />
+    <Folder Id="7589" RelativePath="adam/Gallery-Fancybox3/JkwglifamU6AoVrOcHX2dg/Images/" />
+    <Folder Id="7601" RelativePath="adam/Gallery-Fancybox3/k5hq-CX6l0ayodrfQybjMA/" />
+    <Folder Id="7602" RelativePath="adam/Gallery-Fancybox3/k5hq-CX6l0ayodrfQybjMA/Images/" />
+    <Folder Id="7603" RelativePath="adam/Gallery-Fancybox3/N7kcal3HjEKNgenPnMF65g/" />
+    <Folder Id="7604" RelativePath="adam/Gallery-Fancybox3/N7kcal3HjEKNgenPnMF65g/Images/" />
+    <Folder Id="7599" RelativePath="adam/Gallery-Fancybox3/ZxpP1Bhg7Uy9fx-PJXXtbA/" />
+    <Folder Id="7600" RelativePath="adam/Gallery-Fancybox3/ZxpP1Bhg7Uy9fx-PJXXtbA/Images/" />
   </PortalFolders>
 </SexyContent>
