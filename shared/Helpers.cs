@@ -1,8 +1,9 @@
-@inherits ToSic.Custom.Razor12
-@using ToSic.Razor.Blade;
-@using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
+using System.Linq;
+using ToSic.Razor.Blade;
+using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
 
-@functions {
+public class Helpers: ToSic.Custom.Code12
+{
   /**
   * Returns the images, sorted by the passed setting
   */
