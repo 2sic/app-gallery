@@ -1,9 +1,10 @@
 @inherits ToSic.Custom.Razor12
 @using ToSic.Razor.Blade;
 @{
-
   // Shows album title and introduction 
-  var album = PageData["album"];
+  // ----------------------------------------
+
+  dynamic album = PageData["album"];
 
   if (album.Presentation.HeadingType != "hidden") {
     @Tag.Custom(album.Presentation.HeadingType).Wrap(album.Title)
