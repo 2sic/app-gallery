@@ -9,7 +9,7 @@
 
 <div @Edit.TagToolbar(Content)>
   @* Display Album Title or information that title is hidden *@
-  @RenderPage("shared/_AlbumTitleAndDescription.cshtml", new { album = Content })
+  @Html.Partial("shared/_AlbumTitleAndDescription.cshtml", new { album = Content })
 
 
   @* Display the images *@
@@ -40,4 +40,4 @@
   </div>
 </div>
 
-@RenderPage("shared/_Assets.cshtml", new { scripts = true})
+@Html.Partial("shared/_Assets.cshtml", new { scripts = true})

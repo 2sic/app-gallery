@@ -28,7 +28,7 @@
 
 <div @Edit.TagToolbar(album)>
   @* Display Album Title or information that title is hidden *@
-  @RenderPage("shared/_AlbumTitleAndDescription.cshtml", new { album = album })
+  @Html.Partial("shared/_AlbumTitleAndDescription.cshtml", new { album = album })
 
   @* Display the images *@
   <div class="ga-wrapper row auto-clear">
@@ -63,4 +63,4 @@
   <a href="@Tags.SafeUrl(Link.To())" class="btn btn-outline-primary btn-sm">@App.Resources.BackToOverview</a>
 }
 
-@RenderPage("shared/_Assets.cshtml", new { scripts = true})
+@Html.Partial("shared/_Assets.cshtml", new { scripts = true})
