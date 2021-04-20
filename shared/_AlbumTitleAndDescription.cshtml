@@ -2,15 +2,14 @@
 @using ToSic.Razor.Blade;
 @{
   // Shows album title and introduction 
-  // ----------------------------------------
 
-  dynamic album = DynamicModel.album;
-
-  if (album.Presentation.HeadingType != "hidden") {
-    @Tag.Custom(album.Presentation.HeadingType).Wrap(album.Title)
-  } else if(Edit.Enabled) {
-    <h2>(@App.Resources.TitleNotDisplayed)</h2>
-  }
-  <div class="mb-4">@Html.Raw(album.Introduction)</div>
-
+  // The album information as passed in from the caller
+  var album = DynamicModel.album;
 }
+@if (album.Presentation.HeadingType != "hidden") {
+  @Tag.Custom(album.Presentation.HeadingType).Wrap(album.Title)
+} else if(Edit.Enabled) {
+  <h2>(@App.Resources.TitleNotDisplayed)</h2>
+}
+
+<div class="mb-4">@Html.Raw(album.Introduction)</div>
