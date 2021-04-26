@@ -2,7 +2,7 @@ using System.Linq;
 using ToSic.Razor.Blade;
 using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
 
-public class Helpers: ToSic.Custom.Code12
+public class Helpers: Custom.Hybrid.Code12
 {
   /**
   * Returns the images, sorted by the passed setting
