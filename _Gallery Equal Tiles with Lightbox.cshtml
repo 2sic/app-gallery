@@ -4,7 +4,8 @@
 @{
   var helpers = CreateInstance("shared/Helpers.cs");
 
-  var albumInUrl = Request.QueryString["Album"];
+  var albumInUrl = ViewContext.HttpContext.Request.Query["Album"];
+  // TODO: var albumInUrl = Request.QueryString["Album"];
   var isDetailViewOfAlbum = Text.Has(albumInUrl);
   @* If album QueryString is specified, take album from QueryString, else take "current" album *@
   var album = isDetailViewOfAlbum ? AsList(Data).FirstOrDefault(a => a.Path == albumInUrl) : Content;
@@ -13,12 +14,14 @@
     <h1>@App.Resources.AlbumNotFound</h1>
     <div>@Html.Raw(App.Resources.AlbumNotFoundText)</div>
     <a href="@Tags.SafeUrl(Link.To())" class="btn btn-outline-primary btn-sm">@App.Resources.BackToOverview</a>
-    Response.StatusCode = 404;
-    Response.TrySkipIisCustomErrors = true;
+    // TODO:
+    // Response.StatusCode = 404;
+    // Response.TrySkipIisCustomErrors = true;
     return;
   }
 
-  HtmlPage.Title = album.Title + " | " + HtmlPage.Title;
+  // TODO:
+  // HtmlPage.Title = album.Title + " | " + HtmlPage.Title;
 }
 
 @* Hide the side navigation if the view is used as detail view *@
