@@ -11,6 +11,7 @@
         : images.First().Url;
 
       <div class="ga-album col-12 col-sm-6 col-md-6 col-lg-4" @Edit.TagToolbar(album)>
+        @* <a href='@Tags.SafeUrl(Link.To(parameters: "mid/" + CmsContext.Module.Id + "&album=" + album.Path))'> *@
         <a href='@Tags.SafeUrl(Link.To(parameters: "album=" + album.Path))'>
           <div class="ga-img">
             <div class="overlay">

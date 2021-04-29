@@ -4,8 +4,10 @@
 @{
   var helpers = CreateInstance("shared/Helpers.cs");
 
-  var albumInUrl = ViewContext.HttpContext.Request.Query["Album"];
-  // TODO: var albumInUrl = Request.QueryString["Album"];
+  // Dnn: var albumInUrl = Request.QueryString["Album"];
+  // Oqtane: var albumInUrl = ViewContext.HttpContext.Request.Query["Album"];
+  // Hybrid: 
+  var albumInUrl = CmsContext.Page.Parameters["Album"];
   var isDetailViewOfAlbum = Text.Has(albumInUrl);
   @* If album QueryString is specified, take album from QueryString, else take "current" album *@
   var album = isDetailViewOfAlbum ? AsList(Data).FirstOrDefault(a => a.Path == albumInUrl) : Content;
@@ -67,3 +69,10 @@
 }
 
 @Html.Partial("shared/_Assets.cshtml", new { scripts = true})
+
+<script>
+  console.log('experimental');
+  $().fancybox({
+    selector : '.imglist a:visible'
+  });
+</script>
