@@ -70,9 +70,7 @@
 
 @Html.Partial("shared/_Assets.cshtml", new { scripts = true})
 
+
 <script>
-  console.log('experimental');
-  $().fancybox({
-    selector : '.imglist a:visible'
-  });
+  $(appFancyboxGallery3Init);       // Activate Fancybox once the page is ready
 </script>
