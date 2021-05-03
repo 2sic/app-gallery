@@ -1,33 +1,5 @@
-/** 
- * In case jQuery slim is loaded, fadeIn is missing and would cause errors
- * So we check for that and just put an empty function there
- */
-function monkeyPatchjQueryFade() {
-  const jQueryProto = ($() as any).__proto__;
-  if(!jQueryProto.fadeIn)
-    jQueryProto.fadeIn = function () { /* do nothing */ }
-}
-
-/** Loader function for our Fancybox Gallery 3 */
-function fancyboxGallery3() {
-  /* Fancybox */
-  if ($('.fancybox').fancybox) {
-    $('.ga-fancybox').fancybox(<FancyBoxOptions>{
-      loop: true,
-      caption: function() {
-        return $(this).find('figcaption').html();
-      }
-    });
-  }
-
-  /* Lazy - only if jQuery Animations exists */
-  if (($('.lazy') as any).Lazy) {
-    ($('.lazy') as any).Lazy({
-      effect: 'fadeIn',
-      effectTime: 200,
-    });
-  }
-}
+import { fancyboxGallery3 } from './fancybox';
+import { monkeyPatchjQueryFade } from './jquery-fade-in';
 
 $(monkeyPatchjQueryFade);
 
