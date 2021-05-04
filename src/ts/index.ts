@@ -1,12 +1,9 @@
 import { fancyboxGallery3 } from './fancybox';
-import { activateLazyLoad } from './lazyload';
 import { monkeyPatchjQueryFade } from './jquery-fade-in';
 
 /** activate all the content-app features */
 function activateGalleryAll() {
-  console.log('activateGalleryAll')
   fancyboxGallery3();
-  activateLazyLoad();
 }
 
 $(monkeyPatchjQueryFade);

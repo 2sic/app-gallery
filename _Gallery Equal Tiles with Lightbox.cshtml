@@ -47,7 +47,7 @@
             <a class="ga-fancybox" href='@Tags.SafeUrl(pic.Url + "?w=1200&h=900&mode=max")' data-fancybox="album-@CmsContext.Module.Id">
             <div class="ga-img">
               <div class="overlay"></div>
-              <img class="lazy img-fluid" data-src='@Tags.SafeUrl(pic.Url + "?w=560&scale=both&quality=80&h=404&mode=crop")' alt="@pic.Metadata.Title" />
+              <img class="img-fluid" src='@Tags.SafeUrl(pic.Url + "?w=560&scale=both&quality=80&h=404&mode=crop")' alt="@pic.Metadata.Title" />
             </div>
             @if(Content.Presentation.ShowImageTitle && Text.Has(pic.Metadata.Title)) {
               <figcaption>
@@ -68,7 +68,7 @@
   <a href="@Tags.SafeUrl(Link.To())" class="btn btn-outline-primary btn-sm">@App.Resources.BackToOverview</a>
 }
 
-@Html.Partial("shared/_Assets.cshtml", new { scripts = true, lazy = true, fancy = true})
+@Html.Partial("shared/_Assets.cshtml", new { scripts = true })
 
 
 <script>
