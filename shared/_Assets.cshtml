@@ -28,8 +28,19 @@
     DotNetNuke.Framework.JavaScriptLibraries.JavaScript.RequestRegistration(DotNetNuke.Framework.JavaScriptLibraries.CommonJs.jQuery);
   #endif
 }
-@if(DynamicModel.scripts == true) {
+@if(DynamicModel.lazy == true) {
+  // Add from App Settings
+  @Html.Raw(App.Settings.AssetsLazyload)
+}
+
+@if(DynamicModel.fancy == true) {
   // Add from App Settings
   @Html.Raw(App.Settings.AssetsFancybox)
-  <script src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script>
+}
+
+@if(DynamicModel.scripts == true) {
+  <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script>
+  <script type="text/javascript">    
+    $(function() { if(window.appGallery) window.appGallery.activateGalleryAll() });
+  </script>
 }
