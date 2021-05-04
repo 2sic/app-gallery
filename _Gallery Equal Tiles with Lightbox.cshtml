@@ -1,10 +1,13 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
+@inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 
 @{
-  var helpers = CreateInstance("shared/_Helpers.cshtml");
+  var helpers = CreateInstance("shared/Helpers.cs");
 
-  var albumInUrl = Request.QueryString["Album"];
+  // Dnn: var albumInUrl = Request.QueryString["Album"];
+  // Oqtane: var albumInUrl = ViewContext.HttpContext.Request.Query["Album"];
+  // Hybrid: 
+  var albumInUrl = CmsContext.Page.Parameters["Album"];
   var isDetailViewOfAlbum = Text.Has(albumInUrl);
   @* If album QueryString is specified, take album from QueryString, else take "current" album *@
   var album = isDetailViewOfAlbum ? AsList(Data).FirstOrDefault(a => a.Path == albumInUrl) : Content;
@@ -12,13 +15,15 @@
   if (album == null) {
     <h1>@App.Resources.AlbumNotFound</h1>
     <div>@Html.Raw(App.Resources.AlbumNotFoundText)</div>
-    <a href="@Tags.SafeUrl(Dnn.Tab.FullUrl)" class="btn btn-outline-primary btn-sm">@App.Resources.BackToOverview</a>
-    Response.StatusCode = 404;
-    Response.TrySkipIisCustomErrors = true;
+    <a href="@Tags.SafeUrl(Link.To())" class="btn btn-outline-primary btn-sm">@App.Resources.BackToOverview</a>
+    // TODO:
+    // Response.StatusCode = 404;
+    // Response.TrySkipIisCustomErrors = true;
     return;
   }
 
-  HtmlPage.Title = album.Title + " | " + HtmlPage.Title;
+  // TODO:
+  // HtmlPage.Title = album.Title + " | " + HtmlPage.Title;
 }
 
 @* Hide the side navigation if the view is used as detail view *@
@@ -28,7 +33,7 @@
 
 <div @Edit.TagToolbar(album)>
   @* Display Album Title or information that title is hidden *@
-  @helpers.AlbumTitle(album)
+  @Html.Partial("shared/_AlbumTitleAndDescription.cshtml", new { album = album })
 
   @* Display the images *@
   <div class="ga-wrapper row auto-clear">
@@ -39,10 +44,10 @@
           "metadata?entityId=" + pic.Metadata.EntityId + "&contentType=ImageMetadata&for=file:" + pic.FileId
         })>
           <figure>
-            <a class="ga-fancybox" href='@Tags.SafeUrl(pic.Url + "?w=1200&h=900&mode=max")' data-fancybox="album-@Dnn.Module.ModuleID">
+            <a class="ga-fancybox" href='@Tags.SafeUrl(pic.Url + "?w=1200&h=900&mode=max")' data-fancybox="album-@CmsContext.Module.Id">
             <div class="ga-img">
               <div class="overlay"></div>
-              <img class="lazy img-fluid" src='@Tags.SafeUrl(pic.Url + "?w=560&scale=both&quality=80&h=404&mode=crop")' alt="@pic.Metadata.Title" />
+              <img class="img-fluid" src='@Tags.SafeUrl(pic.Url + "?w=560&scale=both&quality=80&h=404&mode=crop")' alt="@pic.Metadata.Title" />
             </div>
             @if(Content.Presentation.ShowImageTitle && Text.Has(pic.Metadata.Title)) {
               <figcaption>
@@ -60,7 +65,11 @@
 
 @* Show back button if the view is used as detail view *@
 @if(isDetailViewOfAlbum) {
-  <a href="@Tags.SafeUrl(Dnn.Tab.FullUrl)" class="btn btn-outline-primary btn-sm">@App.Resources.BackToOverview</a>
+  <a href="@Tags.SafeUrl(Link.To())" class="btn btn-outline-primary btn-sm">@App.Resources.BackToOverview</a>
 }
 
-@RenderPage("shared/_Assets.cshtml", new { scripts = true})
+@Html.Partial("shared/_Assets.cshtml", new { scripts = true })
+
+
+<script>
+</script>

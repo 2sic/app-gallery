@@ -1,15 +1,16 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
+@inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 
 @{
-  var helpers = CreateInstance("shared/_Helpers.cshtml");
+  var helpers = CreateInstance("shared/Helpers.cs");
 
   HtmlPage.Title = Content.Title + " | " + HtmlPage.Title;
 }
 
 <div @Edit.TagToolbar(Content)>
   @* Display Album Title or information that title is hidden *@
-  @helpers.AlbumTitle(Content)
+  @Html.Partial("shared/_AlbumTitleAndDescription.cshtml", new { album = Content })
+
 
   @* Display the images *@
   <div class="ga-wrapper row auto-clear">
@@ -20,10 +21,10 @@
           "metadata?entityId=" + pic.Metadata.EntityId + "&contentType=ImageMetadata&for=file:" + pic.FileId
         })>
           <figure>
-            <a class="ga-fancybox" href='@Tags.SafeUrl(pic.Url + "?w=1200&h=900&mode=max")' data-fancybox="album-@Dnn.Module.ModuleID">
+            <a class="ga-fancybox" href='@Tags.SafeUrl(pic.Url + "?w=1200&h=900&mode=max")' data-fancybox="album-@CmsContext.Module.Id">
               <div class="ga-img">
                 <div class="overlay"></div>
-                <img class="lazy img-fluid" src='@Tags.SafeUrl(pic.Url + "?w=560&scale=both&quality=80&mode=max")' alt="@pic.Metadata.Title" />
+                <img class="img-fluid" src='@Tags.SafeUrl(pic.Url + "?w=560&scale=both&quality=80&mode=max")' alt="@pic.Metadata.Title" />
               </div>
               @if(Content.Presentation.ShowImageTitle && Text.Has(pic.Metadata.Title)) {
                 <figcaption>
@@ -39,4 +40,4 @@
   </div>
 </div>
 
-@RenderPage("shared/_Assets.cshtml", new { scripts = true})
+@Html.Partial("shared/_Assets.cshtml", new { scripts = true })

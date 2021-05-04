@@ -1,18 +1,9 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
-@using ToSic.Razor.Blade;
-@using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
+using System.Linq;
+using ToSic.Razor.Blade;
+using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
 
-@* Shows album title and introduction *@
-@helper AlbumTitle(dynamic album) {
-  if (album.Presentation.HeadingType != "hidden") {
-    @Tag.Custom(album.Presentation.HeadingType).Wrap(album.Title)
-  } else if(Edit.Enabled) {
-    <h2>(@App.Resources.TitleNotDisplayed)</h2>
-  }
-  <div class="mb-4">@Html.Raw(album.Introduction)</div>
-}
-
-@functions {
+public class Helpers: Custom.Hybrid.Code12
+{
   /**
   * Returns the images, sorted by the passed setting
   */

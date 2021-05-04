@@ -1,6 +1,6 @@
 <image src="app-icon.png" align="right" width="200px">
 
-# Gallery App Fancybox3 for DNN (DotNetNuke)
+# Gallery App Fancybox3 for Dnn ☢ and Oqtane 💧
 
 A 2sxc / DNN App using the javascript lib [fancybox](https://github.com/fancyapps/fancybox)
 

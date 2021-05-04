@@ -1,4 +1,4 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
+@inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 @using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
 
@@ -11,7 +11,8 @@
         : images.First().Url;
 
       <div class="ga-album col-12 col-sm-6 col-md-6 col-lg-4" @Edit.TagToolbar(album)>
-        <a href='@Tags.SafeUrl(Link.To(parameters: "mid/" + Dnn.Module.ModuleID + "&album=" + album.Path))'>
+        @* <a href='@Tags.SafeUrl(Link.To(parameters: "mid/" + CmsContext.Module.Id + "&album=" + album.Path))'> *@
+        <a href='@Tags.SafeUrl(Link.To(parameters: "album=" + album.Path))'>
           <div class="ga-img">
             <div class="overlay">
               <div class="ga-album-title"><h5 class="ga-title">@album.Title</h5></div>
@@ -25,4 +26,4 @@
   </div>
 </div>
 
-@RenderPage("shared/_Assets.cshtml")
+@Html.Partial("shared/_Assets.cshtml")
