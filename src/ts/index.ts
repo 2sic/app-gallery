@@ -3,7 +3,6 @@ import { monkeyPatchjQueryFade } from './jquery-fade-in';
 
 /** activate all the content-app features */
 function activateGalleryAll() {
-console.log('acvitate all');
   fancyboxGallery3();
 }
 
