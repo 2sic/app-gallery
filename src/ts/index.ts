@@ -3,6 +3,7 @@ import { monkeyPatchjQueryFade } from './jquery-fade-in';
 
 /** activate all the content-app features */
 function activateGalleryAll() {
+console.log('acvitate all');
   fancyboxGallery3();
 }
 
@@ -16,4 +17,4 @@ appG.activateGalleryAll = appG.activateGalleryAll || activateGalleryAll;
 
 // If loaded the first time on a dynamic page, activate automatically
 // Later reloads will need to call the activateAll from the reloaded content
-$(activateGalleryAll);
+// $(activateGalleryAll);

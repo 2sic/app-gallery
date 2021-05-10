@@ -30,9 +30,8 @@
 }
 
 @if(DynamicModel.scripts == true) {
+  Edit.Enable(turnOn: true);
   @Html.Raw(App.Settings.AssetsFancybox)
   <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script>
-  <script type="text/javascript">    
-    $(function() { if(window.appGallery) window.appGallery.activateGalleryAll() });
-  </script>
+  <span turn-on='{ "run": "window.appGallery.activateGalleryAll()" }' />
 }
