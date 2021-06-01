@@ -4,7 +4,10 @@
 @{
   var helpers = CreateInstance("shared/Helpers.cs");
 
-  HtmlPage.Title = Content.Title + " | " + HtmlPage.Title;
+  // New Set Title (Hybrid)
+  var page = GetService<ToSic.Sxc.Web.IPageService>();
+  page.SetTitle(Content.Title + " | "); // will prepend to the existing title
+  // page.SetTitle(Content.Title, "[album]"); // Alternative - would replace the token [album] in the title with the title
 }
 
 <div @Edit.TagToolbar(Content)>

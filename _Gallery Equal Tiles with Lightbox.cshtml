@@ -22,8 +22,9 @@
     return;
   }
 
-  // TODO:
-  // HtmlPage.Title = album.Title + " | " + HtmlPage.Title;
+  var page = GetService<ToSic.Sxc.Web.IPageService>();
+  page.SetTitle(album.Title + " | "); // will prepend to the existing title
+  // page.SetTitle(Content.Title, "[album]"); // Alternative - would replace the token [album] in the title with the title
 }
 
 @* Hide the side navigation if the view is used as detail view *@
