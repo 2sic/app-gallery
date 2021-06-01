@@ -30,7 +30,7 @@
 }
 
 @if(DynamicModel.scripts == true) {
-  Edit.Enable(turnOn: true);
+  GetService<ToSic.Sxc.Web.IPageService>().Activate("turnOn");
   @Html.Raw(App.Settings.AssetsFancybox)
   <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script>
   <span turn-on='{ "run": "window.appGallery.activateGalleryAll()" }' />
