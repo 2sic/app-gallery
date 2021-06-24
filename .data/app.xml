@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.02.02" ExportDate="2021-06-24T16:07:56.3281652+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.02.02" ExportDate="2021-06-24T16:36:52.08333+02:00">
   <Header>
-    <App Guid="46d319be-70f5-40c5-aaf1-a827e2d863bd" />
+    <App Guid="70047076-5b93-4b1f-ae2d-deb1d8da4dbc" />
     <Language Default="en-us" />
     <Dimensions>
       <Dimension DimensionID="121" Name="Deutsch (Deutschland)" SystemKey="" ExternalKey="de-DE" Active="true" />
@@ -1002,7 +1002,7 @@
       <Value Key="RequiredOqtaneVersion" Value="02.00.02" Type="String">
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredVersion" Value="12.02.02" Type="String">
+      <Value Key="RequiredVersion" Value="12.03.00" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
