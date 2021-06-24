@@ -8,7 +8,7 @@
     @if (album.Presentation.HeadingType != "hidden") {
       @((Tag.Custom(album.Presentation.HeadingType)).Wrap(album.Title))
     } else if(Edit.Enabled) {
-      <h2>(@App.Resources.TitleNotDisplayed)</h2>
+      <h2>(@Resources.TitleNotDisplayed)</h2>
     }
     <div class="ga-album-information-introduction">@Html.Raw(album.Introduction)</div>
   </div>
@@ -74,13 +74,13 @@
   // Also make sure DNN doesn't inject a default 404 page, which it would when an error code is set
   Response.StatusCode = 404;
   Response.TrySkipIisCustomErrors = true;
-  <h1>@App.Resources.AlbumNotFound</h1>
-  <div>@Html.Raw(App.Resources.AlbumNotFoundText)</div>
+  <h1>@Resources.AlbumNotFound</h1>
+  <div>@Html.Raw(Resources.AlbumNotFoundText)</div>
 }
 
 @* Shows "back to list" button *@
 @helper BackButton() {
-  <a href="@Dnn.Tab.FullUrl" class="btn btn-primary btn-sm">@App.Resources.BackToOverview</a>
+  <a href="@Dnn.Tab.FullUrl" class="btn btn-primary btn-sm">@Resources.BackToOverview</a>
 }
 
 @functions {

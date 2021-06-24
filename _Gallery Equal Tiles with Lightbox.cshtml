@@ -13,9 +13,9 @@
   var album = isDetailViewOfAlbum ? AsList(Data).FirstOrDefault(a => a.Path == albumInUrl) : Content;
   @* Show album not found notification and stop processing *@
   if (album == null) {
-    <h1>@App.Resources.AlbumNotFound</h1>
-    <div>@Html.Raw(App.Resources.AlbumNotFoundText)</div>
-    <a href="@Tags.SafeUrl(Link.To())" class="btn btn-outline-primary btn-sm">@App.Resources.BackToOverview</a>
+    <h1>@Resources.AlbumNotFound</h1>
+    <div>@Html.Raw(Resources.AlbumNotFoundText)</div>
+    <a href="@Tags.SafeUrl(Link.To())" class="btn btn-outline-primary btn-sm">@Resources.BackToOverview</a>
 
     page.SetHttpStatus(404);
     return;
@@ -65,7 +65,7 @@
 
 @* Show back button if the view is used as detail view *@
 @if(isDetailViewOfAlbum) {
-  <a href="@Tags.SafeUrl(Link.To())" class="btn btn-outline-primary btn-sm">@App.Resources.BackToOverview</a>
+  <a href="@Tags.SafeUrl(Link.To())" class="btn btn-outline-primary btn-sm">@Resources.BackToOverview</a>
 }
 
 @Html.Partial("shared/_Assets.cshtml", new { scripts = true })
