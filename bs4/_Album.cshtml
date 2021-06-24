@@ -2,7 +2,7 @@
 @using ToSic.Razor.Blade;
 @{
   // Basics / Preparation
-  var helpers = CreateInstance("shared/Helpers.cs");
+  var helpers = CreateInstance("Helpers.cs");
   var page = GetService<ToSic.Sxc.Web.IPageService>();  // Service to set titles etc. on the page
 
   // Get page Parameters (works on Dnn & Oqtane)
@@ -25,9 +25,8 @@
   }
 
   // Set the title
-  page.SetTitle(album.Title + " | "); // will prepend to the existing title
-  // You could also use the following to replace the token [album] in the title with the title
-  // page.SetTitle(album.Title, "[album]");
+  page.SetTitle(album.Title + " | ");       // will prepend to the existing title
+  // page.SetTitle(album.Title, "[album]"); // this would replace a placeholder [album] in the title with the title
 
   // Determine if we should show as Masonry
   var albumTiling = Text.Has(album.Presentation.TileStructure)
@@ -37,7 +36,7 @@
 
   // Determine the widths of each part, based on 12 Bootstrap Cols
   const int bsColumns = 12;
-  var imgColumns = useMasonry ? 4 : 3;  // bsColumns - colsText;
+  var imgColumns = useMasonry ? 4 : 3;
 
 
   // Image Settings http://r.2sxc.org/settings
@@ -55,8 +54,6 @@
     + "&mode=max&scale=both&quality=" 
     + lightbox.Quality;
 
-// Qs Tom
-// Masonry correct like this? is there a way to simplify the divs?
 }
 
 @* Hide the side navigation if the view is used as detail view *@
@@ -66,7 +63,7 @@
 
 <div @Edit.TagToolbar(album)>
   @* Display Album Title or information that title is hidden *@
-  @Html.Partial("shared/_AlbumTitleAndDescription.cshtml", new { album = album })
+  @Html.Partial("_Part Title Description.cshtml", new { album = album })
 
   @* Display the images *@
   <div class="ga-wrapper row auto-clear">
@@ -106,7 +103,7 @@
   <a href="@Tags.SafeUrl(Link.To())" class="btn btn-outline-primary btn-sm">@Resources.BackToOverview</a>
 }
 
-@Html.Partial("shared/_Assets.cshtml", new { scripts = true })
+@Html.Partial("_Part WebResources.cshtml", new { scripts = true })
 
 
 <script>

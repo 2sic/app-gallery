@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.02.02" ExportDate="2021-06-24T10:44:11.2662547+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.02.02" ExportDate="2021-06-24T16:07:56.3281652+02:00">
   <Header>
     <App Guid="46d319be-70f5-40c5-aaf1-a827e2d863bd" />
     <Language Default="en-us" />
@@ -552,6 +552,62 @@
           </Entity>
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@Boolean" AttributeSetName="@Boolean" EntityGUID="4f090cd9-f836-4030-8686-3ea502a7d040" Json="True" KeyNumber="2837" />
         </Attribute>
+        <Attribute StaticName="TileStructure" Type="String" IsTitle="false">
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="3b192473-e6d7-43c0-a045-9909a6043f2a" Json="True" KeyNumber="4709">
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="122" ReadOnly="false" />
+            </Value>
+            <Value Key="DefaultValue" Value="" Type="String">
+              <Dimension DimensionID="122" ReadOnly="false" />
+            </Value>
+            <Value Key="Disabled" Value="False" Type="Boolean">
+              <Dimension DimensionID="122" ReadOnly="false" />
+            </Value>
+            <Value Key="DisableTranslation" Value="False" Type="Boolean">
+              <Dimension DimensionID="122" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="string-dropdown" Type="String">
+              <Dimension DimensionID="122" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Tile Structure" Type="String">
+              <Dimension DimensionID="122" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="" Type="String">
+              <Dimension DimensionID="122" ReadOnly="false" />
+            </Value>
+            <Value Key="Placeholder" Value="" Type="String">
+              <Dimension DimensionID="122" ReadOnly="false" />
+            </Value>
+            <Value Key="Required" Value="False" Type="Boolean">
+              <Dimension DimensionID="122" ReadOnly="false" />
+            </Value>
+            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
+              <Dimension DimensionID="122" ReadOnly="false" />
+            </Value>
+            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
+              <Dimension DimensionID="122" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="67c5dd43-661e-47ae-a65d-e96f7b420709" Json="True" KeyNumber="4709">
+            <Value Key="DropdownValues" Value="" Type="String">
+              <Dimension DimensionID="122" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="" Type="String">
+              <Dimension DimensionID="122" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-dropdown" AttributeSetName="@string-dropdown" EntityGUID="c33f3f07-dc67-4f4b-abfb-098894407952" Json="True" KeyNumber="4709">
+            <Value Key="DropdownValues" Value="Default (Tiles):&#xA;Masonry:masonry&#xA;Tiles:tiles" Type="String">
+              <Dimension DimensionID="122" ReadOnly="false" />
+            </Value>
+            <Value Key="DropdownValuesFormat" Value="" Type="String">
+              <Dimension DimensionID="122" ReadOnly="false" />
+            </Value>
+            <Value Key="EnableTextEntry" Value="False" Type="Boolean">
+              <Dimension DimensionID="122" ReadOnly="false" />
+            </Value>
+          </Entity>
+        </Attribute>
       </Attributes>
     </AttributeSet>
     <AttributeSet StaticName="App-Resources" Name="App-Resources" Description="Stores resources like translations for an app" Scope="2SexyContent-App" AlwaysShareConfiguration="false">
@@ -917,7 +973,7 @@
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
-      <Value Key="Description" Value="" Type="String">
+      <Value Key="Description" Value="Image Gallery using Fancybox3" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
@@ -927,7 +983,7 @@
       <Value Key="DisplayName" Value="Bildergalerie" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
       </Value>
-      <Value Key="Folder" Value="Gallery-Fancybox3" Type="String">
+      <Value Key="Folder" Value="Gallery-Fancybox3-v6" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
@@ -946,7 +1002,7 @@
       <Value Key="RequiredOqtaneVersion" Value="02.00.02" Type="String">
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredVersion" Value="12.00.00" Type="String">
+      <Value Key="RequiredVersion" Value="12.02.02" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
@@ -954,7 +1010,7 @@
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="06.00.00" Type="String">
+      <Value Key="Version" Value="06.01.00" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
@@ -1099,6 +1155,12 @@
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
+      <Value Key="Icon" Value="[App:Path]/Preview-Albums.png" Type="Hyperlink">
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
+      <Value Key="Identifier" Value="" Type="String">
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
       <Value Key="IsHidden" Value="False" Type="Boolean">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
@@ -1111,7 +1173,7 @@
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
-      <Value Key="Location" Value="Portal File System" Type="String">
+      <Value Key="Location" Value="Site" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
@@ -1121,7 +1183,7 @@
       <Value Key="Name" Value="Alben (mehrere)" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Album List.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/_Albums.cshtml" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
@@ -1134,6 +1196,12 @@
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
+      <Value Key="SearchIndexingDisabled" Value="False" Type="Boolean">
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingStreams" Value="" Type="String">
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
       <Value Key="StreamsToPublish" Value="" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
@@ -1144,6 +1212,9 @@
       </Value>
       <Value Key="UseForList" Value="True" Type="Boolean">
         <Dimension DimensionID="121" ReadOnly="false" />
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
+      <Value Key="ViewController" Value="" Type="String">
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
       <Value Key="ViewNameInUrl" Value="" Type="String">
@@ -1164,6 +1235,9 @@
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
+      <Value Key="TileStructure" Value="masonry" Type="String">
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="60db0aeb-e280-4394-bdb2-d31540f0a225" Json="True">
       <Value Key="ContentDemoEntity" Value="34ce33d2-022f-484f-b4ea-ca777726ed0b" Type="Entity">
@@ -1171,6 +1245,12 @@
       </Value>
       <Value Key="ContentTypeStaticName" Value="e51e37ed-e9f8-43d7-bf5f-3f992be63f44" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
+      <Value Key="Icon" Value="[App:Path]/Preview-Tiles.png" Type="Hyperlink">
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
+      <Value Key="Identifier" Value="tiles" Type="String">
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
       <Value Key="IsHidden" Value="False" Type="Boolean">
@@ -1185,17 +1265,17 @@
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
-      <Value Key="Location" Value="Portal File System" Type="String">
+      <Value Key="Location" Value="Site" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Single Album with equal tiles and lightbox" Type="String">
+      <Value Key="Name" Value="One Album as Tiles" Type="String">
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Einzelnes Album mit identischen Kacheln und Vollbildansicht" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Gallery Equal Tiles with Lightbox.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/_Album.cshtml" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
@@ -1210,6 +1290,12 @@
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
+      <Value Key="SearchIndexingDisabled" Value="False" Type="Boolean">
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingStreams" Value="" Type="String">
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
       <Value Key="StreamsToPublish" Value="" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
@@ -1220,6 +1306,9 @@
       </Value>
       <Value Key="UseForList" Value="False" Type="Boolean">
         <Dimension DimensionID="121" ReadOnly="false" />
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
+      <Value Key="ViewController" Value="" Type="String">
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
       <Value Key="ViewNameInUrl" Value="album/.*" Type="String">
@@ -1235,6 +1324,12 @@
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
+      <Value Key="Icon" Value="[App:Path]/Preview-Masonry.png" Type="Hyperlink">
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
+      <Value Key="Identifier" Value="masonry" Type="String">
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
       <Value Key="IsHidden" Value="False" Type="Boolean">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
@@ -1247,17 +1342,17 @@
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
-      <Value Key="Location" Value="Portal File System" Type="String">
+      <Value Key="Location" Value="Site" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
-      <Value Key="Name" Value="Single Album with masonry tiles and lightbox" Type="String">
+      <Value Key="Name" Value="One Album as Masonry" Type="String">
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
       <Value Key="Name" Value="Einzelalbum mit Mauerziegeln und Vollbildansicht" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="_Gallery Masonry Tiles with Lightbox.cshtml" Type="String">
+      <Value Key="Path" Value="bs4/_Album.cshtml" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
@@ -1272,6 +1367,12 @@
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
+      <Value Key="SearchIndexingDisabled" Value="False" Type="Boolean">
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingStreams" Value="" Type="String">
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
       <Value Key="StreamsToPublish" Value="" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
@@ -1282,6 +1383,9 @@
       </Value>
       <Value Key="UseForList" Value="False" Type="Boolean">
         <Dimension DimensionID="121" ReadOnly="false" />
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
+      <Value Key="ViewController" Value="" Type="String">
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
       <Value Key="ViewNameInUrl" Value="" Type="String">
@@ -1395,153 +1499,93 @@
         <Dimension DimensionID="121" ReadOnly="false" />
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
+      <Value Key="TileStructure" Value="masonry" Type="String">
+        <Dimension DimensionID="122" ReadOnly="false" />
+      </Value>
     </Entity>
   </Entities>
   <PortalFiles>
-    <File Id="4332" RelativePath="adam\Gallery-Fancybox3\0jPONC8CT0i06sp3dybtCw\AlbumThumbnail\Platzhalterbild_Album.jpg" />
-    <File Id="4608" RelativePath="adam\Gallery-Fancybox3\iOrap4JS80uliE6qgXxszg\AlbumThumbnail\1-1.jpg" />
-    <File Id="1300" RelativePath="adam\Gallery-Fancybox3\0jPONC8CT0i06sp3dybtCw\Images\Platzhalterbild_Inhalt-1.jpg" />
-    <File Id="1301" RelativePath="adam\Gallery-Fancybox3\0jPONC8CT0i06sp3dybtCw\Images\Platzhalterbild_Inhalt-2.jpg" />
-    <File Id="1303" RelativePath="adam\Gallery-Fancybox3\0jPONC8CT0i06sp3dybtCw\Images\Platzhalterbild_Inhalt-4.jpg" />
-    <File Id="1295" RelativePath="adam\Gallery-Fancybox3\0jPONC8CT0i06sp3dybtCw\Images\Platzhalterbild_Inhalt-5.jpg" />
-    <File Id="4582" RelativePath="adam\Gallery-Fancybox3\4AQ6bLG8pkWHOM4c6ogb2Q\AlbumThumbnail\1.jpg" />
-    <File Id="4576" RelativePath="adam\Gallery-Fancybox3\4AQ6bLG8pkWHOM4c6ogb2Q\Images\1.jpg" />
-    <File Id="4580" RelativePath="adam\Gallery-Fancybox3\4AQ6bLG8pkWHOM4c6ogb2Q\Images\10.jpg" />
-    <File Id="4581" RelativePath="adam\Gallery-Fancybox3\4AQ6bLG8pkWHOM4c6ogb2Q\Images\100.jpg" />
-    <File Id="4578" RelativePath="adam\Gallery-Fancybox3\4AQ6bLG8pkWHOM4c6ogb2Q\Images\2.jpg" />
-    <File Id="4577" RelativePath="adam\Gallery-Fancybox3\4AQ6bLG8pkWHOM4c6ogb2Q\Images\3.jpg" />
-    <File Id="4579" RelativePath="adam\Gallery-Fancybox3\4AQ6bLG8pkWHOM4c6ogb2Q\Images\4.jpg" />
-    <File Id="4360" RelativePath="adam\Gallery-Fancybox3\f5de-YkJ60yNI3nPwWouDQ\Images\Platzhalterbild_Inhalt-1.jpg" />
-    <File Id="4358" RelativePath="adam\Gallery-Fancybox3\f5de-YkJ60yNI3nPwWouDQ\Images\Platzhalterbild_Inhalt-2.jpg" />
-    <File Id="4359" RelativePath="adam\Gallery-Fancybox3\f5de-YkJ60yNI3nPwWouDQ\Images\Platzhalterbild_Inhalt-3.jpg" />
-    <File Id="4352" RelativePath="adam\Gallery-Fancybox3\f5de-YkJ60yNI3nPwWouDQ\Images\Platzhalterbild_Inhalt-4.jpg" />
-    <File Id="4607" RelativePath="adam\Gallery-Fancybox3\iOrap4JS80uliE6qgXxszg\AlbumThumbnail\1.jpg" />
-    <File Id="4602" RelativePath="adam\Gallery-Fancybox3\iOrap4JS80uliE6qgXxszg\Images\1.jpg" />
-    <File Id="4604" RelativePath="adam\Gallery-Fancybox3\iOrap4JS80uliE6qgXxszg\Images\10.jpg" />
-    <File Id="4606" RelativePath="adam\Gallery-Fancybox3\iOrap4JS80uliE6qgXxszg\Images\100.jpg" />
-    <File Id="4601" RelativePath="adam\Gallery-Fancybox3\iOrap4JS80uliE6qgXxszg\Images\2.jpg" />
-    <File Id="4605" RelativePath="adam\Gallery-Fancybox3\iOrap4JS80uliE6qgXxszg\Images\3.jpg" />
-    <File Id="4603" RelativePath="adam\Gallery-Fancybox3\iOrap4JS80uliE6qgXxszg\Images\4.jpg" />
-    <File Id="4595" RelativePath="adam\Gallery-Fancybox3\KAKhgcm65k2dc9RlybCsRg\Images\1.jpg" />
-    <File Id="4600" RelativePath="adam\Gallery-Fancybox3\KAKhgcm65k2dc9RlybCsRg\Images\10.jpg" />
-    <File Id="4599" RelativePath="adam\Gallery-Fancybox3\KAKhgcm65k2dc9RlybCsRg\Images\100.jpg" />
-    <File Id="4597" RelativePath="adam\Gallery-Fancybox3\KAKhgcm65k2dc9RlybCsRg\Images\2.jpg" />
-    <File Id="4596" RelativePath="adam\Gallery-Fancybox3\KAKhgcm65k2dc9RlybCsRg\Images\3.jpg" />
-    <File Id="4598" RelativePath="adam\Gallery-Fancybox3\KAKhgcm65k2dc9RlybCsRg\Images\4.jpg" />
-    <File Id="4589" RelativePath="adam\Gallery-Fancybox3\xe97UmfWrUSlw--MVfO95A\Images\1.jpg" />
-    <File Id="4593" RelativePath="adam\Gallery-Fancybox3\xe97UmfWrUSlw--MVfO95A\Images\10.jpg" />
-    <File Id="4594" RelativePath="adam\Gallery-Fancybox3\xe97UmfWrUSlw--MVfO95A\Images\100.jpg" />
-    <File Id="4590" RelativePath="adam\Gallery-Fancybox3\xe97UmfWrUSlw--MVfO95A\Images\2.jpg" />
-    <File Id="4592" RelativePath="adam\Gallery-Fancybox3\xe97UmfWrUSlw--MVfO95A\Images\3.jpg" />
-    <File Id="4591" RelativePath="adam\Gallery-Fancybox3\xe97UmfWrUSlw--MVfO95A\Images\4.jpg" />
-    <File Id="4574" RelativePath="adam\Gallery-Fancybox3\XgmGdzqSX0-PppwohL9Krw\AlbumThumbnail\1.jpg" />
-    <File Id="4575" RelativePath="adam\Gallery-Fancybox3\XgmGdzqSX0-PppwohL9Krw\AlbumThumbnail\1-1.jpg" />
-    <File Id="4569" RelativePath="adam\Gallery-Fancybox3\XgmGdzqSX0-PppwohL9Krw\Images\1.jpg" />
-    <File Id="4570" RelativePath="adam\Gallery-Fancybox3\XgmGdzqSX0-PppwohL9Krw\Images\10.jpg" />
-    <File Id="4571" RelativePath="adam\Gallery-Fancybox3\XgmGdzqSX0-PppwohL9Krw\Images\100.jpg" />
-    <File Id="4568" RelativePath="adam\Gallery-Fancybox3\XgmGdzqSX0-PppwohL9Krw\Images\2.jpg" />
-    <File Id="4573" RelativePath="adam\Gallery-Fancybox3\XgmGdzqSX0-PppwohL9Krw\Images\3.jpg" />
-    <File Id="4572" RelativePath="adam\Gallery-Fancybox3\XgmGdzqSX0-PppwohL9Krw\Images\4.jpg" />
-    <File Id="4583" RelativePath="adam\Gallery-Fancybox3\YkXHaT6baEyiD_QtkIiIsA\Images\1.jpg" />
-    <File Id="4587" RelativePath="adam\Gallery-Fancybox3\YkXHaT6baEyiD_QtkIiIsA\Images\10.jpg" />
-    <File Id="4588" RelativePath="adam\Gallery-Fancybox3\YkXHaT6baEyiD_QtkIiIsA\Images\100.jpg" />
-    <File Id="4584" RelativePath="adam\Gallery-Fancybox3\YkXHaT6baEyiD_QtkIiIsA\Images\2.jpg" />
-    <File Id="4585" RelativePath="adam\Gallery-Fancybox3\YkXHaT6baEyiD_QtkIiIsA\Images\3.jpg" />
-    <File Id="4586" RelativePath="adam\Gallery-Fancybox3\YkXHaT6baEyiD_QtkIiIsA\Images\4.jpg" />
+    <File Id="4332" RelativePath="adam\Gallery-Fancybox3-v6\0jPONC8CT0i06sp3dybtCw\AlbumThumbnail\Platzhalterbild_Album.jpg" />
+    <File Id="4608" RelativePath="adam\Gallery-Fancybox3-v6\iOrap4JS80uliE6qgXxszg\AlbumThumbnail\1-1.jpg" />
+    <File Id="5902" RelativePath="adam\Gallery-Fancybox3-v6\0jPONC8CT0i06sp3dybtCw\Images\2018-05-2sxc9-33.JPG" />
+    <File Id="5903" RelativePath="adam\Gallery-Fancybox3-v6\0jPONC8CT0i06sp3dybtCw\Images\2sic Logo blue.png" />
+    <File Id="5901" RelativePath="adam\Gallery-Fancybox3-v6\0jPONC8CT0i06sp3dybtCw\Images\app-icon.jpg" />
+    <File Id="1300" RelativePath="adam\Gallery-Fancybox3-v6\0jPONC8CT0i06sp3dybtCw\Images\Platzhalterbild_Inhalt-1.jpg" />
+    <File Id="1301" RelativePath="adam\Gallery-Fancybox3-v6\0jPONC8CT0i06sp3dybtCw\Images\Platzhalterbild_Inhalt-2.jpg" />
+    <File Id="1303" RelativePath="adam\Gallery-Fancybox3-v6\0jPONC8CT0i06sp3dybtCw\Images\Platzhalterbild_Inhalt-4.jpg" />
+    <File Id="1295" RelativePath="adam\Gallery-Fancybox3-v6\0jPONC8CT0i06sp3dybtCw\Images\Platzhalterbild_Inhalt-5.jpg" />
+    <File Id="4582" RelativePath="adam\Gallery-Fancybox3-v6\4AQ6bLG8pkWHOM4c6ogb2Q\AlbumThumbnail\1.jpg" />
+    <File Id="4576" RelativePath="adam\Gallery-Fancybox3-v6\4AQ6bLG8pkWHOM4c6ogb2Q\Images\1.jpg" />
+    <File Id="4580" RelativePath="adam\Gallery-Fancybox3-v6\4AQ6bLG8pkWHOM4c6ogb2Q\Images\10.jpg" />
+    <File Id="4581" RelativePath="adam\Gallery-Fancybox3-v6\4AQ6bLG8pkWHOM4c6ogb2Q\Images\100.jpg" />
+    <File Id="4578" RelativePath="adam\Gallery-Fancybox3-v6\4AQ6bLG8pkWHOM4c6ogb2Q\Images\2.jpg" />
+    <File Id="4577" RelativePath="adam\Gallery-Fancybox3-v6\4AQ6bLG8pkWHOM4c6ogb2Q\Images\3.jpg" />
+    <File Id="4579" RelativePath="adam\Gallery-Fancybox3-v6\4AQ6bLG8pkWHOM4c6ogb2Q\Images\4.jpg" />
+    <File Id="4360" RelativePath="adam\Gallery-Fancybox3-v6\f5de-YkJ60yNI3nPwWouDQ\Images\Platzhalterbild_Inhalt-1.jpg" />
+    <File Id="4358" RelativePath="adam\Gallery-Fancybox3-v6\f5de-YkJ60yNI3nPwWouDQ\Images\Platzhalterbild_Inhalt-2.jpg" />
+    <File Id="4359" RelativePath="adam\Gallery-Fancybox3-v6\f5de-YkJ60yNI3nPwWouDQ\Images\Platzhalterbild_Inhalt-3.jpg" />
+    <File Id="4352" RelativePath="adam\Gallery-Fancybox3-v6\f5de-YkJ60yNI3nPwWouDQ\Images\Platzhalterbild_Inhalt-4.jpg" />
+    <File Id="4607" RelativePath="adam\Gallery-Fancybox3-v6\iOrap4JS80uliE6qgXxszg\AlbumThumbnail\1.jpg" />
+    <File Id="4602" RelativePath="adam\Gallery-Fancybox3-v6\iOrap4JS80uliE6qgXxszg\Images\1.jpg" />
+    <File Id="4604" RelativePath="adam\Gallery-Fancybox3-v6\iOrap4JS80uliE6qgXxszg\Images\10.jpg" />
+    <File Id="4606" RelativePath="adam\Gallery-Fancybox3-v6\iOrap4JS80uliE6qgXxszg\Images\100.jpg" />
+    <File Id="4601" RelativePath="adam\Gallery-Fancybox3-v6\iOrap4JS80uliE6qgXxszg\Images\2.jpg" />
+    <File Id="4605" RelativePath="adam\Gallery-Fancybox3-v6\iOrap4JS80uliE6qgXxszg\Images\3.jpg" />
+    <File Id="4603" RelativePath="adam\Gallery-Fancybox3-v6\iOrap4JS80uliE6qgXxszg\Images\4.jpg" />
+    <File Id="4595" RelativePath="adam\Gallery-Fancybox3-v6\KAKhgcm65k2dc9RlybCsRg\Images\1.jpg" />
+    <File Id="4600" RelativePath="adam\Gallery-Fancybox3-v6\KAKhgcm65k2dc9RlybCsRg\Images\10.jpg" />
+    <File Id="4599" RelativePath="adam\Gallery-Fancybox3-v6\KAKhgcm65k2dc9RlybCsRg\Images\100.jpg" />
+    <File Id="4597" RelativePath="adam\Gallery-Fancybox3-v6\KAKhgcm65k2dc9RlybCsRg\Images\2.jpg" />
+    <File Id="4596" RelativePath="adam\Gallery-Fancybox3-v6\KAKhgcm65k2dc9RlybCsRg\Images\3.jpg" />
+    <File Id="4598" RelativePath="adam\Gallery-Fancybox3-v6\KAKhgcm65k2dc9RlybCsRg\Images\4.jpg" />
+    <File Id="4589" RelativePath="adam\Gallery-Fancybox3-v6\xe97UmfWrUSlw--MVfO95A\Images\1.jpg" />
+    <File Id="4593" RelativePath="adam\Gallery-Fancybox3-v6\xe97UmfWrUSlw--MVfO95A\Images\10.jpg" />
+    <File Id="4594" RelativePath="adam\Gallery-Fancybox3-v6\xe97UmfWrUSlw--MVfO95A\Images\100.jpg" />
+    <File Id="4590" RelativePath="adam\Gallery-Fancybox3-v6\xe97UmfWrUSlw--MVfO95A\Images\2.jpg" />
+    <File Id="4592" RelativePath="adam\Gallery-Fancybox3-v6\xe97UmfWrUSlw--MVfO95A\Images\3.jpg" />
+    <File Id="4591" RelativePath="adam\Gallery-Fancybox3-v6\xe97UmfWrUSlw--MVfO95A\Images\4.jpg" />
+    <File Id="4574" RelativePath="adam\Gallery-Fancybox3-v6\XgmGdzqSX0-PppwohL9Krw\AlbumThumbnail\1.jpg" />
+    <File Id="4575" RelativePath="adam\Gallery-Fancybox3-v6\XgmGdzqSX0-PppwohL9Krw\AlbumThumbnail\1-1.jpg" />
+    <File Id="4569" RelativePath="adam\Gallery-Fancybox3-v6\XgmGdzqSX0-PppwohL9Krw\Images\1.jpg" />
+    <File Id="4570" RelativePath="adam\Gallery-Fancybox3-v6\XgmGdzqSX0-PppwohL9Krw\Images\10.jpg" />
+    <File Id="4571" RelativePath="adam\Gallery-Fancybox3-v6\XgmGdzqSX0-PppwohL9Krw\Images\100.jpg" />
+    <File Id="4568" RelativePath="adam\Gallery-Fancybox3-v6\XgmGdzqSX0-PppwohL9Krw\Images\2.jpg" />
+    <File Id="4573" RelativePath="adam\Gallery-Fancybox3-v6\XgmGdzqSX0-PppwohL9Krw\Images\3.jpg" />
+    <File Id="4572" RelativePath="adam\Gallery-Fancybox3-v6\XgmGdzqSX0-PppwohL9Krw\Images\4.jpg" />
+    <File Id="4583" RelativePath="adam\Gallery-Fancybox3-v6\YkXHaT6baEyiD_QtkIiIsA\Images\1.jpg" />
+    <File Id="4587" RelativePath="adam\Gallery-Fancybox3-v6\YkXHaT6baEyiD_QtkIiIsA\Images\10.jpg" />
+    <File Id="4588" RelativePath="adam\Gallery-Fancybox3-v6\YkXHaT6baEyiD_QtkIiIsA\Images\100.jpg" />
+    <File Id="4584" RelativePath="adam\Gallery-Fancybox3-v6\YkXHaT6baEyiD_QtkIiIsA\Images\2.jpg" />
+    <File Id="4585" RelativePath="adam\Gallery-Fancybox3-v6\YkXHaT6baEyiD_QtkIiIsA\Images\3.jpg" />
+    <File Id="4586" RelativePath="adam\Gallery-Fancybox3-v6\YkXHaT6baEyiD_QtkIiIsA\Images\4.jpg" />
   </PortalFiles>
   <PortalFolders>
-    <Folder Id="7441" RelativePath="adam/Gallery-Fancybox3/0jPONC8CT0i06sp3dybtCw/AlbumThumbnail/" />
-    <Folder Id="10441" RelativePath="adam/Gallery-Fancybox3/iOrap4JS80uliE6qgXxszg/AlbumThumbnail/" />
-    <Folder Id="2701" RelativePath="adam/Gallery-Fancybox3/0jPONC8CT0i06sp3dybtCw/Images/" />
-    <Folder Id="10397" RelativePath="adam/Gallery-Fancybox3/4AQ6bLG8pkWHOM4c6ogb2Q/AlbumThumbnail/" />
-    <Folder Id="10396" RelativePath="adam/Gallery-Fancybox3/4AQ6bLG8pkWHOM4c6ogb2Q/Images/" />
-    <Folder Id="7544" RelativePath="adam/Gallery-Fancybox3/f5de-YkJ60yNI3nPwWouDQ/Images/" />
-    <Folder Id="10440" RelativePath="adam/Gallery-Fancybox3/iOrap4JS80uliE6qgXxszg/Images/" />
-    <Folder Id="10433" RelativePath="adam/Gallery-Fancybox3/KAKhgcm65k2dc9RlybCsRg/Images/" />
-    <Folder Id="10408" RelativePath="adam/Gallery-Fancybox3/xe97UmfWrUSlw--MVfO95A/Images/" />
-    <Folder Id="10391" RelativePath="adam/Gallery-Fancybox3/XgmGdzqSX0-PppwohL9Krw/AlbumThumbnail/" />
-    <Folder Id="10390" RelativePath="adam/Gallery-Fancybox3/XgmGdzqSX0-PppwohL9Krw/Images/" />
-    <Folder Id="10405" RelativePath="adam/Gallery-Fancybox3/YkXHaT6baEyiD_QtkIiIsA/Images/" />
-    <Folder Id="2699" RelativePath="adam/Gallery-Fancybox3/" />
-    <Folder Id="2700" RelativePath="adam/Gallery-Fancybox3/0jPONC8CT0i06sp3dybtCw/" />
-    <Folder Id="10416" RelativePath="adam/Gallery-Fancybox3/1Mmi-g7Xr0mP0Mmm_IYN7A/" />
-    <Folder Id="10418" RelativePath="adam/Gallery-Fancybox3/1Mmi-g7Xr0mP0Mmm_IYN7A/AlbumThumbnail/" />
-    <Folder Id="10417" RelativePath="adam/Gallery-Fancybox3/1Mmi-g7Xr0mP0Mmm_IYN7A/Images/" />
-    <Folder Id="10419" RelativePath="adam/Gallery-Fancybox3/3CBMm7fB20OiXi8EKfagpw/" />
-    <Folder Id="10421" RelativePath="adam/Gallery-Fancybox3/3CBMm7fB20OiXi8EKfagpw/AlbumThumbnail/" />
-    <Folder Id="10420" RelativePath="adam/Gallery-Fancybox3/3CBMm7fB20OiXi8EKfagpw/Images/" />
-    <Folder Id="10395" RelativePath="adam/Gallery-Fancybox3/4AQ6bLG8pkWHOM4c6ogb2Q/" />
-    <Folder Id="10410" RelativePath="adam/Gallery-Fancybox3/4dMEVAelJEGudDjrv41t6g/" />
-    <Folder Id="10412" RelativePath="adam/Gallery-Fancybox3/4dMEVAelJEGudDjrv41t6g/AlbumThumbnail/" />
-    <Folder Id="10411" RelativePath="adam/Gallery-Fancybox3/4dMEVAelJEGudDjrv41t6g/Images/" />
-    <Folder Id="10442" RelativePath="adam/Gallery-Fancybox3/65cMy7Vlok-wPNjt7Yrimw/" />
-    <Folder Id="10445" RelativePath="adam/Gallery-Fancybox3/65cMy7Vlok-wPNjt7Yrimw/AlbumThumbnail/" />
-    <Folder Id="10444" RelativePath="adam/Gallery-Fancybox3/65cMy7Vlok-wPNjt7Yrimw/Images/" />
-    <Folder Id="10426" RelativePath="adam/Gallery-Fancybox3/7TALy0bzkkig0C99ODEefw/" />
-    <Folder Id="10428" RelativePath="adam/Gallery-Fancybox3/7TALy0bzkkig0C99ODEefw/AlbumThumbnail/" />
-    <Folder Id="10427" RelativePath="adam/Gallery-Fancybox3/7TALy0bzkkig0C99ODEefw/Images/" />
-    <Folder Id="7593" RelativePath="adam/Gallery-Fancybox3/aqJA3DjoI0SmL0zXH8uYSw/" />
-    <Folder Id="7594" RelativePath="adam/Gallery-Fancybox3/aqJA3DjoI0SmL0zXH8uYSw/Images/" />
-    <Folder Id="7605" RelativePath="adam/Gallery-Fancybox3/cYGJMJl67E2OSJNxDCjBIg/" />
-    <Folder Id="7606" RelativePath="adam/Gallery-Fancybox3/cYGJMJl67E2OSJNxDCjBIg/Images/" />
-    <Folder Id="7607" RelativePath="adam/Gallery-Fancybox3/DW1EAAAt_UOdnNC7R42o8g/" />
-    <Folder Id="7608" RelativePath="adam/Gallery-Fancybox3/DW1EAAAt_UOdnNC7R42o8g/Images/" />
-    <Folder Id="7543" RelativePath="adam/Gallery-Fancybox3/f5de-YkJ60yNI3nPwWouDQ/" />
-    <Folder Id="10288" RelativePath="adam/Gallery-Fancybox3/f5de-YkJ60yNI3nPwWouDQ/AlbumThumbnail/" />
-    <Folder Id="9765" RelativePath="adam/Gallery-Fancybox3/Fa6dwTNOTUKsNuoSbH2Tbg/" />
-    <Folder Id="9766" RelativePath="adam/Gallery-Fancybox3/Fa6dwTNOTUKsNuoSbH2Tbg/Images/" />
-    <Folder Id="7597" RelativePath="adam/Gallery-Fancybox3/FfJJGaQEKUy4Iy8W4VE4fA/" />
-    <Folder Id="7598" RelativePath="adam/Gallery-Fancybox3/FfJJGaQEKUy4Iy8W4VE4fA/Images/" />
-    <Folder Id="10422" RelativePath="adam/Gallery-Fancybox3/GApGCvWn6kqL4pRCUEFrUg/" />
-    <Folder Id="10423" RelativePath="adam/Gallery-Fancybox3/GApGCvWn6kqL4pRCUEFrUg/AlbumThumbnail/" />
-    <Folder Id="10424" RelativePath="adam/Gallery-Fancybox3/GApGCvWn6kqL4pRCUEFrUg/Images/" />
-    <Folder Id="7595" RelativePath="adam/Gallery-Fancybox3/i-LuAivezEqhQ1CJ4Hcvbg/" />
-    <Folder Id="7596" RelativePath="adam/Gallery-Fancybox3/i-LuAivezEqhQ1CJ4Hcvbg/Images/" />
-    <Folder Id="10439" RelativePath="adam/Gallery-Fancybox3/iOrap4JS80uliE6qgXxszg/" />
-    <Folder Id="10392" RelativePath="adam/Gallery-Fancybox3/je8qpMyRY0aNkGfM-s5I1w/" />
-    <Folder Id="10394" RelativePath="adam/Gallery-Fancybox3/je8qpMyRY0aNkGfM-s5I1w/AlbumThumbnail/" />
-    <Folder Id="10393" RelativePath="adam/Gallery-Fancybox3/je8qpMyRY0aNkGfM-s5I1w/Images/" />
-    <Folder Id="7588" RelativePath="adam/Gallery-Fancybox3/JkwglifamU6AoVrOcHX2dg/" />
-    <Folder Id="7589" RelativePath="adam/Gallery-Fancybox3/JkwglifamU6AoVrOcHX2dg/Images/" />
-    <Folder Id="7601" RelativePath="adam/Gallery-Fancybox3/k5hq-CX6l0ayodrfQybjMA/" />
-    <Folder Id="7602" RelativePath="adam/Gallery-Fancybox3/k5hq-CX6l0ayodrfQybjMA/Images/" />
-    <Folder Id="10432" RelativePath="adam/Gallery-Fancybox3/KAKhgcm65k2dc9RlybCsRg/" />
-    <Folder Id="10434" RelativePath="adam/Gallery-Fancybox3/KAKhgcm65k2dc9RlybCsRg/AlbumThumbnail/" />
-    <Folder Id="10413" RelativePath="adam/Gallery-Fancybox3/lEwMRYgH7UuEYQDG4hVW2Q/" />
-    <Folder Id="10415" RelativePath="adam/Gallery-Fancybox3/lEwMRYgH7UuEYQDG4hVW2Q/AlbumThumbnail/" />
-    <Folder Id="10414" RelativePath="adam/Gallery-Fancybox3/lEwMRYgH7UuEYQDG4hVW2Q/Images/" />
-    <Folder Id="7603" RelativePath="adam/Gallery-Fancybox3/N7kcal3HjEKNgenPnMF65g/" />
-    <Folder Id="7604" RelativePath="adam/Gallery-Fancybox3/N7kcal3HjEKNgenPnMF65g/Images/" />
-    <Folder Id="10429" RelativePath="adam/Gallery-Fancybox3/pScbeeidK0u0LShwFphoWg/" />
-    <Folder Id="10431" RelativePath="adam/Gallery-Fancybox3/pScbeeidK0u0LShwFphoWg/AlbumThumbnail/" />
-    <Folder Id="10430" RelativePath="adam/Gallery-Fancybox3/pScbeeidK0u0LShwFphoWg/Images/" />
-    <Folder Id="10435" RelativePath="adam/Gallery-Fancybox3/qjR9D8BaLUqJu5cDByYK7g/" />
-    <Folder Id="10437" RelativePath="adam/Gallery-Fancybox3/qjR9D8BaLUqJu5cDByYK7g/AlbumThumbnail/" />
-    <Folder Id="10438" RelativePath="adam/Gallery-Fancybox3/qjR9D8BaLUqJu5cDByYK7g/Images/" />
-    <Folder Id="9965" RelativePath="adam/Gallery-Fancybox3/R_AU35p-e0GmG61z_N6W6w/" />
-    <Folder Id="9966" RelativePath="adam/Gallery-Fancybox3/R_AU35p-e0GmG61z_N6W6w/Images/" />
-    <Folder Id="10385" RelativePath="adam/Gallery-Fancybox3/Rbr3r9m7WESnYNX6odytXA/" />
-    <Folder Id="10387" RelativePath="adam/Gallery-Fancybox3/Rbr3r9m7WESnYNX6odytXA/AlbumThumbnail/" />
-    <Folder Id="10388" RelativePath="adam/Gallery-Fancybox3/Rbr3r9m7WESnYNX6odytXA/Images/" />
-    <Folder Id="10398" RelativePath="adam/Gallery-Fancybox3/rkn-7IxBNECa36iUuFZf3g/" />
-    <Folder Id="10400" RelativePath="adam/Gallery-Fancybox3/rkn-7IxBNECa36iUuFZf3g/AlbumThumbnail/" />
-    <Folder Id="10399" RelativePath="adam/Gallery-Fancybox3/rkn-7IxBNECa36iUuFZf3g/Images/" />
-    <Folder Id="9763" RelativePath="adam/Gallery-Fancybox3/rOFW7x59fEKWlGsE_5UiSw/" />
-    <Folder Id="9764" RelativePath="adam/Gallery-Fancybox3/rOFW7x59fEKWlGsE_5UiSw/Images/" />
-    <Folder Id="9967" RelativePath="adam/Gallery-Fancybox3/St4C2qYyw0uwONscfmHj4g/" />
-    <Folder Id="9968" RelativePath="adam/Gallery-Fancybox3/St4C2qYyw0uwONscfmHj4g/Images/" />
-    <Folder Id="10401" RelativePath="adam/Gallery-Fancybox3/wse9-GEjFkuJprVsooHkpQ/" />
-    <Folder Id="10403" RelativePath="adam/Gallery-Fancybox3/wse9-GEjFkuJprVsooHkpQ/AlbumThumbnail/" />
-    <Folder Id="10402" RelativePath="adam/Gallery-Fancybox3/wse9-GEjFkuJprVsooHkpQ/Images/" />
-    <Folder Id="10407" RelativePath="adam/Gallery-Fancybox3/xe97UmfWrUSlw--MVfO95A/" />
-    <Folder Id="10409" RelativePath="adam/Gallery-Fancybox3/xe97UmfWrUSlw--MVfO95A/AlbumThumbnail/" />
-    <Folder Id="10389" RelativePath="adam/Gallery-Fancybox3/XgmGdzqSX0-PppwohL9Krw/" />
-    <Folder Id="10446" RelativePath="adam/Gallery-Fancybox3/xunNJWUf006rd7JolkdlWg/" />
-    <Folder Id="10448" RelativePath="adam/Gallery-Fancybox3/xunNJWUf006rd7JolkdlWg/AlbumThumbnail/" />
-    <Folder Id="10447" RelativePath="adam/Gallery-Fancybox3/xunNJWUf006rd7JolkdlWg/Images/" />
-    <Folder Id="10404" RelativePath="adam/Gallery-Fancybox3/YkXHaT6baEyiD_QtkIiIsA/" />
-    <Folder Id="10406" RelativePath="adam/Gallery-Fancybox3/YkXHaT6baEyiD_QtkIiIsA/AlbumThumbnail/" />
-    <Folder Id="7599" RelativePath="adam/Gallery-Fancybox3/ZxpP1Bhg7Uy9fx-PJXXtbA/" />
-    <Folder Id="7600" RelativePath="adam/Gallery-Fancybox3/ZxpP1Bhg7Uy9fx-PJXXtbA/Images/" />
+    <Folder Id="7441" RelativePath="adam/Gallery-Fancybox3-v6/0jPONC8CT0i06sp3dybtCw/AlbumThumbnail/" />
+    <Folder Id="10441" RelativePath="adam/Gallery-Fancybox3-v6/iOrap4JS80uliE6qgXxszg/AlbumThumbnail/" />
+    <Folder Id="2701" RelativePath="adam/Gallery-Fancybox3-v6/0jPONC8CT0i06sp3dybtCw/Images/" />
+    <Folder Id="10397" RelativePath="adam/Gallery-Fancybox3-v6/4AQ6bLG8pkWHOM4c6ogb2Q/AlbumThumbnail/" />
+    <Folder Id="10396" RelativePath="adam/Gallery-Fancybox3-v6/4AQ6bLG8pkWHOM4c6ogb2Q/Images/" />
+    <Folder Id="7544" RelativePath="adam/Gallery-Fancybox3-v6/f5de-YkJ60yNI3nPwWouDQ/Images/" />
+    <Folder Id="10440" RelativePath="adam/Gallery-Fancybox3-v6/iOrap4JS80uliE6qgXxszg/Images/" />
+    <Folder Id="10433" RelativePath="adam/Gallery-Fancybox3-v6/KAKhgcm65k2dc9RlybCsRg/Images/" />
+    <Folder Id="10408" RelativePath="adam/Gallery-Fancybox3-v6/xe97UmfWrUSlw--MVfO95A/Images/" />
+    <Folder Id="10391" RelativePath="adam/Gallery-Fancybox3-v6/XgmGdzqSX0-PppwohL9Krw/AlbumThumbnail/" />
+    <Folder Id="10390" RelativePath="adam/Gallery-Fancybox3-v6/XgmGdzqSX0-PppwohL9Krw/Images/" />
+    <Folder Id="10405" RelativePath="adam/Gallery-Fancybox3-v6/YkXHaT6baEyiD_QtkIiIsA/Images/" />
+    <Folder Id="2699" RelativePath="adam/Gallery-Fancybox3-v6/" />
+    <Folder Id="2700" RelativePath="adam/Gallery-Fancybox3-v6/0jPONC8CT0i06sp3dybtCw/" />
+    <Folder Id="10395" RelativePath="adam/Gallery-Fancybox3-v6/4AQ6bLG8pkWHOM4c6ogb2Q/" />
+    <Folder Id="12999" RelativePath="adam/Gallery-Fancybox3-v6/6wrbYIDilEO9stMVQPCiJQ/" />
+    <Folder Id="13000" RelativePath="adam/Gallery-Fancybox3-v6/6wrbYIDilEO9stMVQPCiJQ/Icon/" />
+    <Folder Id="7543" RelativePath="adam/Gallery-Fancybox3-v6/f5de-YkJ60yNI3nPwWouDQ/" />
+    <Folder Id="10439" RelativePath="adam/Gallery-Fancybox3-v6/iOrap4JS80uliE6qgXxszg/" />
+    <Folder Id="10432" RelativePath="adam/Gallery-Fancybox3-v6/KAKhgcm65k2dc9RlybCsRg/" />
+    <Folder Id="12995" RelativePath="adam/Gallery-Fancybox3-v6/SpX2IHZB1USVMlGd3vNkrQ/" />
+    <Folder Id="12996" RelativePath="adam/Gallery-Fancybox3-v6/SpX2IHZB1USVMlGd3vNkrQ/Icon/" />
+    <Folder Id="12997" RelativePath="adam/Gallery-Fancybox3-v6/tGyntGFrXU-JM1_A2QDSjA/" />
+    <Folder Id="12998" RelativePath="adam/Gallery-Fancybox3-v6/tGyntGFrXU-JM1_A2QDSjA/Icon/" />
+    <Folder Id="10407" RelativePath="adam/Gallery-Fancybox3-v6/xe97UmfWrUSlw--MVfO95A/" />
+    <Folder Id="10389" RelativePath="adam/Gallery-Fancybox3-v6/XgmGdzqSX0-PppwohL9Krw/" />
+    <Folder Id="10404" RelativePath="adam/Gallery-Fancybox3-v6/YkXHaT6baEyiD_QtkIiIsA/" />
   </PortalFolders>
 </SexyContent>
