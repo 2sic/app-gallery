@@ -4,9 +4,9 @@
 @{
   var helpers = CreateInstance("shared/Helpers.cs");
 
-  // Dnn: var albumInUrl = Request.QueryString["Album"];
-  // Oqtane: var albumInUrl = ViewContext.HttpContext.Request.Query["Album"];
-  // Hybrid: 
+  var page = GetService<ToSic.Sxc.Web.IPageService>();
+
+  // Hybrid get page Parameters (works on Dnn & Oqtane)
   var albumInUrl = CmsContext.Page.Parameters["Album"];
   var isDetailViewOfAlbum = Text.Has(albumInUrl);
   @* If album QueryString is specified, take album from QueryString, else take "current" album *@
@@ -16,15 +16,14 @@
     <h1>@App.Resources.AlbumNotFound</h1>
     <div>@Html.Raw(App.Resources.AlbumNotFoundText)</div>
     <a href="@Tags.SafeUrl(Link.To())" class="btn btn-outline-primary btn-sm">@App.Resources.BackToOverview</a>
-    // TODO:
-    // Response.StatusCode = 404;
-    // Response.TrySkipIisCustomErrors = true;
+
+    page.SetHttpStatus(404);
     return;
   }
 
-  var page = GetService<ToSic.Sxc.Web.IPageService>();
   page.SetTitle(album.Title + " | "); // will prepend to the existing title
-  // page.SetTitle(Content.Title, "[album]"); // Alternative - would replace the token [album] in the title with the title
+  // You could also use this to replace the token [album] in the title with the title
+  // page.SetTitle(album.Title, "[album]");
 }
 
 @* Hide the side navigation if the view is used as detail view *@
@@ -39,23 +38,23 @@
   @* Display the images *@
   <div class="ga-wrapper row auto-clear">
     @foreach (var pic in helpers.GetImagesSorted(album)) {
+      var imgCaption = (Content.Presentation.ShowImageTitle && Text.Has(pic.Metadata.Title)) 
+        ? ("<h6>" + Tags.Strip(pic.Metadata.Title) + "</h6><p>" + Tags.Strip(pic.Metadata.Description) + "</p>")
+          .Replace("\"", "&quot;")
+        : "";
       <div class="ga-tiles col-6 col-sm-6 col-md-4 col-lg-3">
         <div class="ga-image" @Edit.TagToolbar(toolbar: new [] {
           "toolbar=empty",
           "metadata?entityId=" + pic.Metadata.EntityId + "&contentType=ImageMetadata&for=file:" + pic.FileId
         })>
           <figure>
-            <a class="ga-fancybox" href='@Tags.SafeUrl(pic.Url + "?w=1200&h=900&mode=max")' data-fancybox="album-@CmsContext.Module.Id">
+            <a class="ga-fancybox" href='@Tags.SafeUrl(pic.Url + "?w=1200&h=900&mode=max")' 
+              data-fancybox="album-@CmsContext.Module.Id" data-caption="@imgCaption"
+              >
             <div class="ga-img">
               <div class="overlay"></div>
               <img class="img-fluid" src='@Tags.SafeUrl(pic.Url + "?w=560&scale=both&quality=80&h=404&mode=crop")' alt="@pic.Metadata.Title" />
             </div>
-            @if(Content.Presentation.ShowImageTitle && Text.Has(pic.Metadata.Title)) {
-              <figcaption>
-                <h6>@pic.Metadata.Title</h6>
-                <p>@pic.Metadata.Description</p>
-              </figcaption>
-            }
           </a>
           </figure>
         </div>

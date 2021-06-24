@@ -2,36 +2,35 @@
 @{
   // get CSS information about the current Theme
   var pageCss = GetService<Connect.Koi.ICss>();
-}
-@* show warning for admin if koi.json is missing *@
-@if(pageCss.IsUnknown && CmsContext.User.IsSiteAdmin) {
-  <div class='dnnFormMessage dnnFormWarning'>
-    @Html.Raw(Connect.Koi.Messages.CssInformationMissing) <br>
-    @Html.Raw(Connect.Koi.Messages.OnlyAdminsSeeThis)
-  </div>
-}
 
-@* Include styles of the App *@
-<link rel="stylesheet" href="@App.Path/dist/bs4.min.css" data-enableoptimizations="true" />
+  // show warning for admin if koi.json is missing 
+  if(pageCss.IsUnknown && CmsContext.User.IsSiteAdmin) {
+    <div class='dnnFormMessage dnnFormWarning'>
+      @Html.Raw(Connect.Koi.Messages.CssInformationMissing) <br>
+      @Html.Raw(Connect.Koi.Messages.OnlyAdminsSeeThis)
+    </div>
+  }
 
-@* Include bootstrap 4 if the framework isn't known - then this file is still called, and we add Bootstrap to the page *@
-@if(!pageCss.Is("bs4")) {
-  // Note that the link and script tags are in the App Settings to make it easier to update a live installation
-  @Html.Raw(App.Settings.AssetsBootstrap) 
-}
+  // Include styles of the App
+  <link rel="stylesheet" href="@App.Path/dist/bs4.min.css" data-enableoptimizations="true" />
 
-@* Include libaries / scripts *@
-@if(DynamicModel.scripts == true) {
-  // tell DNN to load jquery as it's needed by fancybox
-  // Oqtane doesn't need this, as jQuery is always preloaded as of now
-  #if !NETCOREAPP
-    DotNetNuke.Framework.JavaScriptLibraries.JavaScript.RequestRegistration(DotNetNuke.Framework.JavaScriptLibraries.CommonJs.jQuery);
-  #endif
-}
+  // Include bootstrap 4 if the framework isn't known - then this file is still called, and we add Bootstrap to the page
+  if(!pageCss.Is("bs4")) {
+    // Note that the link and script tags are in the App Settings to make it easier to update a live installation
+    @Html.Raw(Settings.AssetsBootstrap) 
+  }
 
-@if(DynamicModel.scripts == true) {
-  GetService<ToSic.Sxc.Web.IPageService>().Activate("turnOn");
-  @Html.Raw(App.Settings.AssetsFancybox)
-  <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script>
-  <span turn-on='{ "run": "window.appGallery.activateGalleryAll()" }' />
+  var page = GetService<ToSic.Sxc.Web.IPageService>();
+
+  // Include libaries / scripts
+  if(DynamicModel.scripts == true) {
+    // Tell DNN / Oqtane to load jquery as it's needed by fancybox
+    page.Activate("jQuery");
+  }
+
+  if(DynamicModel.scripts == true) {
+    GetService<ToSic.Sxc.Web.IPageService>().Activate("turnOn");
+    @Html.Raw(Settings.AssetsFancybox)
+    <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script>
+  }
 }
