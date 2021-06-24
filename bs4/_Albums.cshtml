@@ -9,7 +9,7 @@
   // Image Settings http://r.2sxc.org/settings
   var imgSettings = Settings.Images.Content;
   var width = (int)(imgSettings.Width * imgColumns / bsColumns);
-  var height = (int)(imgSettings.AspectRatio * width);
+  var height = (int)(width / imgSettings.AspectRatio);
   var thumbnailParams = "?w=" + width + "&h=" + height + "&mode=crop&scale=both&quality=" + (int)imgSettings.Quality;
 }
 

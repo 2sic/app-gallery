@@ -42,20 +42,20 @@
   // Image Settings http://r.2sxc.org/settings
   var imgSettings = Settings.Images.Content;
   var width = (int)(imgSettings.Width * imgColumns / bsColumns);
-  var height = (int)(imgSettings.AspectRatio * width);
+  var height = (int)(width / imgSettings.AspectRatio);
   var thumbnailParams = "?w=" + width 
     + (useMasonry ? "" : "&h=" + height)
-    + "&mode=crop&scale=both&quality=" + (int)imgSettings.Quality;
+    + "&mode=crop&scale=both" 
+    + "&quality=" + (int)imgSettings.Quality;
 
   // Lightbox settings
   var lightbox = Settings.Images.Lightbox;
   var lightboxParams = "?w=" + (int)lightbox.Width 
     + "&h=" + (int)lightbox.Height
-    + "&mode=max&scale=both&quality=" 
-    + (int)lightbox.Quality;
+    + "&mode=max&scale=both"
+    + "&quality=" + (int)lightbox.Quality;
 
 }
-
 @* Hide the side navigation if the view is used as detail view *@
 @if (isDetailViewOfAlbum) {
   <style>.ly-col-leftpane { display: none; }</style>
