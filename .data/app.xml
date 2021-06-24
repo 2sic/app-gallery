@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="11.90.00" ExportDate="2021-05-04T18:37:30.4358775+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.02.02" ExportDate="2021-06-24T10:44:11.2662547+02:00">
   <Header>
     <App Guid="46d319be-70f5-40c5-aaf1-a827e2d863bd" />
     <Language Default="en-us" />
@@ -742,12 +742,12 @@
     </AttributeSet>
     <AttributeSet StaticName="App-Settings" Name="App-Settings" Description="Stores settings for an app" Scope="2SexyContent-App" AlwaysShareConfiguration="false">
       <Attributes>
-        <Attribute StaticName="AssetsFancybox" Type="String" IsTitle="true">
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="2b48fe77-dbcb-4860-8d6b-3d9b6188bee0" Json="True" KeyNumber="4653">
+        <Attribute StaticName="Title" Type="String" IsTitle="true">
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="6815e24c-c9c0-4463-b9ae-5b63330ae8d8" Json="True" KeyNumber="4708">
             <Value Key="CustomJavaScript" Value="" Type="String">
               <Dimension DimensionID="122" ReadOnly="false" />
             </Value>
-            <Value Key="DefaultValue" Value="" Type="String">
+            <Value Key="DefaultValue" Value="Fancybox 3 App Settings" Type="String">
               <Dimension DimensionID="122" ReadOnly="false" />
             </Value>
             <Value Key="Disabled" Value="False" Type="Boolean">
@@ -759,7 +759,7 @@
             <Value Key="InputType" Value="string-default" Type="String">
               <Dimension DimensionID="122" ReadOnly="false" />
             </Value>
-            <Value Key="Name" Value="Assets Fancybox" Type="String">
+            <Value Key="Name" Value="Title (as of now, there are no relevant settings here)" Type="String">
               <Dimension DimensionID="122" ReadOnly="false" />
             </Value>
             <Value Key="Notes" Value="" Type="String">
@@ -778,7 +778,7 @@
               <Dimension DimensionID="122" ReadOnly="false" />
             </Value>
           </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="fa7f2532-4ef2-4e84-b60e-e20e400518de" Json="True" KeyNumber="4653">
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="f3596aa7-609c-4ddf-b516-c22f38d37f80" Json="True" KeyNumber="4708">
             <Value Key="DropdownValues" Value="" Type="String">
               <Dimension DimensionID="122" ReadOnly="false" />
             </Value>
@@ -786,108 +786,8 @@
               <Dimension DimensionID="122" ReadOnly="false" />
             </Value>
           </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="7c9c03d3-eaba-4fd5-9868-d5770c412194" Json="True" KeyNumber="4653">
-            <Value Key="RowCount" Value="10" Type="Number">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-          </Entity>
-        </Attribute>
-        <Attribute StaticName="AssetsBootstrap" Type="String" IsTitle="false">
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="83fd3118-7f97-45a6-ab5b-6216e75b3618" Json="True" KeyNumber="4654">
-            <Value Key="CustomJavaScript" Value="" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="DefaultValue" Value="" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="Disabled" Value="False" Type="Boolean">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="DisableTranslation" Value="False" Type="Boolean">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="string-default" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Assets Bootstrap" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="Notes" Value="" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="Placeholder" Value="" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="Required" Value="False" Type="Boolean">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="2d8c1f20-5d49-49cc-979c-6a53ae6e5b45" Json="True" KeyNumber="4654">
-            <Value Key="DropdownValues" Value="" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="ce0d0601-0cc0-4737-b90b-36f3990f1254" Json="True" KeyNumber="4654">
-            <Value Key="RowCount" Value="10" Type="Number">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-          </Entity>
-        </Attribute>
-        <Attribute StaticName="AssetsLazyload" Type="String" IsTitle="false">
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="72b8f931-fb8c-4b6c-9fde-ab6f52dfc4ca" Json="True" KeyNumber="4656">
-            <Value Key="CustomJavaScript" Value="" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="DefaultValue" Value="" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="Disabled" Value="False" Type="Boolean">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="DisableTranslation" Value="False" Type="Boolean">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="string-default" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="Name" Value="Assets Lazyload" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="Notes" Value="" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="Placeholder" Value="" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="Required" Value="False" Type="Boolean">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="5a8c0c79-62b9-4805-803a-a1f6b4dbb0c9" Json="True" KeyNumber="4656">
-            <Value Key="DropdownValues" Value="" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-            <Value Key="InputType" Value="" Type="String">
-              <Dimension DimensionID="122" ReadOnly="false" />
-            </Value>
-          </Entity>
-          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="753ca849-b801-4905-8c90-70f93e26f69c" Json="True" KeyNumber="4656">
-            <Value Key="RowCount" Value="10" Type="Number">
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-default" AttributeSetName="@string-default" EntityGUID="4d701e0a-3c4c-46ee-8f67-771296b32a85" Json="True" KeyNumber="4708">
+            <Value Key="InputFontFamily" Value="" Type="String">
               <Dimension DimensionID="122" ReadOnly="false" />
             </Value>
           </Entity>
@@ -1060,13 +960,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="App" AttributeSetStaticName="App-Settings" AttributeSetName="App-Settings" EntityGUID="14466648-25e3-4559-82a9-521df752bdd6" KeyNumber="150">
-      <Value Key="AssetsBootstrap" Value="&lt;link rel=&quot;stylesheet&quot; href=&quot;//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot; integrity=&quot;sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4&quot; crossorigin=&quot;anonymous&quot; data-enableoptimizations=&quot;true&quot; /&gt;&#xA;&lt;script src=&quot;//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js&quot; integrity=&quot;sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm&quot; crossorigin=&quot;anonymous&quot; data-enableoptimizations=&quot;true&quot; &gt;&lt;/script&gt;" Type="String">
-        <Dimension DimensionID="122" ReadOnly="false" />
-      </Value>
-      <Value Key="AssetsFancybox" Value="&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css&quot; data-enableoptimizations=&quot;bottom&quot; /&gt;&#xA;&lt;script defer src=&quot;https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js&quot; data-enableoptimizations=&quot;bottom&quot;&gt;&lt;/script&gt;&#xA;" Type="String">
-        <Dimension DimensionID="122" ReadOnly="false" />
-      </Value>
-      <Value Key="AssetsLazyload" Value="&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js&quot; data-enableoptimizations=&quot;bottom&quot;&gt;&lt;/script&gt;" Type="String">
+      <Value Key="Title" Value="Fancybox 3 App Settings" Type="String">
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
     </Entity>
@@ -1401,7 +1295,7 @@
       <Value Key="Template" Value="b4a76cb4-6b61-4f5d-8933-5fc0d900d28c" Type="Entity" />
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="1f44b138-7770-483f-9634-cf2d3286a61c" Json="True">
-      <Value Key="Content" Value="null,null,a7daea88-5282-4bf3-a588-4eaa817c6cce" Type="Entity" />
+      <Value Key="Content" Value="34ce33d2-022f-484f-b4ea-ca777726ed0b,null,a7daea88-5282-4bf3-a588-4eaa817c6cce" Type="Entity" />
       <Value Key="Presentation" Value="null,null,3de9657f-44f3-4f10-ab7f-a250043140e9" Type="Entity" />
       <Value Key="Template" Value="20f6954a-4176-44d5-9532-519ddef364ad" Type="Entity" />
     </Entity>
@@ -1436,7 +1330,7 @@
       <Value Key="Description" Value="Demo Beschreibung" Type="String">
         <Dimension DimensionID="121" ReadOnly="false" />
       </Value>
-      <Value Key="Title" Value="Demo Title" Type="String">
+      <Value Key="Title" Value="Demo Title &lt;b&gt;test&lt;/b&gt;" Type="String">
         <Dimension DimensionID="122" ReadOnly="false" />
       </Value>
       <Value Key="Title" Value="Demo Title" Type="String">

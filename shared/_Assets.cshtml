@@ -14,10 +14,13 @@
   // Include styles of the App
   <link rel="stylesheet" href="@App.Path/dist/bs4.min.css" data-enableoptimizations="true" />
 
+  // The Settings contains rules for  predefined web resources
+  var webResources = Settings.WebResources;
+
   // Include bootstrap 4 if the framework isn't known - then this file is still called, and we add Bootstrap to the page
   if(!pageCss.Is("bs4")) {
-    // Note that the link and script tags are in the App Settings to make it easier to update a live installation
-    @Html.Raw(Settings.AssetsBootstrap) 
+    var resBs4 = webResources.Bootstrap4;
+    if(resBs4.Enabled) { @Html.Raw(resBs4.Html) }
   }
 
   var page = GetService<ToSic.Sxc.Web.IPageService>();
@@ -30,7 +33,8 @@
 
   if(DynamicModel.scripts == true) {
     GetService<ToSic.Sxc.Web.IPageService>().Activate("turnOn");
-    @Html.Raw(Settings.AssetsFancybox)
+    var resFb = webResources.fancybox3;
+    if(resFb.Enabled) { @Html.Raw(resFb.Html) }
     <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script>
   }
 }
