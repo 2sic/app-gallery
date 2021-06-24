@@ -35,26 +35,13 @@
   var useMasonry = albumTiling == "masonry";
 
   // Determine the widths of each part, based on 12 Bootstrap Cols
-  const int bsColumns = 12;
-  var imgColumns = useMasonry ? 4 : 3;
+  var imgResizeFactor = (float)(useMasonry ? 4 : 3) / 12;
 
-
-  // Image Settings http://r.2sxc.org/settings
-  var imgSettings = Settings.Images.Content;
-  var width = (int)(imgSettings.Width * imgColumns / bsColumns);
-  var height = (int)(width / imgSettings.AspectRatio);
-  var thumbnailParams = "?w=" + width 
-    + (useMasonry ? "" : "&h=" + height)
-    + "&mode=crop&scale=both" 
-    + "&quality=" + (int)imgSettings.Quality;
-
-  // Lightbox settings
-  var lightbox = Settings.Images.Lightbox;
-  var lightboxParams = "?w=" + (int)lightbox.Width 
-    + "&h=" + (int)lightbox.Height
-    + "&mode=max&scale=both"
-    + "&quality=" + (int)lightbox.Quality;
-
+  // Get url params for re-use below. 
+  // Uses global Image Settings http://r.2sxc.org/settings
+  // and new Link.Image helper
+  var thumbnailParams = Link.Image("", Settings.Images.Content, factor: imgResizeFactor, height: (useMasonry ? (int?)0 : null));
+  var lightboxParams = Link.Image("", Settings.Images.Lightbox);
 }
 @* Hide the side navigation if the view is used as detail view *@
 @if (isDetailViewOfAlbum) {
