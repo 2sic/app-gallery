@@ -1,7 +1,9 @@
 @inherits Custom.Hybrid.Razor12
 @{
-  // get CSS information about the current Theme
-  var pageCss = GetService<Connect.Koi.ICss>();
+  // Basics / Preparation
+  var webResources = Settings.WebResources;             // Global predefined web resources
+  var pageCss = GetService<Connect.Koi.ICss>();         // Service to get CSS information about the current Theme
+  var page = GetService<ToSic.Sxc.Web.IPageService>();  // Service to set titles etc. on the page
 
   // show warning for admin if koi.json is missing 
   if(pageCss.IsUnknown && CmsContext.User.IsSiteAdmin) {
@@ -14,16 +16,11 @@
   // Include styles of the App
   <link rel="stylesheet" href="@App.Path/dist/bs4.min.css" data-enableoptimizations="true" />
 
-  // The Settings contains rules for  predefined web resources
-  var webResources = Settings.WebResources;
-
   // Include bootstrap 4 if the framework isn't known - then this file is still called, and we add Bootstrap to the page
   if(!pageCss.Is("bs4")) {
     var resBs4 = webResources.Bootstrap4;
     if(resBs4.Enabled) { @Html.Raw(resBs4.Html) }
   }
-
-  var page = GetService<ToSic.Sxc.Web.IPageService>();
 
   // Include libaries / scripts
   if(DynamicModel.scripts == true) {
@@ -32,7 +29,7 @@
   }
 
   if(DynamicModel.scripts == true) {
-    GetService<ToSic.Sxc.Web.IPageService>().Activate("turnOn");
+    page.Activate("turnOn");
     var resFb = webResources.fancybox3;
     if(resFb.Enabled) { @Html.Raw(resFb.Html) }
     <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script>
