@@ -10,7 +10,7 @@
   var imgSettings = Settings.Images.Content;
   var width = (int)(imgSettings.Width * imgColumns / bsColumns);
   var height = (int)(imgSettings.AspectRatio * width);
-  var thumbnailParams = "?w=" + width + "&h=" + height + "&mode=crop&scale=both&quality=" + imgSettings.Quality;
+  var thumbnailParams = "?w=" + width + "&h=" + height + "&mode=crop&scale=both&quality=" + (int)imgSettings.Quality;
 }
 
 <div class="ga-wrapper">
