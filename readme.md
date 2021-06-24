@@ -12,7 +12,7 @@ You can install the app with the ["Installing Gallery Fancybox3" checklist](http
 
 ### Configuration (Settings, Resources)
 
-Gallery App Fancybox3 does not have any app settings but some app resources(labels) you can customize.
+Gallery App Fancybox3 uses the new, [standard Settings-System in 2sxc](http://r.2sxc.org/settings) to configure it. It also has app resources (i18n labels) you can customize.
 
 ### Style
 
@@ -29,11 +29,12 @@ Read more about it in the [App Catalog](https://2sxc.org/en/apps/app/gallery-app
 
 ### Version 6
 
-* Updated to conventions of 2sxc 12.0 as a Hybrid Dnn/Oqtane App
+* Updated to conventions of 2sxc 12.0 as a Hybrid Dnn/Oqtane App based on [this checklist](https://azing.org/2sxc/r/m0iSLifK)
 
 ### Version 6.1 
 
-1. Updated to features and conventions of 2sxc 12.03
+1. Updated to features and conventions of 2sxc 12.03 based on [this checklist](https://azing.org/2sxc/r/KwXMhp8h)
+1. Now uses the new `Settings.WebResources` and `Settings.Images` for global configuration
 1. Renamed folder to enable side-by-side installation with older versions
 1. Reset the GUID so it has a new ID now - allowing side-by-side installation with older versions
 1. Dropped BS3 support - if anybody needs this, we recommend V5
