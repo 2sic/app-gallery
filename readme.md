@@ -1,6 +1,8 @@
 <image src="app-icon.png" align="right" width="200px">
 
-# Gallery App V6 using Fancybox3 for Dnn ☢ and Oqtane 💧
+# Gallery App V7 (WIP) using Fancybox4 for Dnn ☢️ and Oqtane 🩸
+
+_Important: V7 is WIP. Previous version 6.1 is on this branch: https://github.com/2sic/app-gallery/tree/v6-fancybox3_
 
 A 2sxc / DNN App using the javascript lib [fancybox](https://github.com/fancyapps/fancybox)
 
@@ -29,6 +31,8 @@ Read more about it in the [App Catalog](https://2sxc.org/en/apps/app/gallery-app
 
 ### Version 6
 
+Version 6 is found here: https://github.com/2sic/app-gallery/tree/v6-fancybox3
+
 * Updated to conventions of 2sxc 12.0 as a Hybrid Dnn/Oqtane App based on [this checklist](https://azing.org/2sxc/r/m0iSLifK)
 
 ### Version 6.1 
@@ -40,3 +44,8 @@ Read more about it in the [App Catalog](https://2sxc.org/en/apps/app/gallery-app
 1. Dropped BS3 support - if anybody needs this, we recommend V5
 1. Removed duplicate code, cleaned up everything
 1. Albums can now also show Masonry-style galleries inside
+
+
+### Version 7
+
+Just started (2021-08) and wish to convert to Fancybox4 which doesn't use jQuery
