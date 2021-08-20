@@ -19,7 +19,7 @@
         var images = AsAdam(album, "Images").Files as Dynlist;
         var albumThumbUrl = Text.Has(album.AlbumThumbnail)
           ? album.AlbumThumbnail
-          : images.First().Url;
+          : images.Any() ? images.First().Url : ""; // new 2dm
         var linkAlbum = Tags.SafeUrl(Link.To(parameters: "album=" + album.Path));
         var linkThumbnail = Tags.SafeUrl(albumThumbUrl + thumbnailParams);
 
