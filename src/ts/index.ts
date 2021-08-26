@@ -1,5 +1,7 @@
-import { monkeyPatchjQueryFade } from './jquery-fade-in';
+declare let Fancybox: any;
 
-// Work around a limitation of jQuery if it's installed in slim mode
-// because FancyBox will access this jQuery feature
-$(monkeyPatchjQueryFade);
+(window as any).appFb = {
+    initFancybox: function initFancybox(module: any) {
+        Fancybox.bind(`[data-app-gallery-fancybox="gallery-${module.moduleId}"]`, module.options);        
+    }
+}

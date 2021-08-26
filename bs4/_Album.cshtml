@@ -73,7 +73,7 @@
         if(!useMasonry) { @Tag.Div().Class("ga-tiles col-6 col-sm-6 col-md-4 col-lg-3").TagStart }
           <div class="ga-image" @Edit.TagToolbar(toolbar: metaToolbarConfig)>
             <figure>
-              <a class="ga-fancybox" href='@lightboxUrl' data-fancybox="album-@CmsContext.Module.Id" data-caption="@picCaption">
+              <a class="ga-fancybox" href='@lightboxUrl' data-app-gallery-fancybox="gallery-@CmsContext.Module.Id" data-caption="@picCaption">
                 <div class="ga-img">
                   <div class="overlay"></div>
                   <img class="img-fluid" src='@thumbnailUrl' alt="@pic.Metadata.Title" />

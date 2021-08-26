@@ -22,15 +22,11 @@
     if(resBs4.Enabled) { @Html.Raw(resBs4.Html) }
   }
 
-  // Include libaries / scripts
   if(DynamicModel.scripts == true) {
-    // Tell DNN / Oqtane to load jquery as it's needed by fancybox
-    page.Activate("jQuery");
-  }
-
-  if(DynamicModel.scripts == true) {
-    var resFb = webResources.fancybox3;
+    page.Activate("turnOn"); // see https://r.2sxc.org/turnon
+    var resFb = webResources.fancybox4;
     if(resFb.Enabled) { @Html.Raw(resFb.Html) }
     <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script>
+    <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appFb.initFancybox()", "data": { "moduleId": "@CmsContext.Module.Id", "options": { "groupAll": true, "Thumbs": {"autoStart": false}, "Image": {"zoom": true}}}}'></turnOn>
   }
 }
