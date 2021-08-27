@@ -5,51 +5,52 @@
 // To keep things simple, it uses the standard variables of
 // bootstrap 4 conventions.
 .ga-wrapper {
-  a { position: relative;
+  a { 
+    position: relative;
     display: block;
     text-decoration: none;
-     
-      .overlay {
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        transition: background-color 0.3s ease-in-out;
-        backface-visibility: hidden;
-        background: rgba($dark, 0);
-        padding: 15px 20px;
-        h5 {
-          color: #fff;
-          margin-bottom: 0;
-          padding-right: 60px;
 
-          &.ga-title {
-            display: block;
-            font-size: 14px;
-            line-height: 18px;
-            font-weight: normal;
-            text-transform: uppercase;
-            position: relative;
-            padding-right: 40px;
-          }
-          .badge {
-            vertical-align: text-top;
-            display: inline-block;
-            position: absolute;
-            right: 0;
-            top: 0;
-            font-size: 12px;
-            font-weight: normal;
-            background-color: transparent;
-            border: 2px solid #fff;
-          }
+    .overlay {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      transition: background-color 0.3s ease-in-out;
+      backface-visibility: hidden;
+      background: rgba($dark, 0);
+      padding: 15px 20px;
+      h5 {
+        color: #fff;
+        margin-bottom: 0;
+        padding-right: 60px;
+
+        &.ga-title {
+          display: block;
+          font-size: 14px;
+          line-height: 18px;
+          font-weight: normal;
+          text-transform: uppercase;
+          position: relative;
+          padding-right: 40px;
         }
-        .small {
-          line-height: 1.1em;
+        .badge {
+          vertical-align: text-top;
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          top: 0;
+          font-size: 12px;
+          font-weight: normal;
+          background-color: transparent;
+          border: 2px solid #fff;
         }
       }
+      .small {
+        line-height: 1.1em;
+      }
+    }
 
     img {
       width: 100%;
