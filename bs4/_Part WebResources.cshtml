@@ -23,6 +23,6 @@
   if(DynamicModel.scripts == true) {
     page.Activate("turnOn", "fancybox4"); // see https://r.2sxc.org/turnon - fancybox4 is a standard WebResources in 2sxc
     <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script>
-    <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appGalleryV7.initFancybox()", "data": { "moduleId": "@CmsContext.Module.Id", "options": { "groupAll": true, "Thumbs": {"autoStart": false}, "Image": {"zoom": true}}}}'></turnOn>
+    <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appGalleryV7.initFancybox()", "data": { "groupId": "@CmsContext.Module.Id", "options": { "groupAll": true, "Thumbs": {"autoStart": false}}}}'></turnOn>
   }
 }

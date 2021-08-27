@@ -25,13 +25,11 @@
 
         <div class="ga-album col-12 col-sm-6 col-md-6 col-lg-4" @Edit.TagToolbar(album)>
           <a href='@linkAlbum'>
-            <div class="ga-img">
-              <div class="overlay">
-                <div class="ga-album-title"><h5 class="ga-title">@album.Title</h5></div>
-                <div class="ga-files-count"><span class="badge badge-pill badge-dark float-right">@images.Count()</span></div>
+           
+              <div class="overlay d-flex align-items-end">
+                <h5 class="ga-title">@album.Title <span class="badge badge-pill badge-dark float-right">@images.Count()</span></h5>
               </div>
               <img class="img-fluid" src='@linkThumbnail' alt="@album.Title" />
-            </div>
           </a>
         </div>
       }

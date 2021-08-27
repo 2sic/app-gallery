@@ -54,8 +54,9 @@
   @Html.Partial("_Part Title Description.cshtml", new { album = album })
 
   @* Display the images *@
-  <div class="ga-wrapper row auto-clear">
+  <div class="ga-wrapper">
     @if(useMasonry) { @Tag.Div().Class("ga-masonry").TagStart }
+    else { @Tag.Div().Class("row mb-4").TagStart }
 
       @foreach (var pic in helpers.GetImagesSorted(album)) {
         var picCaption = "";
@@ -70,20 +71,27 @@
             "metadata?entityId=" + pic.Metadata.EntityId + "&contentType=ImageMetadata&for=file:" + pic.FileId
         };
 
-        if(!useMasonry) { @Tag.Div().Class("ga-tiles col-6 col-sm-6 col-md-4 col-lg-3").TagStart }
+        if(!useMasonry) {
+          @Tag.Div().Class("ga-tiles col-12 col-sm-6 col-md-4 col-lg-3 mb-4").TagStart }
           <div class="ga-image" @Edit.TagToolbar(toolbar: metaToolbarConfig)>
             <figure>
-              <a class="ga-fancybox" href='@lightboxUrl' data-app-gallery-fancybox="gallery-@CmsContext.Module.Id" data-caption="@picCaption">
-                <div class="ga-img">
-                  <div class="overlay"></div>
+              <a class="ga-fancybox" href='@lightboxUrl' data-app-gallery-fancybox="@CmsContext.Module.Id" data-caption="@picCaption">
+               
+                  <div class="overlay d-flex align-items-end">
+                    @if(Text.Has(pic.Metadata.Title)) {
+                      <div class="small text-white p-1 px-lg-2">
+                        @pic.Metadata.Title
+                        </div>
+                    }
+                  </div>
                   <img class="img-fluid" src='@thumbnailUrl' alt="@pic.Metadata.Title" />
-                </div>
               </a>
             </figure>
           </div>
-        if(!useMasonry) { @Tag.Div().TagEnd }
+        if(!useMasonry) { @Tag.Div().TagEnd}
       }
     @if(useMasonry) { @Tag.Div().TagEnd }
+    else { @Tag.Div().TagEnd }
 </div>
 
 @* Show back button if the view is used as detail view *@
