@@ -4,7 +4,7 @@
 
 _Important: V7 is WIP. Previous version 6.1 is on this branch: https://github.com/2sic/app-gallery/tree/v6-fancybox3_
 
-A 2sxc / DNN App using the javascript lib [fancybox](https://github.com/fancyapps/fancybox)
+A 2sxc / DNN App using the [fancybox4](https://fancyapps.com/) javascript library.
 
 ## Installing the app
 
