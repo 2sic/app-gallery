@@ -75,25 +75,25 @@
 
   // Masonry Style
   .ga-masonry {
-    padding-left: $grid-gutter-width/4;
-    padding-right: $grid-gutter-width/4;
+   
     margin-bottom: $grid-gutter-width/2;
     column-count: 1;
     column-gap: $grid-gutter-width/4;
 
     @include media-breakpoint-up(md) {
-      padding-left: $grid-gutter-width/2;
-      padding-right: $grid-gutter-width/2;
       margin-bottom: $grid-gutter-width;
       column-count: 2;
       column-gap: $grid-gutter-width/2;
     }
     @include media-breakpoint-up(lg) {
       column-count: 3;
+      column-gap: $grid-gutter-width;
+      margin-bottom: $grid-gutter-width;
+
     }
 
     .ga-image {
-      margin-bottom: $grid-gutter-width/4;
+      margin-bottom: $grid-gutter-width/2;
 
       @include media-breakpoint-up(md) {
         margin-bottom: $grid-gutter-width/2;

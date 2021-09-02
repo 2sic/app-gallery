@@ -23,7 +23,7 @@
         var linkAlbum = Tags.SafeUrl(Link.To(parameters: "album=" + album.Path));
         var linkThumbnail = Tags.SafeUrl(albumThumbUrl + thumbnailParams);
 
-        <div class="ga-album col-12 col-sm-6 col-md-6 col-lg-4" @Edit.TagToolbar(album)>
+        <div class="ga-album col-12 col-sm-6 col-md-6 col-lg-4 mb-4" @Edit.TagToolbar(album)>
           <a href='@linkAlbum'>
            
               <div class="overlay d-flex align-items-end">
