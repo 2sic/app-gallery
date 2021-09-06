@@ -1,8 +1,8 @@
 <image src="app-icon.png" align="right" width="200px">
 
-# Gallery App V7 (WIP) using Fancybox4 for Dnn ☢️ and Oqtane 🩸
+# Gallery App V7 using Fancybox4 for Dnn ☢️ and Oqtane 🩸
 
-_Important: V7 is WIP. Previous version 6.1 is on this branch: https://github.com/2sic/app-gallery/tree/v6-fancybox3_
+_Important: V7 is new and Bootstrap4 only. Previous version 6.1 is on this branch: https://github.com/2sic/app-gallery/tree/v6-fancybox3_
 
 A 2sxc / DNN App using the [fancybox4](https://fancyapps.com/) javascript library.
 
