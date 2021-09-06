@@ -5,7 +5,7 @@
   "tasks": [
     {
       "type": "npm",
-      "script": "build-prod",
+      "script": "build-bs4",
       "group": "build",
       "problemMatcher": []
     }
