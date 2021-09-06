@@ -49,14 +49,14 @@
   // 2.3 Determine the widths of each part, based on 12 Bootstrap Cols; 
   var imgResizeFactor = (float)(useMasonry ? 4 : 3) / 12;
   var thumbHeight = (useMasonry ? (int?)0 : null); // if Masonry it must be 0 (no height), otherwise null = default
-  var classForMainDiv = useMasonry ? "app-ga7-masonry" : "row mb-4";
 
   // 2.4 Prepare the url resize-params for re-use with the Link.Image helper and global Image Settings http://r.2sxc.org/settings
   var thumbnailParams = Link.Image("", Settings.Images.Content, factor: imgResizeFactor, height: thumbHeight);
   var lightboxParams = Link.Image("", Settings.Images.Lightbox);
 
-  // Figure out if we should show buttons on the images (don't do that if we're showing demo-data)
+  // 2.5 Other stuff, like show-toolbar, class to use on the container-div etc.
   var showMetaToolbar = !Content.IsDemoItem;
+  var classForMainDiv = useMasonry ? "app-ga7-masonry" : "row mb-4";
 
   // 2.9 Helpers used later in the Template
   var helpers = CreateInstance("SortImages.cs");        // Has helper code for sorting
@@ -92,12 +92,10 @@
         @* 4.4 Now show each image *@
         <a class="app-ga7" href='@Link.Image(pic.Url + lightboxParams)' data-app-gallery-fancybox="@CmsContext.Module.Id" @Tag.Attr("data-caption", caption)>
           <figure class="app-ga7-image" @(showMetaToolbar ? Edit.TagToolbar(toolbar: metaToolbarConfig) as object : null)>
-            @* 4.5 Show the Overlay *@
+            @* 4.5 Show the Overlay, an optional title (based on settings) and the image itself *@
             <figcaption class="overlay d-flex align-items-end">
-              @* 4.5.1 with optional title in the overlay *@
               @if(Text.Has(picTitle)) { <div class="small text-white p-1 px-lg-2">@picTitle</div> }
             </figcaption>
-            @* 4.6 The image itself *@
             <img loading="lazy" class="img-fluid" src='@Link.Image(pic.Url + thumbnailParams)' alt="@picTitle" />
           </figure>
         </a>
