@@ -11,29 +11,27 @@
   var thumbnailParams = Link.Image("", Settings.Images.Content, factor: imgResizeFactor);
 }
 
+<div class="app-ga7-main">
+  <div class="row">
+    @foreach (var album in AsList(Data)) {
+      var images = AsAdam(album, "Images").Files as Dynlist;
+      var albumThumbUrl = Text.Has(album.AlbumThumbnail)
+        ? album.AlbumThumbnail
+        : images.Any() ? images.First().Url : "";
+      var linkAlbum = Tags.SafeUrl(Link.To(parameters: "album=" + album.Path));
+      var linkThumbnail = Tags.SafeUrl(albumThumbUrl + thumbnailParams);
 
-<div class="ga-wrapper">
-  <div class="ga-albums">
-    <div class="row">
-      @foreach (var album in AsList(Data)) {
-        var images = AsAdam(album, "Images").Files as Dynlist;
-        var albumThumbUrl = Text.Has(album.AlbumThumbnail)
-          ? album.AlbumThumbnail
-          : images.Any() ? images.First().Url : ""; // new 2dm
-        var linkAlbum = Tags.SafeUrl(Link.To(parameters: "album=" + album.Path));
-        var linkThumbnail = Tags.SafeUrl(albumThumbUrl + thumbnailParams);
-
-        <div class="ga-album col-12 col-sm-6 col-md-6 col-lg-4 mb-4" @Edit.TagToolbar(album)>
-          <a href='@linkAlbum'>
-           
-              <div class="overlay d-flex align-items-end">
-                <h5 class="ga-title">@album.Title <span class="badge badge-pill badge-dark float-right">@images.Count()</span></h5>
-              </div>
-              <img loading="lazy" class="img-fluid" src='@linkThumbnail' alt="@album.Title" />
-          </a>
-        </div>
-      }
-    </div>
+      <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4" @Edit.TagToolbar(album)>
+        <a class="app-ga7" href='@linkAlbum'>
+          <figure class="app-ga7-image m-0">
+            <figcaption class="overlay d-flex align-items-end">
+              <div class="app-ga7-title">@album.Title <span class="badge badge-pill badge-dark float-right">@images.Count()</span></div>
+            </figcaption>
+            <img loading="lazy" class="img-fluid" src='@linkThumbnail' alt="@album.Title" />
+          </figure>
+        </a>
+      </div>
+    }
   </div>
 </div>
 

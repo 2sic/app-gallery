@@ -4,8 +4,8 @@
 // It is used by all CSS generators (Bootstrap3/4, etc.)
 // To keep things simple, it uses the standard variables of
 // bootstrap 4 conventions.
-.app-ga7-album {
-  a { 
+.app-ga7-main {
+  a.app-ga7 { 
     position: relative;
     display: block;
     text-decoration: none;
@@ -21,7 +21,7 @@
       backface-visibility: hidden;
       background: rgba($dark, 0);
       padding: 15px 20px;
-      h5 {
+      div {
         color: #fff;
         margin-bottom: 0;
         padding-right: 60px;
@@ -63,9 +63,6 @@
     }
   }
 
- 
-  /*END Bootstrap Style Gallery Albums*/
-  /*Bootstrap Style Gallery Single Album*/
 
   // Masonry Style
   .app-ga7-masonry {
@@ -95,17 +92,18 @@
     }
   }
 
-  figure {
-    margin: 0;
-  }
+
 }
 
-/* ENDBootstrap Style Gallery Single Album*/
 
-.fancybox__caption {
-  text-align: center;
-  p,
-  h6 {
-    color: white;
+/* Style the captions on Gallery7 Fancybox */
+
+.app-ga7-fancybox {
+  .fancybox__caption {
+    text-align: center;
+    p,
+    h6 {
+      color: white;
+    }
   }
 }

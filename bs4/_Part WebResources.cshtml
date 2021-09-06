@@ -16,13 +16,13 @@
   <link rel="stylesheet" href="@App.Path/dist/bs4.min.css" data-enableoptimizations="true" />
 
   // Include bootstrap 4 if the framework isn't known - then this file is still called, and we add Bootstrap to the page
-  if(!pageCss.Is("bs4")) {
+  if(pageCss.Is("unk")) {
     page.Activate("Bootstrap4");  // see https://r.2sxc.org/turnon - Bootstrap4 is a standard WebResources in 2sxc
   }
 
   if(DynamicModel.scripts == true) {
     page.Activate("turnOn", "fancybox4"); // see https://r.2sxc.org/turnon - fancybox4 is a standard WebResources in 2sxc
     <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script>
-    <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appGalleryV7.initFancybox()", "data": { "groupId": "@CmsContext.Module.Id", "options": { "groupAll": true, "Thumbs": {"autoStart": false}}}}'></turnOn>
+    <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appGalleryV7.initFancybox()", "data": { "groupId": "@CmsContext.Module.Id", "options": { "groupAll": true, "mainClass": "app-ga7-fancybox", "Thumbs": {"autoStart": false}}}}'></turnOn>
   }
 }

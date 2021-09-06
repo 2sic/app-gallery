@@ -1,15 +1,20 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 @{
-  // Basics / Preparation
-  var helpers = CreateInstance("Helpers.cs");
-  var page = GetService<ToSic.Sxc.Web.IPageService>();  // Service to set titles etc. on the page
+  /* 1. Pre-Checks: Determine which Album to show or show error
+   * This will check if the url specifies a specific album, and if yes, use that
+   * If not, use the one configured in the module (for single-album scenarios)
+   * If nothing is found, it will stop after this code block (see `return` below)
+   */
+
+  // Get the PageServices for setting Titles and HTTP error headers
+  var page = GetService<ToSic.Sxc.Web.IPageService>();
 
   // Get page Parameters (works on Dnn & Oqtane)
   var albumInUrl = CmsContext.Page.Parameters["Album"];
   var isDetailViewOfAlbum = Text.Has(albumInUrl);
   
-  // If album QueryString is specified, take album from QueryString, else take "current" album
+  // If album QueryString is specified, take album from QueryString, else take "current" album of the module
   var album = isDetailViewOfAlbum 
     ? AsList(Data).FirstOrDefault(a => a.Path == albumInUrl) 
     : Content;
@@ -23,10 +28,20 @@
     page.SetHttpStatus(404);
     return;
   }
+}
+@{
+  /* 2. Pre-Checks: Determine which Album to show or show error
+   * This will check if the url specifies a specific album, and if yes, use that
+   * If not, use the one configured in the module (for single-album scenarios)
+   * If nothing is found, it will stop after this code block (see `return` below)
+   */
+
+  // Helpers used later in the Template
+  var helpers = CreateInstance("SortImages.cs");        // Has helper code for sorting
 
   // Set the title
   page.SetTitle(album.Title + " | ");       // will prepend to the existing title
-  // page.SetTitle(album.Title, "[album]"); // this would replace a placeholder [album] in the title with the title
+  // page.SetTitle(album.Title, "[album]"); // Alternative: this would replace a placeholder [album] in the title with the title
 
   // Determine if we should show as Masonry
   var albumTiling = Text.Has(album.Presentation.TileStructure)
@@ -34,73 +49,70 @@
     : CmsContext.View.Identifier;
   var useMasonry = albumTiling == "masonry";
 
-  // Determine the widths of each part, based on 12 Bootstrap Cols
+  // Determine the widths of each part, based on 12 Bootstrap Cols; 
   var imgResizeFactor = (float)(useMasonry ? 4 : 3) / 12;
   var thumbHeight = (useMasonry ? (int?)0 : null); // if Masonry it must be 0 (no height), otherwise null = default
+  var classForMainDiv = useMasonry ? "app-ga7-masonry" : "row mb-4";
 
-  // Get url params for re-use below. 
-  // Uses global Image Settings http://r.2sxc.org/settings
-  // and new Link.Image helper
+  // Prepare the url resize-params for re-use with the Link.Image helper and global Image Settings http://r.2sxc.org/settings
   var thumbnailParams = Link.Image("", Settings.Images.Content, factor: imgResizeFactor, height: thumbHeight);
   var lightboxParams = Link.Image("", Settings.Images.Lightbox);
 }
-@* Hide the side navigation if the view is used as detail view *@
-@if (isDetailViewOfAlbum) {
-  <style>.ly-col-leftpane { display: none; }</style>
-}
-
-<div @Edit.TagToolbar(album)>
+@* 4. Show the Album *@
+<div class="app-ga7-main" @Edit.TagToolbar(album)>
   @* Display Album Title or information that title is hidden *@
   @Html.Partial("_Part Title Description.cshtml", new { album = album })
 
-  @* Display the images *@
-  <div class="ga-wrapper">
-    @if(useMasonry) { @Tag.Div().Class("ga-masonry").TagStart }
-    else { @Tag.Div().Class("row mb-4").TagStart }
+  @* 4.1 Display the images *@
+  <div class="@classForMainDiv">
 
-      @foreach (var pic in helpers.GetImagesSorted(album)) {
-        var picCaption = "";
-        if (Content.Presentation.ShowImageTitle && Text.Has(pic.Metadata.Title)) {
-          picCaption = ("<h6>" + Tags.Strip(pic.Metadata.Title) + "</h6><p>" + Tags.Strip(pic.Metadata.Description) + "</p>")
-            .Replace("\"", "&quot;");
-        }
-        var thumbnailUrl = Tags.SafeUrl(pic.Url + thumbnailParams);
-        var lightboxUrl = Tags.SafeUrl(pic.Url + lightboxParams);
-        var metaToolbarConfig = new [] {
-            "toolbar=empty",
-            "metadata?entityId=" + pic.Metadata.EntityId + "&contentType=ImageMetadata&for=file:" + pic.FileId
-        };
+    @foreach (var pic in helpers.GetImagesSorted(album)) {
+      @* 4.2 Prepare caption, tooltip, toolbar etc. for showing the image afterwards *@
 
-        if(!useMasonry) {
-          @Tag.Div().Class("ga-tiles col-12 col-sm-6 col-md-4 col-lg-3 mb-4").TagStart }
-          <div class="ga-image" @Edit.TagToolbar(toolbar: metaToolbarConfig)>
-            <figure>
-              <a class="ga-fancybox" href='@lightboxUrl' data-app-gallery-fancybox="@CmsContext.Module.Id" data-caption="@picCaption">
-               
-                  <div class="overlay d-flex align-items-end">
-                    @if(Text.Has(pic.Metadata.Title)) {
-                      <div class="small text-white p-1 px-lg-2">
-                        @pic.Metadata.Title
-                        </div>
-                    }
-                  </div>
-                  <img loading="lazy" class="img-fluid" src='@thumbnailUrl' alt="@pic.Metadata.Title" />
-              </a>
-            </figure>
-          </div>
-        if(!useMasonry) { @Tag.Div().TagEnd}
-      }
-    @if(useMasonry) { @Tag.Div().TagEnd }
-    else { @Tag.Div().TagEnd }
+      // Get image title from metadata
+      var picTitle = pic.Metadata.Title;
+
+      // Build the Caption for the Lightbox - will later be converted to an attribute
+      var caption = (Content.Presentation.ShowImageTitle && Text.Has(pic.Metadata.Title))
+        ? Tag.H6().Wrap(Tags.Strip(pic.Metadata.Title)).ToString() + Tag.P().Wrap(Tags.Strip(pic.Metadata.Description))
+        : "";
+
+      // Toolbar parameters (for admins) to ensure the metadata-button does what's needed
+      var metaToolbarConfig = new [] {
+          "toolbar=empty",
+          "metadata?entityId=" + pic.Metadata.EntityId + "&contentType=ImageMetadata&for=file:" + pic.FileId
+      };
+
+      @* 4.3a Optionally wrap inside a special <div> if it's not Masonry-layout *@
+      if(!useMasonry) { @Tag.Div().Class("col-12 col-sm-6 col-md-4 col-lg-3 mb-4").TagStart }
+
+        @* 4.4 Now show each image *@
+        <a class="app-ga7" href='@Link.Image(pic.Url + lightboxParams)' data-app-gallery-fancybox="@CmsContext.Module.Id" @Tag.Attr("data-caption", caption)>
+          <figure class="app-ga7-image" @Edit.TagToolbar(toolbar: metaToolbarConfig)>
+            @* 4.5 Show the Overlay *@
+            <figcaption class="overlay d-flex align-items-end">
+              @* 4.5.1 with optional title in the overlay *@
+              @if(Text.Has(picTitle)) { <div class="small text-white p-1 px-lg-2">@picTitle</div> }
+            </figcaption>
+            @* 4.6 The image itself *@
+            <img loading="lazy" class="img-fluid" src='@Link.Image(pic.Url + thumbnailParams)' alt="@picTitle" />
+          </figure>
+        </a>
+
+      @* 4.3b close <div> if we opened it above *@
+      if(!useMasonry) { @Tag.Div().TagEnd }
+    }
+  </div>
 </div>
 
-@* Show back button if the view is used as detail view *@
+@* 5. Show back button if the view is used as detail view *@
 @if(isDetailViewOfAlbum) {
   <a href="@Tags.SafeUrl(Link.To())" class="btn btn-outline-primary btn-sm">@Resources.BackToOverview</a>
 }
 
+@* 9. Hide the side navigation if the view is used as detail view - this only works if the skin uses the same class *@
+@if (isDetailViewOfAlbum) {
+  <style>.ly-col-leftpane { display: none; }</style>
+}
+
 @Html.Partial("_Part WebResources.cshtml", new { scripts = true })
-
-
-<script>
-</script>
