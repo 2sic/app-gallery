@@ -48,4 +48,10 @@ Version 6 is found here: https://github.com/2sic/app-gallery/tree/v6-fancybox3
 
 ### Version 7
 
-Just started (2021-08) and wish to convert to Fancybox4 which doesn't use jQuery
+1. Switched to Fancybox4
+1. Dropped jQuery
+1. Added turnOn to activate JS cleanly
+1. Now uses dependencies from Settings.WebResources
+1. Complete clean up / simplification of code files
+1. Ensure that multiple galleries don't mix images in lightbox mode
+1. Lots of documentation / comments everywhere

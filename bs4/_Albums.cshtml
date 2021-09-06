@@ -2,32 +2,33 @@
 @using ToSic.Razor.Blade;
 @using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
 @{
-  // Determine the widths of each part, based on 12 Bootstrap Cols
-  var imgResizeFactor = (float)4 / 12;
+  // Determine the widths of each part, based on 12 Bootstrap columns
+  var imgResizeFactor = 4f / 12;  // Each Album has 4 columns
 
-  // Get url params for re-use below. 
-  // Uses global Image Settings http://r.2sxc.org/settings
-  // and new Link.Image helper
+  // Get url params for re-use below. Uses global Image Settings http://r.2sxc.org/settings
   var thumbnailParams = Link.Image("", Settings.Images.Content, factor: imgResizeFactor);
 }
 
 <div class="app-ga7-main">
   <div class="row">
+    @* Loop through all the Albums *@
     @foreach (var album in AsList(Data)) {
+      @* Get the main album image or if not available, the first in the images, or empty *@
       var images = AsAdam(album, "Images").Files as Dynlist;
       var albumThumbUrl = Text.Has(album.AlbumThumbnail)
         ? album.AlbumThumbnail
         : images.Any() ? images.First().Url : "";
-      var linkAlbum = Tags.SafeUrl(Link.To(parameters: "album=" + album.Path));
-      var linkThumbnail = Tags.SafeUrl(albumThumbUrl + thumbnailParams);
 
+      var linkAlbum = Tags.SafeUrl(Link.To(parameters: "album=" + album.Path));
+
+      @* Show one Album Thumbnail with Link etc. *@
       <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4" @Edit.TagToolbar(album)>
         <a class="app-ga7" href='@linkAlbum'>
           <figure class="app-ga7-image m-0">
             <figcaption class="overlay d-flex align-items-end">
               <div class="app-ga7-title">@album.Title <span class="badge badge-pill badge-dark float-right">@images.Count()</span></div>
             </figcaption>
-            <img loading="lazy" class="img-fluid" src='@linkThumbnail' alt="@album.Title" />
+            <img loading="lazy" class="img-fluid" src='@Link.Image(albumThumbUrl + thumbnailParams)' alt="@album.Title" />
           </figure>
         </a>
       </div>

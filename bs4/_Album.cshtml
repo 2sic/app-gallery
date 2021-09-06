@@ -36,27 +36,30 @@
    * If nothing is found, it will stop after this code block (see `return` below)
    */
 
-  // Helpers used later in the Template
-  var helpers = CreateInstance("SortImages.cs");        // Has helper code for sorting
-
-  // Set the title
+  // 2.1 Set the title of the page
   page.SetTitle(album.Title + " | ");       // will prepend to the existing title
   // page.SetTitle(album.Title, "[album]"); // Alternative: this would replace a placeholder [album] in the title with the title
 
-  // Determine if we should show as Masonry
+  // 2.2 Determine if we should show as Masonry
   var albumTiling = Text.Has(album.Presentation.TileStructure)
     ? album.Presentation.TileStructure
     : CmsContext.View.Identifier;
   var useMasonry = albumTiling == "masonry";
 
-  // Determine the widths of each part, based on 12 Bootstrap Cols; 
+  // 2.3 Determine the widths of each part, based on 12 Bootstrap Cols; 
   var imgResizeFactor = (float)(useMasonry ? 4 : 3) / 12;
   var thumbHeight = (useMasonry ? (int?)0 : null); // if Masonry it must be 0 (no height), otherwise null = default
   var classForMainDiv = useMasonry ? "app-ga7-masonry" : "row mb-4";
 
-  // Prepare the url resize-params for re-use with the Link.Image helper and global Image Settings http://r.2sxc.org/settings
+  // 2.4 Prepare the url resize-params for re-use with the Link.Image helper and global Image Settings http://r.2sxc.org/settings
   var thumbnailParams = Link.Image("", Settings.Images.Content, factor: imgResizeFactor, height: thumbHeight);
   var lightboxParams = Link.Image("", Settings.Images.Lightbox);
+
+  // Figure out if we should show buttons on the images (don't do that if we're showing demo-data)
+  var showMetaToolbar = !Content.IsDemoItem;
+
+  // 2.9 Helpers used later in the Template
+  var helpers = CreateInstance("SortImages.cs");        // Has helper code for sorting
 }
 @* 4. Show the Album *@
 <div class="app-ga7-main" @Edit.TagToolbar(album)>
@@ -88,7 +91,7 @@
 
         @* 4.4 Now show each image *@
         <a class="app-ga7" href='@Link.Image(pic.Url + lightboxParams)' data-app-gallery-fancybox="@CmsContext.Module.Id" @Tag.Attr("data-caption", caption)>
-          <figure class="app-ga7-image" @Edit.TagToolbar(toolbar: metaToolbarConfig)>
+          <figure class="app-ga7-image" @(showMetaToolbar ? Edit.TagToolbar(toolbar: metaToolbarConfig) as object : null)>
             @* 4.5 Show the Overlay *@
             <figcaption class="overlay d-flex align-items-end">
               @* 4.5.1 with optional title in the overlay *@
