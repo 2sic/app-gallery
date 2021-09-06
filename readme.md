@@ -8,7 +8,7 @@ A 2sxc / DNN App using the [fancybox4](https://fancyapps.com/) javascript librar
 
 ## Install the app
 
-You can install the app with the ["Installing Gallery Fancybox5" checklist](https://azing.org/2sxc/r/WLu6KUI4)
+You can install the app with the ["Installing Gallery Fancybox4" checklist](https://azing.org/2sxc/r/WLu6KUI4)
 
 ## Customize the app
 
