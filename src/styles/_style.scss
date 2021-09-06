@@ -4,7 +4,7 @@
 // It is used by all CSS generators (Bootstrap3/4, etc.)
 // To keep things simple, it uses the standard variables of
 // bootstrap 4 conventions.
-.ga-wrapper {
+.app-ga7-album {
   a { 
     position: relative;
     display: block;
@@ -26,7 +26,7 @@
         margin-bottom: 0;
         padding-right: 60px;
 
-        &.ga-title {
+        &.app-ga7-title {
           display: block;
           font-size: 14px;
           line-height: 18px;
@@ -67,14 +67,8 @@
   /*END Bootstrap Style Gallery Albums*/
   /*Bootstrap Style Gallery Single Album*/
 
-  .ga-tiles {
-    figure {
-      margin: 0;
-    }
-  }
-
   // Masonry Style
-  .ga-masonry {
+  .app-ga7-masonry {
    
     margin-bottom: $grid-gutter-width/2;
     column-count: 1;
@@ -92,7 +86,7 @@
 
     }
 
-    .ga-image {
+    .app-ga7-image {
       margin-bottom: $grid-gutter-width/2;
 
       @include media-breakpoint-up(md) {
@@ -103,9 +97,6 @@
 
   figure {
     margin: 0;
-    .ga-img {
-      width: 100%;
-    }
   }
 }
 
