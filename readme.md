@@ -6,19 +6,19 @@ _Important: V7 is new and Bootstrap4 only. Previous version 6.1 is on this branc
 
 A 2sxc / DNN App using the [fancybox4](https://fancyapps.com/) javascript library.
 
-## Installing the app
+## Install the app
 
-You can install the app with the ["Installing Gallery Fancybox3" checklist](https://azing.org/2sxc/r/A1Usfevs)
+You can install the app with the ["Installing Gallery Fancybox5" checklist](https://azing.org/2sxc/r/WLu6KUI4)
 
-## Customizing the app
+## Customize the app
 
 ### Configuration (Settings, Resources)
 
-Gallery App Fancybox3 uses the new, [standard Settings-System in 2sxc](http://r.2sxc.org/settings) to configure it. It also has app resources (i18n labels) you can customize.
+Gallery App Fancybox7 uses the new, [standard Settings-System in 2sxc](http://r.2sxc.org/settings) to configure it. It also has app resources (i18n labels) you can customize.
 
 ### Style
 
-If you want to customize the CSS, you will usually follow the ["Create Custom Styles in a Standard 2sxc App" checklist](https://azing.org/2sxc/r/gg_aB9FD)
+If you want to customize the CSS, you will usually follow the ["Create Custom Styles in a Standard 2sxc App" checklist](https://azing.org/2sxc/r/Lu5SDBqU)
 
 ## Screenshots
 
