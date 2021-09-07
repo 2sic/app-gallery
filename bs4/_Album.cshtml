@@ -46,6 +46,9 @@
     : CmsContext.View.Identifier;
   var useMasonry = albumTiling == "masonry";
 
+  // visual effect for mouse interaction
+  var effect = "effect-zoom"; // alternative: "effect-darken"; 
+
   // 2.3 Determine the widths of each part, based on 12 Bootstrap Cols; 
   var imgResizeFactor = (float)(useMasonry ? 4 : 3) / 12;
   var thumbHeight = (useMasonry ? (int?)0 : null); // if Masonry it must be 0 (no height), otherwise null = default
@@ -88,18 +91,16 @@
 
       @* 4.3a Optionally wrap inside a special <div> if it's not Masonry-layout *@
       if(!useMasonry) { @Tag.Div().Class("col-12 col-sm-6 col-md-4 col-lg-3 mb-4").TagStart }
-
         @* 4.4 Now show each image *@
         <a class="app-ga7" href='@Link.Image(pic.Url + lightboxParams)' data-app-gallery-fancybox="@CmsContext.Module.Id" @Tag.Attr("data-caption", caption)>
-          <figure class="app-ga7-image" @(showMetaToolbar ? Edit.TagToolbar(toolbar: metaToolbarConfig) as object : null)>
+          <figure class="app-ga7-image @effect" @(showMetaToolbar ? Edit.TagToolbar(toolbar: metaToolbarConfig) as object : null)>
             @* 4.5 Show the Overlay, an optional title (based on settings) and the image itself *@
             <figcaption class="overlay d-flex align-items-end">
-              @if(Text.Has(picTitle)) { <div class="small text-white p-1 px-lg-2">@picTitle</div> }
+              @if(Text.Has(picTitle)) { <div class="caption">@picTitle</div> }
             </figcaption>
             <img loading="lazy" class="img-fluid" src='@Link.Image(pic.Url + thumbnailParams)' alt="@picTitle" />
           </figure>
         </a>
-
       @* 4.3b close <div> if we opened it above *@
       if(!useMasonry) { @Tag.Div().TagEnd }
     }
