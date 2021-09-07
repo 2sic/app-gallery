@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.04.00" ExportDate="2021-09-06T15:21:18.8343376+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.04.00" ExportDate="2021-09-07T19:47:23.9506822+02:00">
   <Header>
     <App Guid="3bfab1bb-e102-4176-adcf-f70594a6bdfe" />
     <Language Default="en-us" />
@@ -1063,7 +1063,7 @@
       <Value Key="DisplayName" Value="Bildergalerie" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
       </Value>
-      <Value Key="Folder" Value="Gallery-v7" Type="String">
+      <Value Key="Folder" Value="Gallery7" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
@@ -1220,7 +1220,7 @@
       <Value Key="Path" Value="this-is-a-demo" Type="String">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="Title" Value="Demo Album" Type="String">
+      <Value Key="Title" Value="Demo Album with very very long name" Type="String">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
       <Value Key="Title" Value="Demo - klicken Sie auf die Bearbeitung dieses Titels, um Ihren eigenen zu erstellen....." Type="String">
@@ -1529,53 +1529,102 @@
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="b794f8bb-fd7d-4c35-b434-1ce10111d37d" Json="True">
       <Value Key="Template" Value="60db0aeb-e280-4394-bdb2-d31540f0a225" Type="Entity" />
     </Entity>
+    <Entity AssignmentObjectType="CmsObject" AttributeSetStaticName="fb9a5615-dd20-4736-9123-4abc3ec5dfe3" AttributeSetName="ImageMetadata" EntityGUID="225e1f9e-4df5-45c6-87b1-bda709eb0a3c" KeyString="file:5996">
+      <Value Key="Description" Value="View out of Aare gorge in Berner Oberland region" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Aare Gorge" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Aare Schlucht" Type="String">
+        <Dimension DimensionID="185" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="CmsObject" AttributeSetStaticName="fb9a5615-dd20-4736-9123-4abc3ec5dfe3" AttributeSetName="ImageMetadata" EntityGUID="9b869657-2fdc-4899-8b50-a81782481710" KeyString="file:5995">
+      <Value Key="Description" Value="" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Mountain Summit" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="CmsObject" AttributeSetStaticName="fb9a5615-dd20-4736-9123-4abc3ec5dfe3" AttributeSetName="ImageMetadata" EntityGUID="24786396-1896-4233-b228-ecc75b9a32fd" KeyString="file:6000">
+      <Value Key="Description" Value="" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Sunrise illuminating the tip of Mt. Blanc in Switzerland near Zermatt, reflected in the Riffelsee" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="CmsObject" AttributeSetStaticName="fb9a5615-dd20-4736-9123-4abc3ec5dfe3" AttributeSetName="ImageMetadata" EntityGUID="8c3dc021-4615-4d3c-b431-dbdaf54c5dc7" KeyString="file:5999">
+      <Value Key="Description" Value="" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Panorama view from Mount Titlis showing skiers on a Swiss Alpine Slope" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="CmsObject" AttributeSetStaticName="fb9a5615-dd20-4736-9123-4abc3ec5dfe3" AttributeSetName="ImageMetadata" EntityGUID="fe295c55-0950-47fb-b5a7-8d4aeea1e18f" KeyString="file:5998">
+      <Value Key="Description" Value="" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Glacier in the Swiss Alps" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+    </Entity>
   </Entities>
   <PortalFiles>
-    <File Id="5986" RelativePath="adam\Gallery-v7\0jPONC8CT0i06sp3dybtCw\AlbumThumbnail\Demo-1.jpg" />
-    <File Id="5989" RelativePath="adam\Gallery-v7\0jPONC8CT0i06sp3dybtCw\Images\Demo-1.jpg" />
-    <File Id="5987" RelativePath="adam\Gallery-v7\0jPONC8CT0i06sp3dybtCw\Images\Demo-2.jpg" />
-    <File Id="5988" RelativePath="adam\Gallery-v7\0jPONC8CT0i06sp3dybtCw\Images\Demo-3.jpg" />
+    <File Id="5986" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\AlbumThumbnail\Demo-1.jpg" />
+    <File Id="5995" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\boris-baldinger-eUFfY6cwjSU-unsplash.jpg" />
+    <File Id="5989" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\Demo-1.jpg" />
+    <File Id="5987" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\Demo-2.jpg" />
+    <File Id="5988" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\Demo-3.jpg" />
+    <File Id="5997" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\hugo-fergusson-xtQidmET07w-unsplash.jpg" />
+    <File Id="5996" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\marco-peter-Aoah4iWOKm0-unsplash.jpg" />
+    <File Id="5998" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\martin-adams-J2f1PriKFEg-unsplash.jpg" />
+    <File Id="6000" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\robert-richarz-WOhTfiB-ECs-unsplash.jpg" />
+    <File Id="5999" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\wind-tan-kcSswpJdrOI-unsplash.jpg" />
   </PortalFiles>
   <PortalFolders>
-    <Folder Id="13238" RelativePath="adam/Gallery-v7/0jPONC8CT0i06sp3dybtCw/AlbumThumbnail/" />
-    <Folder Id="13239" RelativePath="adam/Gallery-v7/0jPONC8CT0i06sp3dybtCw/Images/" />
-    <Folder Id="13236" RelativePath="adam/Gallery-v7/" />
-    <Folder Id="13237" RelativePath="adam/Gallery-v7/0jPONC8CT0i06sp3dybtCw/" />
-    <Folder Id="13355" RelativePath="adam/Gallery-v7/6wrbYIDilEO9stMVQPCiJQ/" />
-    <Folder Id="13356" RelativePath="adam/Gallery-v7/6wrbYIDilEO9stMVQPCiJQ/Icon/" />
-    <Folder Id="13377" RelativePath="adam/Gallery-v7/8wa7LUhj10SSv1tGMqME0Q/" />
-    <Folder Id="13378" RelativePath="adam/Gallery-v7/8wa7LUhj10SSv1tGMqME0Q/AlbumThumbnail/" />
-    <Folder Id="13379" RelativePath="adam/Gallery-v7/8wa7LUhj10SSv1tGMqME0Q/Images/" />
-    <Folder Id="13383" RelativePath="adam/Gallery-v7/d5rrFWL6QUSv1703bmMIGg/" />
-    <Folder Id="13385" RelativePath="adam/Gallery-v7/d5rrFWL6QUSv1703bmMIGg/AlbumThumbnail/" />
-    <Folder Id="13384" RelativePath="adam/Gallery-v7/d5rrFWL6QUSv1703bmMIGg/Images/" />
-    <Folder Id="13240" RelativePath="adam/Gallery-v7/f5de-YkJ60yNI3nPwWouDQ/" />
-    <Folder Id="13241" RelativePath="adam/Gallery-v7/f5de-YkJ60yNI3nPwWouDQ/AlbumThumbnail/" />
-    <Folder Id="13242" RelativePath="adam/Gallery-v7/f5de-YkJ60yNI3nPwWouDQ/Images/" />
-    <Folder Id="13380" RelativePath="adam/Gallery-v7/GBTtnIt47kiwqS8coS-EOw/" />
-    <Folder Id="13382" RelativePath="adam/Gallery-v7/GBTtnIt47kiwqS8coS-EOw/AlbumThumbnail/" />
-    <Folder Id="13381" RelativePath="adam/Gallery-v7/GBTtnIt47kiwqS8coS-EOw/Images/" />
-    <Folder Id="13243" RelativePath="adam/Gallery-v7/iOrap4JS80uliE6qgXxszg/" />
-    <Folder Id="13245" RelativePath="adam/Gallery-v7/iOrap4JS80uliE6qgXxszg/AlbumThumbnail/" />
-    <Folder Id="13244" RelativePath="adam/Gallery-v7/iOrap4JS80uliE6qgXxszg/Images/" />
-    <Folder Id="13388" RelativePath="adam/Gallery-v7/jzo7KvaXf0SptvIDd_MwWQ/" />
-    <Folder Id="13389" RelativePath="adam/Gallery-v7/jzo7KvaXf0SptvIDd_MwWQ/AlbumThumbnail/" />
-    <Folder Id="13390" RelativePath="adam/Gallery-v7/jzo7KvaXf0SptvIDd_MwWQ/Images/" />
-    <Folder Id="13394" RelativePath="adam/Gallery-v7/kJdFDkZBSkKuHTK-zdRHIA/" />
-    <Folder Id="13396" RelativePath="adam/Gallery-v7/kJdFDkZBSkKuHTK-zdRHIA/AlbumThumbnail/" />
-    <Folder Id="13395" RelativePath="adam/Gallery-v7/kJdFDkZBSkKuHTK-zdRHIA/Images/" />
-    <Folder Id="13263" RelativePath="adam/Gallery-v7/MQuhAahILkeaSdjevw-xyQ/" />
-    <Folder Id="13264" RelativePath="adam/Gallery-v7/MQuhAahILkeaSdjevw-xyQ/AlbumThumbnail/" />
-    <Folder Id="13265" RelativePath="adam/Gallery-v7/MQuhAahILkeaSdjevw-xyQ/Images/" />
-    <Folder Id="13260" RelativePath="adam/Gallery-v7/P0CQ-oCQPEqceyX58i_aWA/" />
-    <Folder Id="13261" RelativePath="adam/Gallery-v7/P0CQ-oCQPEqceyX58i_aWA/AlbumThumbnail/" />
-    <Folder Id="13262" RelativePath="adam/Gallery-v7/P0CQ-oCQPEqceyX58i_aWA/Images/" />
-    <Folder Id="13351" RelativePath="adam/Gallery-v7/SpX2IHZB1USVMlGd3vNkrQ/" />
-    <Folder Id="13352" RelativePath="adam/Gallery-v7/SpX2IHZB1USVMlGd3vNkrQ/Icon/" />
-    <Folder Id="13391" RelativePath="adam/Gallery-v7/sZrUwhaqL0GP59c6bluOrg/" />
-    <Folder Id="13392" RelativePath="adam/Gallery-v7/sZrUwhaqL0GP59c6bluOrg/AlbumThumbnail/" />
-    <Folder Id="13393" RelativePath="adam/Gallery-v7/sZrUwhaqL0GP59c6bluOrg/Images/" />
-    <Folder Id="13353" RelativePath="adam/Gallery-v7/tGyntGFrXU-JM1_A2QDSjA/" />
-    <Folder Id="13354" RelativePath="adam/Gallery-v7/tGyntGFrXU-JM1_A2QDSjA/Icon/" />
+    <Folder Id="13238" RelativePath="adam/Gallery7/0jPONC8CT0i06sp3dybtCw/AlbumThumbnail/" />
+    <Folder Id="13239" RelativePath="adam/Gallery7/0jPONC8CT0i06sp3dybtCw/Images/" />
+    <Folder Id="13236" RelativePath="adam/Gallery7/" />
+    <Folder Id="13237" RelativePath="adam/Gallery7/0jPONC8CT0i06sp3dybtCw/" />
+    <Folder Id="13355" RelativePath="adam/Gallery7/6wrbYIDilEO9stMVQPCiJQ/" />
+    <Folder Id="13356" RelativePath="adam/Gallery7/6wrbYIDilEO9stMVQPCiJQ/Icon/" />
+    <Folder Id="13377" RelativePath="adam/Gallery7/8wa7LUhj10SSv1tGMqME0Q/" />
+    <Folder Id="13378" RelativePath="adam/Gallery7/8wa7LUhj10SSv1tGMqME0Q/AlbumThumbnail/" />
+    <Folder Id="13379" RelativePath="adam/Gallery7/8wa7LUhj10SSv1tGMqME0Q/Images/" />
+    <Folder Id="13383" RelativePath="adam/Gallery7/d5rrFWL6QUSv1703bmMIGg/" />
+    <Folder Id="13385" RelativePath="adam/Gallery7/d5rrFWL6QUSv1703bmMIGg/AlbumThumbnail/" />
+    <Folder Id="13384" RelativePath="adam/Gallery7/d5rrFWL6QUSv1703bmMIGg/Images/" />
+    <Folder Id="13240" RelativePath="adam/Gallery7/f5de-YkJ60yNI3nPwWouDQ/" />
+    <Folder Id="13241" RelativePath="adam/Gallery7/f5de-YkJ60yNI3nPwWouDQ/AlbumThumbnail/" />
+    <Folder Id="13242" RelativePath="adam/Gallery7/f5de-YkJ60yNI3nPwWouDQ/Images/" />
+    <Folder Id="13380" RelativePath="adam/Gallery7/GBTtnIt47kiwqS8coS-EOw/" />
+    <Folder Id="13382" RelativePath="adam/Gallery7/GBTtnIt47kiwqS8coS-EOw/AlbumThumbnail/" />
+    <Folder Id="13381" RelativePath="adam/Gallery7/GBTtnIt47kiwqS8coS-EOw/Images/" />
+    <Folder Id="13243" RelativePath="adam/Gallery7/iOrap4JS80uliE6qgXxszg/" />
+    <Folder Id="13245" RelativePath="adam/Gallery7/iOrap4JS80uliE6qgXxszg/AlbumThumbnail/" />
+    <Folder Id="13244" RelativePath="adam/Gallery7/iOrap4JS80uliE6qgXxszg/Images/" />
+    <Folder Id="13388" RelativePath="adam/Gallery7/jzo7KvaXf0SptvIDd_MwWQ/" />
+    <Folder Id="13389" RelativePath="adam/Gallery7/jzo7KvaXf0SptvIDd_MwWQ/AlbumThumbnail/" />
+    <Folder Id="13390" RelativePath="adam/Gallery7/jzo7KvaXf0SptvIDd_MwWQ/Images/" />
+    <Folder Id="13394" RelativePath="adam/Gallery7/kJdFDkZBSkKuHTK-zdRHIA/" />
+    <Folder Id="13396" RelativePath="adam/Gallery7/kJdFDkZBSkKuHTK-zdRHIA/AlbumThumbnail/" />
+    <Folder Id="13395" RelativePath="adam/Gallery7/kJdFDkZBSkKuHTK-zdRHIA/Images/" />
+    <Folder Id="13263" RelativePath="adam/Gallery7/MQuhAahILkeaSdjevw-xyQ/" />
+    <Folder Id="13264" RelativePath="adam/Gallery7/MQuhAahILkeaSdjevw-xyQ/AlbumThumbnail/" />
+    <Folder Id="13265" RelativePath="adam/Gallery7/MQuhAahILkeaSdjevw-xyQ/Images/" />
+    <Folder Id="13260" RelativePath="adam/Gallery7/P0CQ-oCQPEqceyX58i_aWA/" />
+    <Folder Id="13261" RelativePath="adam/Gallery7/P0CQ-oCQPEqceyX58i_aWA/AlbumThumbnail/" />
+    <Folder Id="13262" RelativePath="adam/Gallery7/P0CQ-oCQPEqceyX58i_aWA/Images/" />
+    <Folder Id="13351" RelativePath="adam/Gallery7/SpX2IHZB1USVMlGd3vNkrQ/" />
+    <Folder Id="13352" RelativePath="adam/Gallery7/SpX2IHZB1USVMlGd3vNkrQ/Icon/" />
+    <Folder Id="13391" RelativePath="adam/Gallery7/sZrUwhaqL0GP59c6bluOrg/" />
+    <Folder Id="13392" RelativePath="adam/Gallery7/sZrUwhaqL0GP59c6bluOrg/AlbumThumbnail/" />
+    <Folder Id="13393" RelativePath="adam/Gallery7/sZrUwhaqL0GP59c6bluOrg/Images/" />
+    <Folder Id="13353" RelativePath="adam/Gallery7/tGyntGFrXU-JM1_A2QDSjA/" />
+    <Folder Id="13354" RelativePath="adam/Gallery7/tGyntGFrXU-JM1_A2QDSjA/Icon/" />
   </PortalFolders>
 </SexyContent>
