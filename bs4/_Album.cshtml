@@ -50,8 +50,8 @@
   var effect = "effect-zoom"; // alternative: "effect-darken"; 
 
   // 2.3 Determine the widths of each part, based on 12 Bootstrap Cols; 
-  var imgResizeFactor = (float)(useMasonry ? 4 : 3) / 12;
-  var thumbHeight = (useMasonry ? (int?)0 : null); // if Masonry it must be 0 (no height), otherwise null = default
+  var imgResizeFactor = useMasonry ? "4:12" : "3:12";
+  var thumbHeight = useMasonry ? (int?)0 : null; // if Masonry it must be 0 (no height), otherwise null = default
 
   // 2.4 Prepare the url resize-params for re-use with the Link.Image helper and global Image Settings http://r.2sxc.org/settings
   var thumbnailParams = Link.Image("", Settings.Images.Content, factor: imgResizeFactor, height: thumbHeight);
@@ -67,7 +67,7 @@
 @* 4. Show the Album *@
 <div class="app-ga7-main" @Edit.TagToolbar(album)>
   @* Display Album Title or information that title is hidden *@
-  @Html.Partial("_Part Title Description.cshtml", new { album = album })
+  @Html.Partial("_Album.Part-Title-Description.cshtml", new { album = album })
 
   @* 4.1 Display the images *@
   <div class="@classForMainDiv">

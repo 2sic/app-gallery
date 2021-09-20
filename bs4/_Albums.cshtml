@@ -3,10 +3,7 @@
 @using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
 @{
   // Determine the widths of each part, based on 12 Bootstrap columns
-  var imgResizeFactor = 4f / 12;  // Each Album uses 4 columns
-
-  // Get url params for re-use below. Uses global Image Settings http://r.2sxc.org/settings
-  var thumbnailParams = Link.Image("", Settings.Images.Content, factor: imgResizeFactor);
+  var imgResizeFactor = "4/12";  // Each Album uses 4 columns
 
   // visual effect for mouse interaction
   var effect = "effect-zoom"; // alternative: "effect-darken"; 
@@ -34,7 +31,7 @@
                 <span class="badge badge-pill">@images.Count()</span>
               </div>
             </figcaption>
-            <img loading="lazy" class="img-fluid" src='@Link.Image(albumThumbUrl + thumbnailParams)' alt="@album.Title" />
+            <img loading="lazy" class="img-fluid" src='@Link.Image(albumThumbUrl, Settings.Images.Content, factor: imgResizeFactor)' alt="@album.Title" />
           </figure>
         </a>
       </div>
