@@ -57,8 +57,7 @@
   var thumbnailParams = Link.Image("", Settings.Images.Content, factor: imgResizeFactor, height: thumbHeight);
   var lightboxParams = Link.Image("", Settings.Images.Lightbox);
 
-  // 2.5 Other stuff, like show-toolbar, class to use on the container-div etc.
-  var showMetaToolbar = !Content.IsDemoItem;
+  // 2.5 Other stuff like class to use on the container-div etc.
   var classForMainDiv = useMasonry ? "app-ga7-masonry" : "row mb-4";
 
   // 2.9 Helpers used later in the Template
@@ -93,7 +92,7 @@
       if(!useMasonry) { @Tag.Div().Class("col-12 col-sm-6 col-md-4 col-lg-3 mb-4").TagStart }
         @* 4.4 Now show each image *@
         <a class="app-ga7" href='@Link.Image(pic.Url + lightboxParams)' data-app-gallery-fancybox="@CmsContext.Module.Id" @Tag.Attr("data-caption", caption)>
-          <figure class="app-ga7-image @effect" @(showMetaToolbar ? Edit.TagToolbar(toolbar: metaToolbarConfig) as object : null)>
+          <figure class="app-ga7-image @effect" @Edit.TagToolbar(toolbar: metaToolbarConfig, condition: !Content.IsDemoItem)>
             @* 4.5 Show the Overlay, an optional title (based on settings) and the image itself *@
             <figcaption class="overlay d-flex align-items-end">
               @if(Text.Has(picTitle)) { <div class="caption">@picTitle</div> }
