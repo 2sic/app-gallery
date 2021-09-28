@@ -1,28 +1,33 @@
 <image src="app-icon.png" align="right" width="200px">
 
-# Gallery App V7 using Fancybox4 for Dnn ☢️ and Oqtane 🩸
+# Gallery App V7 using Fancybox4 for .net CMSs
 
-_Important: V7 is new and Bootstrap4 only. Previous version 6.1 is on this branch: https://github.com/2sic/app-gallery/tree/v6-fancybox3_
+> This is a [2sxc](https://2sxc.org) App for [DNN ☢️](https://www.dnnsoftware.com/) and [Oqtane 💧](https://www.oqtane.org/)
 
-A 2sxc / DNN App using the [fancybox4](https://fancyapps.com/) javascript library.
+A Gallery App using the [fancybox4](https://fancyapps.com/) javascript library.
 
-## Install the app
+| Aspect              | Status | Comments or Version |
+| ------------------- | :----: | ------------------- |
+| 2sxc                | ✅    | requires 2sxc v12.05
+| Dnn                 | ✅    | For v7, v8 and v9
+| Oqtane 2            | ✅    | Requires v2.02
+| No jQuery           | ✅    | 
+| Live Demo           | ➖    |
+| Install Checklist   | ✅    | See [Installation](https://azing.org/2sxc/r/WLu6KUI4) on [azing.org](https://azing.org/2sxc)
+| Source & License    | ✅    | included, ISC/MIT
+| App Catalog         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/gallery-app-v6-using-fancybox-3-hybrid-for-dnn-and-oqtane)
+| Screenshots         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/gallery-app-v6-using-fancybox-3-hybrid-for-dnn-and-oqtane)
+| Best Practices      | ✅    | Uses v12.05 conventions
+| Bootstrap 3         | ➖    | Not tested, but [v6.1](https://github.com/2sic/app-gallery/tree/v6-fancybox3) is
+| Bootstrap 4         | ✅    |
+| Bootstrap 5         | ✔️    | Works, but not optimized
 
-You can install the app with the ["Installing Gallery Fancybox4" checklist](https://azing.org/2sxc/r/WLu6KUI4)
 
 ## Customize the app
 
-### Configuration (Settings, Resources)
-
 Gallery App Fancybox7 uses the new, [standard Settings-System in 2sxc](http://r.2sxc.org/settings) to configure it. It also has app resources (i18n labels) you can customize.
 
-### Style
-
 If you want to customize the CSS, you will usually follow the ["Create Custom Styles in a Standard 2sxc App" checklist](https://azing.org/2sxc/r/Lu5SDBqU)
-
-## Screenshots
-
-Read more about it in the [App Catalog](https://2sxc.org/en/apps/app/gallery-app-v6-using-fancybox-3-hybrid-for-dnn-and-oqtane)
 
 
 ---
