@@ -79,7 +79,7 @@
 
       // Build the Caption for the Lightbox - will later be converted to an attribute
       var caption = (Content.Presentation.ShowImageTitle && Text.Has(pic.Metadata.Title))
-        ? Tag.H6().Wrap(Tags.Strip(pic.Metadata.Title)).ToString() + Tag.P().Wrap(Tags.Strip(pic.Metadata.Description))
+        ? Tag.H6().Wrap(Tags.Strip(pic.Metadata.Title)) + Tag.P().Wrap(Tags.Strip(pic.Metadata.Description))
         : "";
 
       // Toolbar parameters (for admins) to ensure the metadata-button does what's needed
