@@ -23,7 +23,7 @@
   if (album == null) {
     <h1>@Resources.AlbumNotFound</h1>
     <div>@Html.Raw(Resources.AlbumNotFoundText)</div>
-    <a href="@Tags.SafeUrl(Link.To())" class="btn btn-outline-primary btn-sm">@Resources.BackToOverview</a>
+    <a href="@Link.To()" class="btn btn-outline-primary btn-sm">@Resources.BackToOverview</a>
 
     page.SetHttpStatus(404);
     return;
@@ -108,7 +108,7 @@
 
 @* 5. Show back button if the view is used as detail view *@
 @if(isDetailViewOfAlbum) {
-  <a href="@Tags.SafeUrl(Link.To())" class="btn btn-outline-primary btn-sm">@Resources.BackToOverview</a>
+  <a href="@Link.To()" class="btn btn-outline-primary btn-sm">@Resources.BackToOverview</a>
 }
 
 @* 9. Hide the side navigation if the view is used as detail view - this only works if the skin uses the same class *@

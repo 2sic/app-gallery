@@ -19,7 +19,7 @@
         ? album.AlbumThumbnail
         : images.Any() ? images.First().Url : "";
 
-      var linkAlbum = Tags.SafeUrl(Link.To(parameters: "album=" + album.Path));
+      var linkAlbum = Link.To(parameters: "album=" + album.Path);
 
       @* Show one Album Thumbnail with Link etc. *@
       <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4" @Edit.TagToolbar(album)>

@@ -23,7 +23,7 @@ A Gallery App using the [fancybox4](https://fancyapps.com/) javascript library.
 | Bootstrap 5         | ✔️    | Works, but not optimized
 
 
-## Customize the app
+## Customize the App
 
 Gallery App Fancybox7 uses the new, [standard Settings-System in 2sxc](http://r.2sxc.org/settings) to configure it. It also has app resources (i18n labels) you can customize.
 
