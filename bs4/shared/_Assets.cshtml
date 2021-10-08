@@ -24,7 +24,18 @@
   if(DynamicModel.scripts == true) {
     // Activate turnOn and Fancybox4 - see https://r.2sxc.org/turnon - fancybox4 is a standard WebResources in 2sxc
     page.Activate("turnOn", "fancybox4");
+
+    // Init options for fancybox binding
+    // This is only partial - if you want to see more, see https://fancyapps.com/docs/ui/fancybox/options
+    var fancyboxOptions = new {
+      groupAll = true,
+      mainClass = "app-ga7-fancybox", 
+      Thumbs = new {
+        autoStart = false
+      }
+    };
+    
     <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script>
-    <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appGalleryV7.init()", "data": { "domId": "@DynamicModel.FancyboxDomId", "options": { "groupAll": true, "mainClass": "app-ga7-fancybox", "Thumbs": {"autoStart": false}}}}'></turnOn>
+    <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appGalleryV7.init()", "data": { "domId": "@DynamicModel.FancyboxDomId", "options": @Html.Raw(Convert.Json.ToJson(fancyboxOptions)) }}'></turnOn>
   }
 }
