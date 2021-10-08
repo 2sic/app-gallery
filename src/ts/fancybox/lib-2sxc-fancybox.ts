@@ -1,5 +1,5 @@
 declare let Fancybox: any;
-import { FancyboxOptions } from './fancybox-options-definition';
+import { FancyboxOptions } from './lib-2sxc-fancybox-options';
 
 /*
   This is a shared code used in various 2sxc apps. Make sure that they are in sync, so if you improve it, improve all 2sxc apps which use this. 
