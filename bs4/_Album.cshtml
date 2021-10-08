@@ -15,7 +15,7 @@
   var isDetailViewOfAlbum = Text.Has(albumInUrl);
 
   // define dom attribute for fancybox
-  var fancyboxDomId = "app-gallery7-fancybox-js-" + CmsContext.Module.Id; 
+  var fancyboxAttribute = "app-gallery7-fancybox-" + CmsContext.Module.Id; 
   
   // If album QueryString is specified, take album from QueryString, else take "current" album of the module
   var album = isDetailViewOfAlbum 
@@ -94,7 +94,7 @@
       @* 4.3a Optionally wrap inside a special <div> if it's not Masonry-layout *@
       if(!useMasonry) { @Tag.Div().Class("col-12 col-sm-6 col-md-4 col-lg-3 mb-4").TagStart }
         @* 4.4 Now show each image *@
-        <a class="app-ga7 @fancyboxDomId" href='@Link.Image(pic.Url + lightboxParams)' @Tag.Attr("data-caption", caption)>
+        <a class="app-ga7" @fancyboxAttribute href='@Link.Image(pic.Url + lightboxParams)' @Tag.Attr("data-caption", caption)>
           <figure class="app-ga7-image @effect" @Edit.TagToolbar(toolbar: metaToolbarConfig, condition: !Content.IsDemoItem)>
             @* 4.5 Show the Overlay, an optional title (based on settings) and the image itself *@
             <figcaption class="overlay d-flex align-items-end">
@@ -119,4 +119,4 @@
   <style>.ly-col-leftpane { display: none; }</style>
 }
 
-@Html.Partial("shared/_Assets.cshtml", new { Scripts = true, FancyboxDomId = fancyboxDomId })
+@Html.Partial("shared/_Assets.cshtml", new { Scripts = true, FancyboxAttribute = fancyboxAttribute })

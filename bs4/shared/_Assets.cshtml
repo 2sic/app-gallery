@@ -36,6 +36,6 @@
     };
     
     <script type="text/javascript" src="@App.Path/dist/scripts.min.js" data-enableoptimizations="bottom"></script>
-    <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appGalleryV7.init()", "data": { "domId": "@DynamicModel.FancyboxDomId", "options": @Html.Raw(Convert.Json.ToJson(fancyboxOptions)) }}'></turnOn>
+    <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appGalleryV7.init()", "data": { "attribute": "@DynamicModel.FancyboxAttribute", "options": @Html.Raw(Convert.Json.ToJson(fancyboxOptions)) }}'></turnOn>
   }
 }

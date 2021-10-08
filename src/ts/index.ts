@@ -1,4 +1,4 @@
-import { initFancybox } from "./fancybox/lib-2sxc-fancybox";
+import { initFancybox } from "./lib-2sxc-fancybox";
 
 var winAny = window as any;
 winAny.appGalleryV7 ??= {};
