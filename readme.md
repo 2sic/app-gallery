@@ -15,8 +15,8 @@ A Gallery App using the [fancybox4](https://fancyapps.com/) javascript library.
 | Live Demo           | ➖    |
 | Install Checklist   | ✅    | See [Installation](https://azing.org/2sxc/r/WLu6KUI4) on [azing.org](https://azing.org/2sxc)
 | Source & License    | ✅    | included, ISC/MIT
-| App Catalog         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/gallery-app-v6-using-fancybox-3-hybrid-for-dnn-and-oqtane)
-| Screenshots         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/gallery-app-v6-using-fancybox-3-hybrid-for-dnn-and-oqtane)
+| App Catalog         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/gallery-app-v7-using-fancybox-4-hybrid-for-dnn-and-oqtane)
+| Screenshots         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/gallery-app-v7-using-fancybox-4-hybrid-for-dnn-and-oqtane)
 | Best Practices      | ✅    | Uses v12.05 conventions
 | Bootstrap 3         | ➖    | Not tested, but [v6.1](https://github.com/2sic/app-gallery/tree/v6-fancybox3) is
 | Bootstrap 4         | ✅    |
