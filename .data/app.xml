@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.05.00" ExportDate="2021-09-20T22:49:43.2472561+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.05.00" ExportDate="2021-10-11T08:39:12.4503251+02:00">
   <Header>
     <App Guid="3bfab1bb-e102-4176-adcf-f70594a6bdfe" />
     <Language Default="en-us" />
@@ -1075,14 +1075,14 @@
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredDnnVersion" Value="07.02.00" Type="String">
+      <Value Key="RequiredDnnVersion" Value="07.04.02" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
       <Value Key="RequiredOqtaneVersion" Value="02.02.00" Type="String">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredVersion" Value="12.04.00" Type="String">
+      <Value Key="RequiredVersion" Value="12.05.00" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
