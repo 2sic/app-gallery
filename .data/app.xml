@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="13.00.00" ExportDate="2021-12-08T08:20:30.0170748+01:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="13.00.00" ExportDate="2021-12-14T17:15:48.0654872+01:00">
   <Header>
     <App Guid="3bfab1bb-e102-4176-adcf-f70594a6bdfe" />
     <Language Default="en-us" />
@@ -9,7 +9,7 @@
     </Dimensions>
   </Header>
   <AttributeSets>
-    <AttributeSet StaticName="e51e37ed-e9f8-43d7-bf5f-3f992be63f44" Name="Album" Description="Album with many Images" Scope="2SexyContent" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="e51e37ed-e9f8-43d7-bf5f-3f992be63f44" Name="Album" Description="Album with many Images" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="539d1a4d-0ef9-47e6-bad4-514a213437b9" Json="True" KeyNumber="4772">
@@ -377,7 +377,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="2d268a4c-b5b7-4289-ad74-893aa69ddcac" Name="AlbumPresentation" Description="Album Presentation Settings" Scope="2SexyContent" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="2d268a4c-b5b7-4289-ad74-893aa69ddcac" Name="AlbumPresentation" Description="Album Presentation Settings" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="HeadingType" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="4752b40c-a8b5-4e96-8b08-05eea7477e68" Json="True" KeyNumber="4777">
@@ -690,7 +690,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="App-Resources" Name="App-Resources" Description="Stores resources like translations for an app" Scope="2SexyContent-App" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="App-Resources" Name="App-Resources" Description="Stores resources like translations for an app" Scope="System.App" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="AlbumNotFound" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="44d401c2-94b7-460d-8296-40653e1f88a5" Json="True" KeyNumber="4781">
@@ -876,7 +876,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="App-Settings" Name="App-Settings" Description="Stores settings for an app" Scope="2SexyContent-App" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="App-Settings" Name="App-Settings" Description="Stores settings for an app" Scope="System.App" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="6815e24c-c9c0-4463-b9ae-5b63330ae8d8" Json="True" KeyNumber="4785">
@@ -930,7 +930,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="fb9a5615-dd20-4736-9123-4abc3ec5dfe3" Name="ImageMetadata" Description="Image Metadata (label, notes, etc.)" Scope="2SexyContent" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="fb9a5615-dd20-4736-9123-4abc3ec5dfe3" Name="ImageMetadata" Description="Image Metadata (label, notes, etc.)" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="766bed44-925d-436b-8d13-21c4be86b775" Json="True" KeyNumber="4786">
@@ -1090,7 +1090,7 @@
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="07.00.01" Type="String">
+      <Value Key="Version" Value="07.01.00" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>

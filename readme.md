@@ -20,7 +20,7 @@ A Gallery App using the [fancybox4](https://fancyapps.com/) javascript library.
 | Best Practices      | ✅    | Uses v12.05 conventions
 | Bootstrap 3         | ➖    | Not tested, but [v6.1](https://github.com/2sic/app-gallery/tree/v6-fancybox3) is
 | Bootstrap 4         | ✅    |
-| Bootstrap 5         | ✔️    | Works, but not optimized
+| Bootstrap 5         | ✅    |
 
 
 ## Customize the App
