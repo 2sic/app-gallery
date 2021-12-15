@@ -37,7 +37,9 @@
       // If you use max-width, then there will be cases where the container is larger than the image
       img {
         width: 100%;
-        min-width: 100%;
+        // workaround for lazy-loading issues
+        min-width: 1px;
+        min-height: 1px;
       }
     }
 
