@@ -1,5 +1,6 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
+@using ToSic.Sxc.Services;
 @using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
 @{
   // Determine the widths of each part, based on 12 Bootstrap columns
@@ -7,6 +8,8 @@
 
   // visual effect for mouse interaction
   var effect = "effect-zoom"; // alternative: "effect-darken"; 
+
+  var imgSvc = GetService<IImageService>();
 }
 
 <div class="app-ga7-main">
@@ -31,7 +34,7 @@
                 <span class="badge rounded-pill">@images.Count()</span>
               </div>
             </figcaption>
-            <img loading="lazy" class="img-fluid" src='@Link.Image(albumThumbUrl, Settings.Images.Content, factor: imgResizeFactor)' alt="@album.Title" />
+            @imgSvc.Picture(albumThumbUrl, settings: Settings.Images.Content, factor: imgResizeFactor, imgAlt:album.Title, imgClass:"img-fluid")
           </figure>
         </a>
       </div>

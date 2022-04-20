@@ -1,9 +1,11 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
+@using ToSic.Sxc.Services;
 @using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
 @{
   // Determine the widths of each part, based on 12 Bootstrap columns
   var imgResizeFactor = "4/12";  // Each Album uses 4 columns
+  var imgSvc = GetService<IImageService>();
 
   // visual effect for mouse interaction
   var effect = "effect-zoom"; // alternative: "effect-darken"; 
@@ -31,7 +33,7 @@
                 <span class="badge badge-pill">@images.Count()</span>
               </div>
             </figcaption>
-            <img loading="lazy" class="img-fluid" src='@Link.Image(albumThumbUrl, Settings.Images.Content, factor: imgResizeFactor)' alt="@album.Title" />
+            @imgSvc.Picture(albumThumbUrl, settings: Settings.Images.Content, factor: imgResizeFactor, imgAlt:album.Title, imgClass:"img-fluid")
           </figure>
         </a>
       </div>

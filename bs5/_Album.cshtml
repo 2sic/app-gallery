@@ -1,5 +1,6 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
+@using ToSic.Sxc.Services;
 @{
   /* 1. Pre-Checks: Determine which Album to show or show error
    * This will check if the url specifies a specific album, and if yes, use that
@@ -8,7 +9,10 @@
    */
 
   // Get the PageServices for setting Titles and HTTP error headers
-  var page = GetService<ToSic.Sxc.Web.IPageService>();
+  var page = GetService<IPageService>();
+  var imgSvc = GetService<IImageService>();
+  var scrubSvc = GetService<IScrub>();
+  var toolbarSvc = GetService<IToolbarService>();
 
   // Get page Parameters (works on Dnn & Oqtane)
   var albumInUrl = CmsContext.Page.Parameters["Album"];
@@ -65,6 +69,8 @@
 
   // 2.9 Helpers used later in the Template
   var helpers = CreateInstance("SortImages.cs");        // Has helper code for sorting
+
+  var gallerySettings = CmsContext.View.Identifier == "masonry" ? imgSvc.Settings("GalleryMasonry") : imgSvc.Settings("Gallery");
 }
 @* 4. Show the Album *@
 <div class="app-ga7-main" @Edit.TagToolbar(album)>
@@ -82,7 +88,7 @@
 
       // Build the Caption for the Lightbox - will later be converted to an attribute
       var caption = (Content.Presentation.ShowImageTitle && Text.Has(pic.Metadata.Title))
-        ? Tag.H6().Wrap(Tags.Strip(pic.Metadata.Title)) + Tag.P().Wrap(Tags.Strip(pic.Metadata.Description))
+        ? Tag.H6().Wrap(scrubSvc.All(pic.Metadata.Title)) + Tag.P().Wrap(scrubSvc.All(pic.Metadata.Description))
         : "";
 
       // Toolbar parameters (for admins) to ensure the metadata-button does what's needed
@@ -100,7 +106,7 @@
             <figcaption class="overlay d-flex align-items-end">
               @if(Text.Has(picTitle)) { <div class="caption">@picTitle</div> }
             </figcaption>
-            <img loading="lazy" class="img-fluid" src='@Link.Image(pic.Url + thumbnailParams)' alt="@picTitle" />
+            @imgSvc.Picture(pic.Url, settings: gallerySettings)
           </figure>
         </a>
       @* 4.3b close <div> if we opened it above *@

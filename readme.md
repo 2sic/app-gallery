@@ -60,3 +60,7 @@ Version 6 is found here: https://github.com/2sic/app-gallery/tree/v6-fancybox3
 1. Complete clean up / simplification of code files
 1. Ensure that multiple galleries don't mix images in lightbox mode
 1. Lots of documentation / comments everywhere
+
+### Version 7.1 
+
+1. Moved all access of Services to ToSic.Sxc.Services
