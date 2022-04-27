@@ -64,3 +64,4 @@ Version 6 is found here: https://github.com/2sic/app-gallery/tree/v6-fancybox3
 ### Version 7.1 
 
 1. Moved all access of Services to ToSic.Sxc.Services
+1. Activated image configuration
