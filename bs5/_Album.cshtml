@@ -70,7 +70,9 @@
   // 2.9 Helpers used later in the Template
   var helpers = CreateInstance("SortImages.cs");        // Has helper code for sorting
 
-  var gallerySettings = CmsContext.View.Identifier == "masonry" ? imgSvc.Settings("GalleryMasonry") : imgSvc.Settings("Gallery");
+  @* var gallerySettings = CmsContext.View.Identifier == "masonry" ? imgSvc.Settings("GalleryMasonry") : Settings.Images.Content; *@
+  var gallerySettings = CmsContext.View.Identifier == "masonry" ? imgSvc.Settings(Settings.Images.Content, resizeMode:"max") : Settings.Images.Content;
+  var galleryFactor = CmsContext.View.Identifier == "masonry" ? "4/12" : "3/12";
 }
 @* 4. Show the Album *@
 <div class="app-ga7-main" @Edit.TagToolbar(album)>
@@ -79,7 +81,6 @@
 
   @* 4.1 Display the images *@
   <div class="@classForMainDiv">
-
     @foreach (var pic in helpers.GetImagesSorted(album)) {
       @* 4.2 Prepare caption, tooltip, toolbar etc. for showing the image afterwards *@
 
@@ -106,7 +107,8 @@
             <figcaption class="overlay d-flex align-items-end">
               @if(Text.Has(picTitle)) { <div class="caption">@picTitle</div> }
             </figcaption>
-            @imgSvc.Picture(pic.Url, settings: gallerySettings)
+
+            @imgSvc.Picture(pic.Url, settings: gallerySettings, factor: galleryFactor)
           </figure>
         </a>
       @* 4.3b close <div> if we opened it above *@
