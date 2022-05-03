@@ -101,7 +101,6 @@
       if(!useMasonry) { @Tag.Div().Class("col-12 col-sm-6 col-md-4 col-lg-3 mb-4").TagStart }
         @* 4.4 Now show each image *@
         <a class="app-ga7" @fancyboxAttribute href='@Link.Image(pic.Url + lightboxParams)' @Tag.Attr("data-caption", caption)>
-          @* TODO: Check with 2dm how to pass a target-item as default for toolbar *@
           <figure class="app-ga7-image @effect" @Edit.TagToolbar(toolbar: tlbSvc.Metadata(pic, "ImageMetadata"), condition: !Content.IsDemoItem)>
             @* 4.5 Show the Overlay, an optional title (based on settings) and the image itself *@
             <figcaption class="overlay d-flex align-items-end">
