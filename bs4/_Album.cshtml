@@ -70,7 +70,7 @@
   // 2.9 Helpers used later in the Template
   var helpers = CreateInstance("SortImages.cs");        // Has helper code for sorting
 
-  var gallerySettings = CmsContext.View.Identifier == "masonry" ? imgSvc.Settings("GalleryMasonry") : imgSvc.Settings("Gallery");
+  var gallerySettings = CmsContext.View.Identifier == "masonry" ? imgSvc.Settings(Settings.Images.Content, resizeMode:"max") : Settings.Images.Content;
 }
 @* 4. Show the Album *@
 <div class="app-ga7-main" @Edit.TagToolbar(album)>
