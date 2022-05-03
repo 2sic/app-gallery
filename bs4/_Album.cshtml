@@ -106,7 +106,7 @@
             <figcaption class="overlay d-flex align-items-end">
               @if(Text.Has(picTitle)) { <div class="caption">@picTitle</div> }
             </figcaption>
-            @imgSvc.Picture(pic.Url, settings: gallerySettings)
+            @imgSvc.Picture(pic.Field("Url"), settings: gallerySettings)
           </figure>
         </a>
       @* 4.3b close <div> if we opened it above *@

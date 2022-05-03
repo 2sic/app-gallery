@@ -19,10 +19,11 @@
       @* Get the main album image or if not available, the first in the images, or empty *@
       var images = AsAdam(album, "Images").Files as Dynlist;
       var albumThumbUrl = Text.Has(album.AlbumThumbnail)
-        ? album.AlbumThumbnail
+        ? album.Field("AlbumThumbnail")
         : images.Any() ? images.First().Url : "";
 
       var linkAlbum = Link.To(parameters: "album=" + album.Path);
+      var altText = Text.First(album.Field("AlbumThumbnail").Metadata.Description, album.Title);
 
       @* Show one Album Thumbnail with Link etc. *@
       <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4" @Edit.TagToolbar(album)>
@@ -34,7 +35,7 @@
                 <span class="badge rounded-pill">@images.Count()</span>
               </div>
             </figcaption>
-            @imgSvc.Picture(albumThumbUrl, settings: Settings.Images.Content, factor: imgResizeFactor, imgAlt:album.Title, imgClass:"img-fluid")
+            @imgSvc.Picture(albumThumbUrl, settings: Settings.Images.Content, factor: imgResizeFactor, imgAlt:album.Title)
           </figure>
         </a>
       </div>
