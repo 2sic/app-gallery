@@ -5,10 +5,12 @@
 @{
   // Determine the widths of each part, based on 12 Bootstrap columns
   var imgResizeFactor = "4/12";  // Each Album uses 4 columns
-  var imgSvc = GetService<IImageService>();
 
   // visual effect for mouse interaction
   var effect = "effect-zoom"; // alternative: "effect-darken"; 
+
+  // Image Service used to generate optimal images
+  var imgSvc = GetService<IImageService>();
 }
 
 <div class="app-ga7-main">
