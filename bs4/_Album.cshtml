@@ -61,8 +61,8 @@
   var thumbHeight = useMasonry ? (int?)0 : null; // if Masonry it must be 0 (no height), otherwise null = default
 
   // 2.4 Prepare the url resize-params for re-use with the Link.Image helper and global Image Settings http://r.2sxc.org/settings
-  var thumbnailParams = Link.Image("", Settings.Images.Content, factor: imgResizeFactor, height: thumbHeight);
-  var lightboxParams = Link.Image("", Settings.Images.Lightbox);
+  var thumbnailParams = Link.Image("", "Content", factor: imgResizeFactor, height: thumbHeight);
+  var lightboxParams = Link.Image("", "Lightbox");
 
   // 2.5 Other stuff like class to use on the container-div etc.
   var classForMainDiv = useMasonry ? "app-ga7-masonry" : "row mb-4";
@@ -70,7 +70,7 @@
   // 2.9 Helpers used later in the Template
   var helpers = CreateInstance("SortImages.cs");        // Has helper code for sorting
 
-  var gallerySettings = CmsContext.View.Identifier == "masonry" ? imgSvc.Settings(Settings.Images.Content, resizeMode:"max") : Settings.Images.Content;
+  var gallerySettings = CmsContext.View.Identifier == "masonry" ? imgSvc.Settings("Content", resizeMode:"max") : "Content";
 }
 @* 4. Show the Album *@
 <div class="app-ga7-main" @Edit.TagToolbar(album)>
