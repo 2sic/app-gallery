@@ -66,3 +66,4 @@ Version 6 is found here: https://github.com/2sic/app-gallery/tree/v6-fancybox3
 1. Moved all access of Services to ToSic.Sxc.Services
 1. Activated image configuration
 1. Replaced data-enableoptimization with IPageService.AssetAttributes()
+1. Changed fancybox images to use the IImageService

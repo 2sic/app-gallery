@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="13.06.00" ExportDate="2022-04-11T13:35:41.4850091+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="13.11.00" ExportDate="2022-05-10T15:31:39.2306414+02:00">
   <Header>
     <App Guid="3bfab1bb-e102-4176-adcf-f70594a6bdfe" />
     <Language Default="en-us" />
@@ -249,6 +249,9 @@
               <Dimension DimensionID="185" ReadOnly="false" />
               <Dimension DimensionID="186" ReadOnly="false" />
             </Value>
+            <Value Key="EnableImageConfiguration" Value="True" Type="Boolean">
+              <Dimension DimensionID="186" ReadOnly="false" />
+            </Value>
             <Value Key="FileFilter" Value="*.jpg,*.png,*.gif,*.jpeg" Type="String">
               <Dimension DimensionID="185" ReadOnly="false" />
               <Dimension DimensionID="186" ReadOnly="false" />
@@ -307,6 +310,9 @@
               <Dimension DimensionID="185" ReadOnly="false" />
               <Dimension DimensionID="186" ReadOnly="false" />
             </Value>
+            <Value Key="DisableTranslation" Value="False" Type="Boolean">
+              <Dimension DimensionID="186" ReadOnly="false" />
+            </Value>
             <Value Key="InputType" Value="hyperlink-default" Type="String">
               <Dimension DimensionID="185" ReadOnly="false" />
               <Dimension DimensionID="186" ReadOnly="false" />
@@ -322,6 +328,9 @@
             </Value>
             <Value Key="Notes" Value="&lt;p&gt;Die Miniaturansicht wird in einer Alben&amp;uuml;bersicht angezeigt. Nicht sichtbar, wenn Sie nur ein einzelnes Album anzeigen.&lt;/p&gt;" Type="String">
               <Dimension DimensionID="185" ReadOnly="false" />
+            </Value>
+            <Value Key="Placeholder" Value="" Type="String">
+              <Dimension DimensionID="186" ReadOnly="false" />
             </Value>
             <Value Key="Required" Value="False" Type="Boolean">
               <Dimension DimensionID="185" ReadOnly="false" />
@@ -343,6 +352,9 @@
             </Value>
             <Value Key="DefaultDialog" Value="" Type="String">
               <Dimension DimensionID="185" ReadOnly="false" />
+              <Dimension DimensionID="186" ReadOnly="false" />
+            </Value>
+            <Value Key="EnableImageConfiguration" Value="True" Type="Boolean">
               <Dimension DimensionID="186" ReadOnly="false" />
             </Value>
             <Value Key="FileFilter" Value="" Type="String">
@@ -1079,10 +1091,10 @@
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredOqtaneVersion" Value="02.02.00" Type="String">
+      <Value Key="RequiredOqtaneVersion" Value="03.01.00" Type="String">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredVersion" Value="12.05.00" Type="String">
+      <Value Key="RequiredVersion" Value="13.10.00" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
@@ -1381,6 +1393,7 @@
       <Value Key="SearchIndexingStreams" Value="" Type="String">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
+      <Value Key="Settings" Value="6dd61a66-d8a2-4e2d-ae78-f683fd6eec2f" Type="Entity" />
       <Value Key="StreamsToPublish" Value="" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
@@ -1458,6 +1471,7 @@
       <Value Key="SearchIndexingStreams" Value="" Type="String">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
+      <Value Key="Settings" Value="de2ac084-3114-44e2-a745-c28730461be2" Type="Entity" />
       <Value Key="StreamsToPublish" Value="" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
@@ -1573,6 +1587,88 @@
       </Value>
     </Entity>
     <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="529ba3a2-d7d4-4f40-a81b-ff819de03a9e" AttributeSetName="IsDefaultDecorator" EntityGUID="d832250d-1a0e-43a1-a6ff-9a3cc863a6d3" Json="True" KeyGuid="20f6954a-4176-44d5-9532-519ddef364ad" />
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="7edd0b8d-1405-44ed-ac33-d0d63a274bd6" AttributeSetName="⚙️Images" EntityGUID="07619c7a-aab6-4d50-8eb5-9ebc7bb38dbc" Json="True">
+      <Value Key="Items" Value="3d61b81f-87db-4fcc-b3e3-27afa519ba2f" Type="Entity" />
+      <Value Key="SettingsIdentifier" Value="Images" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="813a3cb7-1a89-4477-bdfe-8863ab3ae59a" AttributeSetName="SettingsSystem" EntityGUID="6d1b4825-522e-4783-929b-5df34d013ea4" Json="True">
+      <Value Key="Images" Value="07619c7a-aab6-4d50-8eb5-9ebc7bb38dbc" Type="Entity" />
+      <Value Key="SettingsEntityScope" Value="" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="System Settings" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="7edd0b8d-1405-44ed-ac33-d0d63a274bd6" AttributeSetName="⚙️Images" EntityGUID="6dd61a66-d8a2-4e2d-ae78-f683fd6eec2f" Json="True">
+      <Value Key="Items" Value="null" Type="Entity" />
+      <Value Key="SettingsIdentifier" Value="Images" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="1a86b080-9e0d-4207-97d2-04edf80b4f2f" AttributeSetName="⚙️Image" EntityGUID="3d61b81f-87db-4fcc-b3e3-27afa519ba2f" Json="True">
+      <Value Key="Advanced" Value="{&#xD;&#xA;  &quot;recipe&quot;: {&#xD;&#xA;    &quot;name&quot;: &quot;default&quot;,&#xD;&#xA;    &quot;variants&quot;: &quot;2* ,1.5* ,1* , 3/4* , 1/2* , 0.5*&quot;,&#xD;&#xA;    &quot;setWidth&quot;: false,&#xD;&#xA;    &quot;attributes&quot;: {&#xD;&#xA;      &quot;loading&quot;: &quot;lazy&quot;&#xD;&#xA;    }&#xD;&#xA;  }&#xD;&#xA;}" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="Format" Value="" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="ItemIdentifier" Value="GalleryMasonry" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="Quality" Value="75" Type="Number">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="ResizeMode" Value="max" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="ScaleMode" Value="" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="SettingsIdentifier" Value="Images.GalleryMasonry" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="Width" Value="1400" Type="Number">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="7edd0b8d-1405-44ed-ac33-d0d63a274bd6" AttributeSetName="⚙️Images" EntityGUID="de2ac084-3114-44e2-a745-c28730461be2" Json="True">
+      <Value Key="Items" Value="3d61b81f-87db-4fcc-b3e3-27afa519ba2f" Type="Entity" />
+      <Value Key="SettingsIdentifier" Value="Images" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="3" AssignmentObjectType="App" AttributeSetStaticName="be34f64b-7d1f-4ad0-b488-dabbbb01a186" AttributeSetName="LightSpeedOutputDecorator" EntityGUID="c4c421f9-30b6-4644-8503-c85b3cde0928" Json="True" KeyNumber="201">
+      <Value Key="Advanced" Value="" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="ByUrlParameters" Value="False" Type="Boolean">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="Duration" Value="14400" Type="Number">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="DurationEditors" Value="300" Type="Number">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="DurationSystemAdmin" Value="300" Type="Number">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="DurationUsers" Value="-1" Type="Number">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="IsEnabled" Value="True" Type="Boolean">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="✅ - Users 14400s, Reg 🚫, Editors 300s, SysAdmins 300s" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="UrlParametersCaseSensitive" Value="False" Type="Boolean">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+    </Entity>
   </Entities>
   <PortalFiles>
     <File Id="5986" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\AlbumThumbnail\Demo-1.jpg" />

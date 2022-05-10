@@ -9,7 +9,7 @@
    */
 
   // Get the PageServices for setting Titles and HTTP error headers
-  var page = GetService<IPageService>();
+  var pageSvc = GetService<IPageService>();
   var imgSvc = GetService<IImageService>();
   var scrubSvc = GetService<IScrub>();
   var toolbarSvc = GetService<IToolbarService>();
@@ -32,7 +32,7 @@
     <div>@Html.Raw(Resources.AlbumNotFoundText)</div>
     <a href="@Link.To()" class="btn btn-outline-primary btn-sm">@Resources.BackToOverview</a>
 
-    page.SetHttpStatus(404);
+    pageSvc.SetHttpStatus(404);
     return;
   }
 }
@@ -44,8 +44,8 @@
    */
 
   // 2.1 Set the title of the page
-  page.SetTitle(album.Title + " | ");       // will prepend to the existing title
-  // page.SetTitle(album.Title, "[album]"); // Alternative: this would replace a placeholder [album] in the title with the title
+  pageSvc.SetTitle(album.Title + " | ");       // will prepend to the existing title
+  // pageSvc.SetTitle(album.Title, "[album]"); // Alternative: this would replace a placeholder [album] in the title with the title
 
   // 2.2 Determine if we should show as Masonry
   var albumTiling = Text.Has(album.Presentation.TileStructure)
@@ -70,7 +70,7 @@
   // 2.9 Helpers used later in the Template
   var helpers = CreateInstance("SortImages.cs");        // Has helper code for sorting
 
-  var gallerySettings = CmsContext.View.Identifier == "masonry" ? imgSvc.Settings("Content", resizeMode:"max") : "Content";
+  var gallerySettings = CmsContext.View.Identifier == "masonry" ? imgSvc.Settings("Content", resizeMode:"max") : Settings.Images.Content;
   var galleryFactor = CmsContext.View.Identifier == "masonry" ? "4/12" : "3/12";
 }
 @* 4. Show the Album *@
@@ -100,7 +100,9 @@
       @* 4.3a Optionally wrap inside a special <div> if it's not Masonry-layout *@
       if(!useMasonry) { @Tag.Div().Class("col-12 col-sm-6 col-md-4 col-lg-3 mb-4").TagStart }
         @* 4.4 Now show each image *@
-        <a class="app-ga7" @fancyboxAttribute href='@Link.Image(pic.Url + lightboxParams)' @Tag.Attr("data-caption", caption)>
+        var lbPic = imgSvc.Picture(pic.Url, settings:"Lightbox");
+        <a class="app-ga7" @fancyboxAttribute data-src="@pic.Url" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption="@caption">
+        
           <figure class="app-ga7-image @effect" @Edit.TagToolbar(toolbar: metaToolbarConfig, condition: !Content.IsDemoItem)>
             @* 4.5 Show the Overlay, an optional title (based on settings) and the image itself *@
             <figcaption class="overlay d-flex align-items-end">
