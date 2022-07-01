@@ -61,9 +61,16 @@ Version 6 is found here: https://github.com/2sic/app-gallery/tree/v6-fancybox3
 1. Ensure that multiple galleries don't mix images in lightbox mode
 1. Lots of documentation / comments everywhere
 
-### Version 7.1 
+### Version 7.2 
 
 1. Moved all access of Services to ToSic.Sxc.Services
 1. Activated image configuration
 1. Replaced data-enableoptimization with IPageService.AssetAttributes()
 1. Changed fancybox images to use the IImageService
+
+### Version 7.3
+
+1. Replaced all base classes with their 2sxc 14 equivalents
+1. Changed from GetService<> to the new ServiceKit14
+1. Changed the toolbars to use the IToolbarService
+1. Updated webpack

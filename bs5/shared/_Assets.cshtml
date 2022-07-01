@@ -1,17 +1,12 @@
-@inherits Custom.Hybrid.Razor12
-@using ToSic.Sxc.Services;
+@inherits Custom.Hybrid.Razor14
 @{
-  // 1. Get Services for Css and Page
-  var pageCss = GetService<Connect.Koi.ICss>();         // Service to get CSS information about the current Theme
-  var pageSvc = GetService<IPageService>();  // Service to activate features or set titles etc.
-
   // 2. Include Bootstrap4 if the framework isn't known
-  if (pageCss.IsUnknown) {
-    pageSvc.Activate("Bootstrap4");
+  if (Kit.Css.IsUnknown) {
+    Kit.Page.Activate("Bootstrap4");
   }
 
   // 3. Show warning for admin if koi.json is missing 
-  if (pageCss.IsUnknown && CmsContext.User.IsSiteAdmin) {
+  if (Kit.Css.IsUnknown && CmsContext.User.IsSiteAdmin) {
     <div class='dnnFormMessage dnnFormWarning'>
       @Html.Raw(Connect.Koi.Messages.CssInformationMissing) <br>
       @Html.Raw(Connect.Koi.Messages.OnlyAdminsSeeThis)
@@ -19,12 +14,12 @@
   }
 
   // 4. Include styles of the App
-  <link rel="stylesheet" href="@App.Path/bs5/dist/styles.min.css" @pageSvc.AssetAttributes()/>
+  <link rel="stylesheet" href="@App.Path/bs5/dist/styles.min.css" @Kit.Page.AssetAttributes()/>
 
   // 5. If we need scripts (only on the single-album-view) activate these. Note that DynamicModel contains the parameters
   if(DynamicModel.scripts == true) {
     // Activate turnOn and Fancybox4 - see https://r.2sxc.org/turnon - fancybox4 is a standard WebResources in 2sxc
-    pageSvc.Activate("turnOn", "fancybox4");
+    Kit.Page.Activate("turnOn", "fancybox4");
 
     // Init options for fancybox binding
     // This is only partial - if you want to see more, see https://fancyapps.com/docs/ui/fancybox/options
@@ -36,7 +31,7 @@
       }
     };
     
-    <script type="text/javascript" src="@App.Path/bs5/dist/scripts.min.js" @pageSvc.AssetAttributes(position:"bottom")></script>
-    <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appGalleryV7.init()", "data": { "attribute": "@DynamicModel.FancyboxAttribute", "options": @Html.Raw(Convert.Json.ToJson(fancyboxOptions)) }}'></turnOn>
+    <script type="text/javascript" src="@App.Path/bs5/dist/scripts.min.js" @Kit.Page.AssetAttributes(position:"bottom")></script>
+    <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appGalleryV7.init()", "data": { "attribute": "@DynamicModel.FancyboxAttribute", "options": @Html.Raw(Kit.Json.ToJson(fancyboxOptions)) }}'></turnOn>
   }
 }

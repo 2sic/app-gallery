@@ -1,6 +1,5 @@
-@inherits Custom.Hybrid.Razor12
+@inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
-@using ToSic.Sxc.Services;
 @using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
 @{
   // Determine the widths of each part, based on 12 Bootstrap columns
@@ -8,9 +7,6 @@
 
   // visual effect for mouse interaction
   var effect = "effect-zoom"; // alternative: "effect-darken"; 
-
-  // Image Service used to generate optimal images
-  var imgSvc = GetService<IImageService>();
 }
 
 <div class="app-ga7-main">
@@ -36,7 +32,7 @@
                 <span class="badge rounded-pill">@images.Count()</span>
               </div>
             </figcaption>
-            @imgSvc.Picture(albumThumbUrl, settings: "Content", factor: imgResizeFactor, imgAlt:album.Title)
+            @Kit.Image.Picture(albumThumbUrl, settings: "Content", factor: imgResizeFactor, imgAlt:album.Title)
           </figure>
         </a>
       </div>

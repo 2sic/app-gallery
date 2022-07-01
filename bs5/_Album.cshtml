@@ -1,19 +1,11 @@
-@inherits Custom.Hybrid.Razor12
+@inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
-@using ToSic.Sxc.Services;
 @{
   /* 1. Pre-Checks: Determine which Album to show or show error
    * This will check if the url specifies a specific album, and if yes, use that
    * If not, use the one configured in the module (for single-album scenarios)
    * If nothing is found, it will stop after this code block (see `return` below)
    */
-
-  // Get the PageServices for setting Titles and HTTP error headers
-  var pageSvc = GetService<IPageService>();
-  var imgSvc = GetService<IImageService>();
-  var scrubSvc = GetService<IScrub>();
-  var toolbarSvc = GetService<IToolbarService>();
-
   // Get page Parameters (works on Dnn & Oqtane)
   var albumInUrl = CmsContext.Page.Parameters["Album"];
   var isDetailViewOfAlbum = Text.Has(albumInUrl);
@@ -32,7 +24,7 @@
     <div>@Html.Raw(Resources.AlbumNotFoundText)</div>
     <a href="@Link.To()" class="btn btn-outline-primary btn-sm">@Resources.BackToOverview</a>
 
-    pageSvc.SetHttpStatus(404);
+    Kit.Page.SetHttpStatus(404);
     return;
   }
 }
@@ -44,8 +36,8 @@
    */
 
   // 2.1 Set the title of the page
-  pageSvc.SetTitle(album.Title + " | ");       // will prepend to the existing title
-  // pageSvc.SetTitle(album.Title, "[album]"); // Alternative: this would replace a placeholder [album] in the title with the title
+  Kit.Page.SetTitle(album.Title + " | ");       // will prepend to the existing title
+  // Kit.Page.SetTitle(album.Title, "[album]"); // Alternative: this would replace a placeholder [album] in the title with the title
 
   // 2.2 Determine if we should show as Masonry
   var albumTiling = Text.Has(album.Presentation.TileStructure)
@@ -70,7 +62,7 @@
   // 2.9 Helpers used later in the Template
   var helpers = CreateInstance("SortImages.cs");        // Has helper code for sorting
 
-  var gallerySettings = CmsContext.View.Identifier == "masonry" ? imgSvc.Settings("Content", resizeMode:"max") : Settings.Images.Content;
+  var gallerySettings = CmsContext.View.Identifier == "masonry" ? Kit.Image.Settings("Content", resizeMode:"max") : Settings.Images.Content;
   var galleryFactor = CmsContext.View.Identifier == "masonry" ? "4/12" : "3/12";
 }
 @* 4. Show the Album *@
@@ -88,7 +80,7 @@
 
       // Build the Caption for the Lightbox - will later be converted to an attribute
       var caption = (Content.Presentation.ShowImageTitle && Text.Has(pic.Metadata.Title))
-        ? Tag.H6().Wrap(scrubSvc.All(pic.Metadata.Title)) + Tag.P().Wrap(scrubSvc.All(pic.Metadata.Description))
+        ? Tag.H6().Wrap(Kit.Scrub.All(pic.Metadata.Title)) + Tag.P().Wrap(Kit.Scrub.All(pic.Metadata.Description))
         : "";
 
       // Toolbar parameters (for admins) to ensure the metadata-button does what's needed
@@ -97,19 +89,21 @@
           "metadata?entityId=" + pic.Metadata.EntityId + "&contentType=ImageMetadata&for=file:" + pic.FileId
       };
 
-      @* 4.3a Optionally wrap inside a special <div> if it's not Masonry-layout *@
+      var picToolbar = Kit.Toolbar.Empty().Metadata(pic, "ImageMetadata").Condition(!Content.IsDemoItem);
+
+      @* 4.3a Optionally wrap inside a special <div> if it's not Masonrylayout *@
       if(!useMasonry) { @Tag.Div().Class("col-12 col-sm-6 col-md-4 col-lg-3 mb-4").TagStart }
         @* 4.4 Now show each image *@
-        var lbPic = imgSvc.Picture(pic.Url, settings:"Lightbox");
+        var lbPic = Kit.Image.Picture(pic.Url, settings:"Lightbox");
         <a class="app-ga7" @fancyboxAttribute data-src="@pic.Url" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption="@caption">
         
-          <figure class="app-ga7-image @effect" @Edit.TagToolbar(toolbar: metaToolbarConfig, condition: !Content.IsDemoItem)>
+          <figure class="app-ga7-image @effect" @pic.Toolb>
             @* 4.5 Show the Overlay, an optional title (based on settings) and the image itself *@
             <figcaption class="overlay d-flex align-items-end">
               @if(Text.Has(picTitle)) { <div class="caption">@picTitle</div> }
             </figcaption>
 
-            @imgSvc.Picture(pic.Url, settings: gallerySettings, factor: galleryFactor)
+            @Kit.Image.Picture(pic.Url, settings: gallerySettings, factor: galleryFactor)
           </figure>
         </a>
       @* 4.3b close <div> if we opened it above *@
