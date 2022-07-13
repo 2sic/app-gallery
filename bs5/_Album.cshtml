@@ -97,7 +97,7 @@
         var lbPic = Kit.Image.Picture(pic.Url, settings:"Lightbox");
         <a class="app-ga7" @fancyboxAttribute data-src="@pic.Url" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption="@caption">
         
-          <figure class="app-ga7-image @effect" @pic.Toolb>
+          <figure class="app-ga7-image @effect" @picToolbar>
             @* 4.5 Show the Overlay, an optional title (based on settings) and the image itself *@
             <figcaption class="overlay d-flex align-items-end">
               @if(Text.Has(picTitle)) { <div class="caption">@picTitle</div> }
