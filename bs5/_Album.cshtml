@@ -63,7 +63,6 @@
   var helpers = CreateInstance("SortImages.cs");        // Has helper code for sorting
 
   var gallerySettings = CmsContext.View.Identifier == "masonry" ? Kit.Image.Settings("Content", resizeMode:"max") : Settings.Images.Content;
-  var galleryFactor = CmsContext.View.Identifier == "masonry" ? "4/12" : "3/12";
 }
 @* 4. Show the Album *@
 <div class="app-ga7-main" @Edit.TagToolbar(album)>
@@ -103,7 +102,7 @@
               @if(Text.Has(picTitle)) { <div class="caption">@picTitle</div> }
             </figcaption>
 
-            @Kit.Image.Picture(pic.Url, settings: gallerySettings, factor: galleryFactor)
+            @Kit.Image.Picture(pic.Url, settings: gallerySettings)
           </figure>
         </a>
       @* 4.3b close <div> if we opened it above *@
