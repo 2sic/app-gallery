@@ -8,7 +8,7 @@
 }
 @if (album.Presentation.HeadingType != "hidden") {
   @Tag.Custom(album.Presentation.HeadingType).Wrap(album.Title)
-} else if(Edit.Enabled) {
+} else if (Edit.Enabled) {
   <h2>(@Resources.TitleNotDisplayed)</h2>
 }
 @if (album.Presentation.ShowDescription != false) {

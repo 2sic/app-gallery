@@ -92,7 +92,7 @@
       var picToolbar = Kit.Toolbar.Empty().Metadata(pic, "ImageMetadata").Condition(!Content.IsDemoItem);
 
       @* 4.3a Optionally wrap inside a special <div> if it's not Masonrylayout *@
-      if(!useMasonry) { @Tag.Div().Class("col-12 col-sm-6 col-md-4 col-lg-3 mb-4").TagStart }
+      if (!useMasonry) { @Tag.Div().Class("col-12 col-sm-6 col-md-4 col-lg-3 mb-4").TagStart }
         @* 4.4 Now show each image *@
         var lbPic = Kit.Image.Picture(pic.Url, settings:"Lightbox");
         <a class="app-ga7" @fancyboxAttribute data-src="@pic.Url" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption="@caption">
@@ -100,20 +100,20 @@
           <figure class="app-ga7-image @effect" @picToolbar>
             @* 4.5 Show the Overlay, an optional title (based on settings) and the image itself *@
             <figcaption class="overlay d-flex align-items-end">
-              @if(Text.Has(picTitle)) { <div class="caption">@picTitle</div> }
+              @if (Text.Has(picTitle)) { <div class="caption">@picTitle</div> }
             </figcaption>
 
             @Kit.Image.Picture(pic.Url, settings: gallerySettings, factor: galleryFactor)
           </figure>
         </a>
       @* 4.3b close <div> if we opened it above *@
-      if(!useMasonry) { @Tag.Div().TagEnd }
+      if (!useMasonry) { @Tag.Div().TagEnd }
     }
   </div>
 </div>
 
 @* 5. Show back button if the view is used as detail view *@
-@if(isDetailViewOfAlbum) {
+@if (isDetailViewOfAlbum) {
   <a href="@Link.To()" class="btn btn-outline-primary btn-sm">@Resources.BackToOverview</a>
 }
 

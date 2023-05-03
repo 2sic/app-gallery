@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="14.09.00" ExportDate="2022-09-21T08:42:35.9829703+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="16.00.00" ExportDate="2023-05-03T15:10:49.3685646+02:00">
   <Header>
     <App Guid="3bfab1bb-e102-4176-adcf-f70594a6bdfe" />
     <Language Default="en-us" />
@@ -9,7 +9,7 @@
     </Dimensions>
   </Header>
   <AttributeSets>
-    <AttributeSet StaticName="e51e37ed-e9f8-43d7-bf5f-3f992be63f44" Name="Album" Description="Album with many Images" Scope="Default" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="e51e37ed-e9f8-43d7-bf5f-3f992be63f44" Name="Album" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="539d1a4d-0ef9-47e6-bad4-514a213437b9" Json="True" KeyNumber="4772">
@@ -286,7 +286,7 @@
               <Dimension DimensionID="185" ReadOnly="false" />
               <Dimension DimensionID="186" ReadOnly="false" />
             </Value>
-            <Value Key="FolderDepth" Value="0" Type="Number">
+            <Value Key="FolderDepth" Value="0.0" Type="Number">
               <Dimension DimensionID="185" ReadOnly="false" />
               <Dimension DimensionID="186" ReadOnly="false" />
             </Value>
@@ -389,7 +389,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="2d268a4c-b5b7-4289-ad74-893aa69ddcac" Name="AlbumPresentation" Description="Album Presentation Settings" Scope="Default" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="2d268a4c-b5b7-4289-ad74-893aa69ddcac" Name="AlbumPresentation" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="HeadingType" Type="String" IsTitle="true">
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="4752b40c-a8b5-4e96-8b08-05eea7477e68" Json="True" KeyNumber="4777">
@@ -702,7 +702,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="App-Resources" Name="App-Resources" Description="Stores resources like translations for an app" Scope="System.App" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="App-Resources" Name="App-Resources" Scope="System.App" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="AlbumNotFound" Type="String" IsTitle="true">
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="44d401c2-94b7-460d-8296-40653e1f88a5" Json="True" KeyNumber="4781">
@@ -888,7 +888,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="App-Settings" Name="App-Settings" Description="Stores settings for an app" Scope="System.App" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="App-Settings" Name="App-Settings" Scope="System.App" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="6815e24c-c9c0-4463-b9ae-5b63330ae8d8" Json="True" KeyNumber="4785">
@@ -942,7 +942,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="fb9a5615-dd20-4736-9123-4abc3ec5dfe3" Name="ImageMetadata" Description="Image Metadata (label, notes, etc.)" Scope="Default" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="fb9a5615-dd20-4736-9123-4abc3ec5dfe3" Name="ImageMetadata" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="766bed44-925d-436b-8d13-21c4be86b775" Json="True" KeyNumber="4786">
@@ -1094,7 +1094,7 @@
       <Value Key="RequiredOqtaneVersion" Value="03.01.00" Type="String">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredVersion" Value="14.09.00" Type="String">
+      <Value Key="RequiredVersion" Value="16.00.00" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
@@ -1102,7 +1102,7 @@
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="07.03.04" Type="String">
+      <Value Key="Version" Value="07.04.00" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
@@ -1240,9 +1240,7 @@
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="20f6954a-4176-44d5-9532-519ddef364ad" Json="True">
-      <Value Key="ContentDemoEntity" Value="34ce33d2-022f-484f-b4ea-ca777726ed0b" Type="Entity">
-        <Dimension DimensionID="186" ReadOnly="false" />
-      </Value>
+      <Value Key="ContentDemoEntity" Value="34ce33d2-022f-484f-b4ea-ca777726ed0b" Type="Entity" />
       <Value Key="ContentTypeStaticName" Value="e51e37ed-e9f8-43d7-bf5f-3f992be63f44" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
@@ -1275,13 +1273,11 @@
       <Value Key="Name" Value="Alben (mehrere)" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="bs4/_Albums.cshtml" Type="String">
+      <Value Key="Path" Value="bs5/Albums.cshtml" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="PresentationDemoEntity" Value="8687a9fb-c0ba-4720-b6ca-0cf63cdf6b4b" Type="Entity">
-        <Dimension DimensionID="186" ReadOnly="false" />
-      </Value>
+      <Value Key="PresentationDemoEntity" Value="8687a9fb-c0ba-4720-b6ca-0cf63cdf6b4b" Type="Entity" />
       <Value Key="PresentationTypeStaticName" Value="2d268a4c-b5b7-4289-ad74-893aa69ddcac" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
@@ -1337,9 +1333,7 @@
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="60db0aeb-e280-4394-bdb2-d31540f0a225" Json="True">
-      <Value Key="ContentDemoEntity" Value="34ce33d2-022f-484f-b4ea-ca777726ed0b" Type="Entity">
-        <Dimension DimensionID="186" ReadOnly="false" />
-      </Value>
+      <Value Key="ContentDemoEntity" Value="34ce33d2-022f-484f-b4ea-ca777726ed0b" Type="Entity" />
       <Value Key="ContentTypeStaticName" Value="e51e37ed-e9f8-43d7-bf5f-3f992be63f44" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
@@ -1372,13 +1366,11 @@
       <Value Key="Name" Value="Einzelnes Album mit identischen Kacheln und Vollbildansicht" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="bs4/_Album.cshtml" Type="String">
+      <Value Key="Path" Value="bs5/Album.cshtml" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="PresentationDemoEntity" Value="3de9657f-44f3-4f10-ab7f-a250043140e9" Type="Entity">
-        <Dimension DimensionID="186" ReadOnly="false" />
-      </Value>
+      <Value Key="PresentationDemoEntity" Value="3de9657f-44f3-4f10-ab7f-a250043140e9" Type="Entity" />
       <Value Key="PresentationTypeStaticName" Value="2d268a4c-b5b7-4289-ad74-893aa69ddcac" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
@@ -1415,9 +1407,7 @@
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="b4a76cb4-6b61-4f5d-8933-5fc0d900d28c" Json="True">
-      <Value Key="ContentDemoEntity" Value="34ce33d2-022f-484f-b4ea-ca777726ed0b" Type="Entity">
-        <Dimension DimensionID="186" ReadOnly="false" />
-      </Value>
+      <Value Key="ContentDemoEntity" Value="34ce33d2-022f-484f-b4ea-ca777726ed0b" Type="Entity" />
       <Value Key="ContentTypeStaticName" Value="e51e37ed-e9f8-43d7-bf5f-3f992be63f44" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
@@ -1450,13 +1440,11 @@
       <Value Key="Name" Value="Einzelalbum mit Mauerziegeln und Vollbildansicht" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="bs4/_Album.cshtml" Type="String">
+      <Value Key="Path" Value="bs5/Album.cshtml" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="PresentationDemoEntity" Value="8687a9fb-c0ba-4720-b6ca-0cf63cdf6b4b" Type="Entity">
-        <Dimension DimensionID="186" ReadOnly="false" />
-      </Value>
+      <Value Key="PresentationDemoEntity" Value="8687a9fb-c0ba-4720-b6ca-0cf63cdf6b4b" Type="Entity" />
       <Value Key="PresentationTypeStaticName" Value="2d268a4c-b5b7-4289-ad74-893aa69ddcac" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
@@ -1618,7 +1606,7 @@
       <Value Key="ItemIdentifier" Value="GalleryMasonry" Type="String">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="Quality" Value="75" Type="Number">
+      <Value Key="Quality" Value="75.0" Type="Number">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
       <Value Key="ResizeMode" Value="max" Type="String">
@@ -1630,7 +1618,7 @@
       <Value Key="SettingsIdentifier" Value="Images.GalleryMasonry" Type="String">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="Width" Value="1400" Type="Number">
+      <Value Key="Width" Value="1400.0" Type="Number">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
     </Entity>
@@ -1647,16 +1635,16 @@
       <Value Key="ByUrlParameters" Value="True" Type="Boolean">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="Duration" Value="14400" Type="Number">
+      <Value Key="Duration" Value="14400.0" Type="Number">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="DurationEditors" Value="300" Type="Number">
+      <Value Key="DurationEditors" Value="300.0" Type="Number">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="DurationSystemAdmin" Value="300" Type="Number">
+      <Value Key="DurationSystemAdmin" Value="300.0" Type="Number">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="DurationUsers" Value="-1" Type="Number">
+      <Value Key="DurationUsers" Value="-1.0" Type="Number">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
       <Value Key="IsEnabled" Value="True" Type="Boolean">
