@@ -8,7 +8,7 @@ A Gallery App using the [fancybox4](https://fancyapps.com/) javascript library.
 
 | Aspect              | Status | Comments or Version |
 | ------------------- | :----: | ------------------- |
-| 2sxc                | ✅    | requires 2sxc v13.10
+| 2sxc                | ✅    | requires 2sxc 16.00
 | Dnn                 | ✅    | For v7, v8 and v9
 | Oqtane 2            | ✅    | Requires v2.02
 | No jQuery           | ✅    | 
@@ -74,3 +74,8 @@ Version 6 is found here: https://github.com/2sic/app-gallery/tree/v6-fancybox3
 1. Changed from GetService<> to the new ServiceKit14
 1. Changed the toolbars to use the IToolbarService
 1. Updated webpack
+
+### Version 7.4
+1. Removed _ from Filenames
+1. Replaced turnOn Tag with `Kit.Page.TurnOn` 
+1. Code in one file the bs5, less duplicated code 

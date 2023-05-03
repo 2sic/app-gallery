@@ -7,6 +7,10 @@
 
   // visual effect for mouse interaction
   var effect = "effect-zoom"; // alternative: "effect-darken"; 
+
+  // query whether BS5 or BS4 for Class
+  var isBs5 = Kit.Css.Is("bs5");
+  var bsPill = isBs5 ? "rounded-pill" : "badge-pill";
 }
 
 <div class="app-ga7-main">
@@ -22,16 +26,16 @@
       var linkAlbum = Link.To(parameters: "album=" + album.Path);
 
       @* Show one Album Thumbnail with Link etc. *@
-      <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4" @Edit.TagToolbar(album)>
+      <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4" @Kit.Toolbar.Default(album)>
         <a class="app-ga7" href='@linkAlbum'>
           <figure class="app-ga7-image @effect">
             <figcaption class="overlay d-flex align-items-end">
               <div class="caption with-badge">
                 <span class="text-uppercase">@album.Title</span>
-                <span class="badge rounded-pill">@images.Count()</span>
+                <span class="badge @bsPill">@images.Count()</span>
               </div>
             </figcaption>
-            @Kit.Image.Picture(albumThumbUrl, settings: "Content", factor: imgResizeFactor, imgAlt: album.Title)
+            @Kit.Image.Picture(albumThumbUrl, settings: "Content", factor: imgResizeFactor, imgAltFallback : album.Title)
           </figure>
         </a>
       </div>
@@ -39,4 +43,4 @@
   </div>
 </div>
 
-@Html.Partial("shared/_Assets.cshtml")
+@Html.Partial("Assets.cshtml")

@@ -1,9 +1,7 @@
 @inherits Custom.Hybrid.Razor14
 @{
   // 2. Include Bootstrap4 if the framework isn't known
-  if (Kit.Css.IsUnknown) {
-    Kit.Page.Activate("Bootstrap4");
-  }
+  @Kit.Page.Activate(condition: Kit.Css.IsUnknown, features: "Bootstrap5")
 
   // 3. Show warning for admin if koi.json is missing 
   if (Kit.Css.IsUnknown && CmsContext.User.IsSiteAdmin) {
@@ -14,13 +12,10 @@
   }
 
   // 4. Include styles of the App
-  <link rel="stylesheet" href="@App.Path/bs4/dist/styles.min.css" @Kit.Page.AssetAttributes()/>
+  <link rel="stylesheet" href="@CmsContext.View.Path/dist/styles.min.css" @Kit.Page.AssetAttributes()/>
 
   // 5. If we need scripts (only on the single-album-view) activate these. Note that DynamicModel contains the parameters
   if(DynamicModel.scripts == true) {
-    // Activate turnOn and Fancybox4 - see https://r.2sxc.org/turnon - fancybox4 is a standard WebResources in 2sxc
-    Kit.Page.Activate("turnOn", "fancybox4");
-
     // Init options for fancybox binding
     // This is only partial - if you want to see more, see https://fancyapps.com/docs/ui/fancybox/options
     var fancyboxOptions = new {
@@ -30,8 +25,16 @@
         autoStart = false
       }
     };
-    
-    <script type="text/javascript" src="@App.Path/bs4/dist/scripts.min.js" @Kit.Page.AssetAttributes(position:"bottom")></script>
-    <turnOn turn-on='{"await": ["window.Fancybox"], "run": "window.appGalleryV7.init()", "data": { "attribute": "@DynamicModel.FancyboxAttribute", "options": @Html.Raw(Kit.Json.ToJson(fancyboxOptions)) }}'></turnOn>
+
+    var data = new {
+      attribute = DynamicModel.FancyboxAttribute,
+      options = fancyboxOptions
+    };
+
+    // Activate turnOn and Fancybox4 - see https://r.2sxc.org/turnon - fancybox4 is a standard WebResources in 2sxc
+    Kit.Page.Activate("fancybox4");
+    Kit.Page.TurnOn("window.appGalleryV7.init()", data: data);
+
+    <script type="text/javascript" src="@CmsContext.View.Path/dist/scripts.min.js" @Kit.Page.AssetAttributes(position:"bottom")></script>
   }
 }

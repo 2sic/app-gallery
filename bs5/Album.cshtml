@@ -6,7 +6,6 @@
    * If not, use the one configured in the module (for single-album scenarios)
    * If nothing is found, it will stop after this code block (see `return` below)
    */
-    
   // Get page Parameters (works on Dnn & Oqtane)
   var albumInUrl = CmsContext.Page.Parameters["Album"];
   var isDetailViewOfAlbum = Text.Has(albumInUrl);
@@ -63,16 +62,16 @@
   // 2.9 Helpers used later in the Template
   var helpers = CreateInstance("SortImages.cs");        // Has helper code for sorting
 
-  var gallerySettings = CmsContext.View.Identifier == "masonry" ? Kit.Image.Settings("Content", resizeMode:"max") : Settings.Images.Content;
+  var gallerySettings = CmsContext.View.Identifier == "masonry" ? Kit.Image.Settings("GalleryMasonry", resizeMode:"max") : Settings.Images.Content;
+  var galleryFactor = CmsContext.View.Identifier == "masonry" ? "4/12" : "3/12";
 }
 @* 4. Show the Album *@
-<div class="app-ga7-main" @Edit.TagToolbar(album)>
+<div class="app-ga7-main" @Kit.Toolbar.Default(album)>
   @* Display Album Title or information that title is hidden *@
-  @Html.Partial("_Album.Part-Title-Description.cshtml", new { album = album })
+  @Html.Partial("Album.Part-Title-Description.cshtml", new { album = album })
 
   @* 4.1 Display the images *@
   <div class="@classForMainDiv">
-
     @foreach (var pic in helpers.GetImagesSorted(album)) {
       @* 4.2 Prepare caption, tooltip, toolbar etc. for showing the image afterwards *@
 
@@ -97,12 +96,14 @@
         @* 4.4 Now show each image *@
         var lbPic = Kit.Image.Picture(pic.Url, settings:"Lightbox");
         <a class="app-ga7" @fancyboxAttribute data-src="@pic.Url" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" data-caption="@caption">
+        
           <figure class="app-ga7-image @effect" @picToolbar>
             @* 4.5 Show the Overlay, an optional title (based on settings) and the image itself *@
             <figcaption class="overlay d-flex align-items-end">
               @if(Text.Has(picTitle)) { <div class="caption">@picTitle</div> }
             </figcaption>
-            @Kit.Image.Picture(pic.Url, settings: gallerySettings)
+
+            @Kit.Image.Picture(pic.Url, settings: gallerySettings, factor: galleryFactor)
           </figure>
         </a>
       @* 4.3b close <div> if we opened it above *@
@@ -110,7 +111,6 @@
     }
   </div>
 </div>
-
 
 @* 5. Show back button if the view is used as detail view *@
 @if(isDetailViewOfAlbum) {
@@ -122,4 +122,4 @@
   <style>.ly-col-leftpane { display: none; }</style>
 }
 
-@Html.Partial("shared/_Assets.cshtml", new { Scripts = true, FancyboxAttribute = fancyboxAttribute })
+@Html.Partial("Assets.cshtml", new { Scripts = true, FancyboxAttribute = fancyboxAttribute })
