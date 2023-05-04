@@ -53,7 +53,7 @@
   var thumbHeight = useMasonry ? (int?)0 : null; // if Masonry it must be 0 (no height), otherwise null = default
 
   // 2.4 Prepare the url resize-params for re-use with the Link.Image helper and global Image Settings http://r.2sxc.org/settings
-  var thumbnailParams = Link.Image("", "Content", factor: imgResizeFactor, height: thumbHeight);
+  var thumbnailParams = Link.Image("", "Content", factor: imgResizeFactor, height: thumbHeight, imgAltFallback : album.Title);
   var lightboxParams = Link.Image("", "Lightbox");
 
   // 2.5 Other stuff like class to use on the container-div etc.
