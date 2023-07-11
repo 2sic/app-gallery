@@ -8,9 +8,9 @@ A Gallery App using the [fancybox4](https://fancyapps.com/) javascript library.
 
 | Aspect              | Status | Comments or Version |
 | ------------------- | :----: | ------------------- |
-| 2sxc                | ✅    | requires 2sxc 16.00
-| Dnn                 | ✅    | For v7, v8 and v9
-| Oqtane 2            | ✅    | Requires v2.02
+| 2sxc                | ✅    | requires 2sxc v16.02
+| Dnn                 | ✅    | For v9.6.1+
+| Oqtane 2            | ✅    | Requires v3.04+
 | No jQuery           | ✅    | 
 | Live Demo           | ➖    |
 | Install Checklist   | ✅    | See [Installation](https://azing.org/2sxc/r/WLu6KUI4) on [azing.org](https://azing.org/2sxc)
@@ -25,7 +25,7 @@ A Gallery App using the [fancybox4](https://fancyapps.com/) javascript library.
 
 ## Customize the App
 
-Gallery App Fancybox7 uses the new, [standard Settings-System in 2sxc](http://r.2sxc.org/settings) to configure it. It also has app resources (i18n labels) you can customize.
+Gallery App V7 with Fancybox4 uses the new, [standard Settings-System in 2sxc](http://r.2sxc.org/settings) to configure it. It also has app resources (i18n labels) you can customize.
 
 If you want to customize the CSS, you will usually follow the ["Create Custom Styles in a Standard 2sxc App" checklist](https://azing.org/2sxc/r/Lu5SDBqU)
 
@@ -40,42 +40,36 @@ Version 6 is found here: https://github.com/2sic/app-gallery/tree/v6-fancybox3
 
 * Updated to conventions of 2sxc 12.0 as a Hybrid Dnn/Oqtane App based on [this checklist](https://azing.org/2sxc/r/m0iSLifK)
 
-### Version 6.1 
-
-1. Updated to features and conventions of 2sxc 12.03 based on [this checklist](https://azing.org/2sxc/r/KwXMhp8h)
-1. Now uses the new `Settings.WebResources` and `Settings.Images` for global configuration
-1. Renamed folder to enable side-by-side installation with older versions
-1. Reset the GUID so it has a new ID now - allowing side-by-side installation with older versions
-1. Dropped BS3 support - if anybody needs this, we recommend V5
-1. Removed duplicate code, cleaned up everything
-1. Albums can now also show Masonry-style galleries inside
-
-
-### Version 7
-
-1. Switched to Fancybox4
-1. Dropped jQuery
-1. Added turnOn to activate JS cleanly
-1. Now uses dependencies from Settings.WebResources
-1. Complete clean up / simplification of code files
-1. Ensure that multiple galleries don't mix images in lightbox mode
-1. Lots of documentation / comments everywhere
-
-### Version 7.2 
-
-1. Moved all access of Services to ToSic.Sxc.Services
-1. Activated image configuration
-1. Replaced data-enableoptimization with IPageService.AssetAttributes()
-1. Changed fancybox images to use the IImageService
-
-### Version 7.3
-
-1. Replaced all base classes with their 2sxc 14 equivalents
-1. Changed from GetService<> to the new ServiceKit14
-1. Changed the toolbars to use the IToolbarService
-1. Updated webpack
-
-### Version 7.4
-1. Removed _ from Filenames
-1. Replaced turnOn Tag with `Kit.Page.TurnOn` 
-1. Code in one file the bs5, less duplicated code 
+* v06.01.00
+  * Updated to features and conventions of 2sxc 12.03 based on [this checklist](https://azing.org/2sxc/r/KwXMhp8h)
+  * Now uses the new `Settings.WebResources` and `Settings.Images` for global configuration
+  * Renamed folder to enable side-by-side installation with older versions
+  * Reset the GUID so it has a new ID now - allowing side-by-side installation with older versions
+  * Dropped BS3 support - if anybody needs this, we recommend V5
+  * Removed duplicate code, cleaned up everything
+  * Albums can now also show Masonry-style galleries inside
+* v07.00.00
+  * Switched to Fancybox4
+  * Dropped jQuery
+  * Added turnOn to activate JS cleanly
+  * Now uses dependencies from Settings.WebResources
+  * Complete clean up / simplification of code files
+  * Ensure that multiple galleries don't mix images in lightbox mode
+  * Lots of documentation / comments everywhere
+* v07.02.00
+  * Moved all access of Services to ToSic.Sxc.Services
+  * Activated image configuration
+  * Replaced data-enableoptimization with IPageService.AssetAttributes()
+  * Changed fancybox images to use the IImageService
+* v07.03.00
+  * Replaced all base classes with their 2sxc 14 equivalents
+  * Changed from GetService<> to the new ServiceKit14
+  * Changed the toolbars to use the IToolbarService
+  * Updated webpack
+* v07.04.00
+  * Removed _ from Filenames
+  * Replaced turnOn Tag with `Kit.Page.TurnOn`
+  * Code in one file the bs5, less duplicated code
+* v07.05.00 2023-07
+  * 2sxc 16.02 coding conventions
+  * everything typed

@@ -1,10 +1,10 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorPro
 @{
   // 2. Include Bootstrap4 if the framework isn't known
   @Kit.Page.Activate(condition: Kit.Css.IsUnknown, features: "Bootstrap5")
 
   // 3. Show warning for admin if koi.json is missing 
-  if (Kit.Css.IsUnknown && CmsContext.User.IsSiteAdmin) {
+  if (Kit.Css.IsUnknown && MyUser.IsSiteAdmin) {
     <div class='dnnFormMessage dnnFormWarning'>
       @Html.Raw(Connect.Koi.Messages.CssInformationMissing) <br>
       @Html.Raw(Connect.Koi.Messages.OnlyAdminsSeeThis)
@@ -12,10 +12,11 @@
   }
 
   // 4. Include styles of the App
-  <link rel="stylesheet" href="@CmsContext.View.Path/dist/styles.min.css" @Kit.Page.AssetAttributes()/>
+  <link rel="stylesheet" href="@MyView.Path/dist/styles.min.css" @Kit.Page.AssetAttributes()/>
 
-  // 5. If we need scripts (only on the single-album-view) activate these. Note that DynamicModel contains the parameters
-   if (DynamicModel.scripts == true) {
+  // 5. If we need scripts (only on the single-album-view) activate these. Note that MyModel contains the parameters
+
+   if (MyModel.Bool("scripts", required: false)) {
     // Init options for fancybox binding
     // This is only partial - if you want to see more, see https://fancyapps.com/docs/ui/fancybox/options
     var fancyboxOptions = new {
@@ -25,9 +26,8 @@
         autoStart = false
       }
     };
-
     var data = new {
-      attribute = DynamicModel.FancyboxAttribute,
+      attribute = MyModel.String("FancyboxAttribute", required: false),
       options = fancyboxOptions
     };
 
@@ -35,6 +35,6 @@
     Kit.Page.Activate("fancybox4");
     Kit.Page.TurnOn("window.appGalleryV7.init()", data: data);
 
-    <script type="text/javascript" src="@CmsContext.View.Path/dist/scripts.min.js" @Kit.Page.AssetAttributes(position:"bottom")></script>
+    <script type="text/javascript" src="@MyView.Path/dist/scripts.min.js" @Kit.Page.AssetAttributes(position:"bottom")></script>
   }
 }

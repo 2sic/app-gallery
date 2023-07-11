@@ -1,16 +1,17 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorPro
 @using ToSic.Razor.Blade;
 @{
   /* This part shows album title and introduction */
-
   // The album information as passed in from the caller
-  var album = DynamicModel.album;
+  var album = MyModel.Item("Album");
 }
-@if (album.Presentation.HeadingType != "hidden") {
-  @Tag.Custom(album.Presentation.HeadingType).Wrap(album.Title)
-} else if (Edit.Enabled) {
-  <h2>(@Resources.TitleNotDisplayed)</h2>
+
+@if (album.Presentation.String("HeadingType") != "hidden") {
+  @Tag.Custom(album.Presentation.String("HeadingType")).Wrap(album.String("Title"))
+} else if (MyUser.IsContentAdmin) {
+  <h2>(@App.Resources.String("TitleNotDisplayed"))</h2>
 }
-@if (album.Presentation.ShowDescription != false) {
-  <div class="mb-4">@Html.Raw(album.Introduction)</div>
+@if (album.Presentation.Bool("ShowDescription") != false) {
+    @album.Html("Introduction").Class("mb-4")
+
 }

@@ -1,27 +1,29 @@
 using System.Linq;
 using ToSic.Razor.Blade;
-using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
+using ToSic.Sxc.Data;
 
-public class SortImages: Custom.Hybrid.Code14
+public class SortImages: Custom.Hybrid.CodePro
 {
   /**
   * Returns the images, sorted by the passed setting
   */
-  public dynamic GetImagesSorted(dynamic album) {
-    var images = AsAdam(album, "Images").Files as Dynlist;
+  public object GetImagesSorted(ITypedItem album) {
+    var images = album.Folder("Images").Files;
 
-    switch ((string)album.Presentation.SortMode) {
+    switch ((string)album.Presentation.String("SortMode")) {
       case "File asc":
-        images = images.OrderBy(c => c.FileName);
+        images = images.OrderBy(c => c.FullName);
         break;
       case "File desc":
-        images = images.OrderByDescending(c => c.FileName);
+        images = images.OrderByDescending(c => c.FullName);
         break;
       case "Title asc":
-        images = images.OrderBy(c => !c.HasMetadata).ThenBy(c => !c.HasMetadata ? "" : ((dynamic)c.Metadata).Title);
+        images = images.OrderBy(c => !c.HasMetadata)
+                    .ThenBy(c => !c.HasMetadata ? "" : c.Metadata.String("Title"));
         break;
       case "Title desc":
-        images = images.OrderBy(c => !c.HasMetadata).ThenByDescending(c => !c.HasMetadata ? "" : ((dynamic)c.Metadata).Title);
+        images = images.OrderBy(c => !c.HasMetadata)
+                    .ThenByDescending(c => !c.HasMetadata ? "" : c.Metadata.String("Title"));
         break;
       case "Upload asc":
         images = images.OrderBy(c => c.Modified);
