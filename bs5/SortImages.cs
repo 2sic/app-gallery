@@ -2,7 +2,7 @@ using System.Linq;
 using ToSic.Razor.Blade;
 using ToSic.Sxc.Data;
 
-public class SortImages: Custom.Hybrid.CodePro
+public class SortImages: Custom.Hybrid.CodeTyped
 {
   /**
   * Returns the images, sorted by the passed setting
