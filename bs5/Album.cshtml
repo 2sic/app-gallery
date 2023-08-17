@@ -79,7 +79,8 @@
         : null;
 
       // Generate the picture object for telling the lightbox the src, srcset etc.
-      var lbPic = Kit.Image.Picture(pic.Url, settings: "Lightbox");
+      // note that pic.Picture(...) wouldn't work, because it's an IFile and not an ITypedItem
+      var lbPic = Kit.Image.Picture(pic, settings: "Lightbox");
 
       @* 4.3 If not Masonry, add some responsive classes to the div *@
       <div class='@(useMasonry ? "" : "col-12 col-sm-6 col-md-4 col-lg-3 mb-4" )'>
@@ -91,7 +92,7 @@
               @if (Text.Has(picTitle)) { <div class="caption">@picTitle</div> }
             </figcaption>
 
-            @Kit.Image.Picture(pic.Url, settings: imageSettings)
+            @Kit.Image.Picture(pic, settings: imageSettings)
           </figure>
         </a>
       </div>
