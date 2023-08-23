@@ -42,7 +42,7 @@
                 @Kit.Image.Picture(fallbackThumbnail, settings: "Content", factor: imgResizeFactor, imgAltFallback: fallbackTitle)
               } else {
                 // FYI: This code will probably never run, because images are a required field
-                @Kit.Image.Picture(App.Path + "/app-icon.png", settings: "Content", factor: imgResizeFactor, imgAltFallback: fallbackTitle)
+                @Kit.Image.Picture(App.Folder.Url + "/app-icon.png", settings: "Content", factor: imgResizeFactor, imgAltFallback: fallbackTitle)
               }
             }
           </figure>
