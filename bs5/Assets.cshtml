@@ -33,7 +33,7 @@
 
     // Activate turnOn and Fancybox4 - see https://r.2sxc.org/turnon - fancybox4 is a standard WebResources in 2sxc
     Kit.Page.Activate("fancybox4");
-    Kit.Page.TurnOn("window.appGalleryV7.init()", data: data);
+    Kit.Page.TurnOn("window.appGalleryV7.init()", data: data, require: "window.Fancybox");
 
     <script type="text/javascript" src="@MyView.Folder.Url/dist/scripts.min.js" @Kit.Page.AssetAttributes(position:"bottom")></script>
   }
