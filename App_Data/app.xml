@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="16.04.00" ExportDate="2023-08-23T18:03:39.0613163+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="16.04.00" ExportDate="2023-08-31T14:40:23.2014676+02:00">
   <Header>
     <App Guid="3bfab1bb-e102-4176-adcf-f70594a6bdfe" />
     <Language Default="en-us" />
@@ -1734,7 +1734,13 @@
       <Value Key="CropTo" Value="tc" Type="String">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="Description" Value="" Type="String">
+      <Value Key="Description" Value="Mountain Summit" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="DescriptionExtended" Value="" Type="String">
+        <Dimension DimensionID="186" ReadOnly="false" />
+      </Value>
+      <Value Key="SkipFallbackTitle" Value="False" Type="Boolean">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
     </Entity>

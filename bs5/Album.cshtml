@@ -82,17 +82,19 @@
       // note that pic.Picture(...) wouldn't work, because it's an IFile and not an ITypedItem
       var lbPic = Kit.Image.Picture(pic, settings: "Lightbox");
 
+      var picTag = Kit.Image.Picture(pic, settings: imageSettings);
+
       @* 4.3 If not Masonry, add some responsive classes to the div *@
       <div class='@(useMasonry ? "" : "col-12 col-sm-6 col-md-4 col-lg-3 mb-4" )'>
         @* 4.4 Now show each image *@
         <a class="app-ga7" @fancyboxAttribute data-src="@lbPic.Src" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" @Tag.Attr("data-caption", lbCaption)>
           <figure class="app-ga7-image @effect" @picToolbar.Metadata(pic, "ImageMetadata")>
+            @picTag
             @* 4.5 Show the Overlay, an optional title (based on settings) and the image itself *@
             <figcaption class="overlay d-flex align-items-end">
               @if (Text.Has(picTitle)) { <div class="caption">@picTitle</div> }
             </figcaption>
 
-            @Kit.Image.Picture(pic, settings: imageSettings)
           </figure>
         </a>
       </div>
