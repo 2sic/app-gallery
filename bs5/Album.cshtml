@@ -49,7 +49,7 @@
   var imageSettings = Kit.Image.Settings(useMasonry ? "GalleryMasonry" : "Content", factor: imgResizeFactor);
 
   // define dom attribute for fancybox
-  var fancyboxAttribute = "app-gallery7-fancybox-" + UniqueKey; 
+  var fancyboxMarker = "app-gallery7-fancybox-" + UniqueKey; 
 
   // 2.6 Prepare the toolbar to use on each picture for adding metadata
   // note that it won't show when a demo-gallery is shown, to ensure that the user doesn't modify demo data
@@ -78,16 +78,25 @@
         ? Tag.H6(picTitle) + (Text.Has(picDescr) ? Tag.P(picDescr) : null)
         : null;
 
+      // prepare the <picture> tag because we'll need it 2x (for toolbar and output)
+      var picTag = Kit.Image.Picture(pic, settings: imageSettings);
+
       // Generate the picture object for telling the lightbox the src, srcset etc.
-      // note that pic.Picture(...) wouldn't work, because it's an IFile and not an ITypedItem
       var lbPic = Kit.Image.Picture(pic, settings: "Lightbox");
 
-      var picTag = Kit.Image.Picture(pic, settings: imageSettings);
+      var tags = Kit.HtmlTags;
+      var fancyboxData = tags.RawHtml(
+        tags.Attr("data-srcset", lbPic.SrcSet),
+        tags.Attr("data-sizes", lbPic.Sizes),
+        tags.Attr("data-src", lbPic.Src),
+        tags.Attr("data-preload", false),
+        tags.Attr("data-caption", lbCaption)
+      );
 
       @* 4.3 If not Masonry, add some responsive classes to the div *@
       <div class='@(useMasonry ? "" : "col-12 col-sm-6 col-md-4 col-lg-3 mb-4" )'>
         @* 4.4 Now show each image *@
-        <a class="app-ga7" @fancyboxAttribute data-src="@lbPic.Src" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" @Tag.Attr("data-caption", lbCaption)>
+        <a class="app-ga7" @fancyboxMarker @fancyboxData>
           <figure class="app-ga7-image @effect" @picTag.Toolbar()>
             @picTag
             @* 4.5 Show the Overlay, an optional title (based on settings) and the image itself *@
@@ -107,4 +116,4 @@
   <a href="@Link.To()" class="btn btn-outline-primary btn-sm">@App.Resources.String("BackToOverview")</a>
 }
 
-@Html.Partial("Assets.cshtml", new { Scripts = true, fancyboxAttribute })
+@Html.Partial("Assets.cshtml", new { fancyboxMarker })

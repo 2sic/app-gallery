@@ -68,7 +68,8 @@ Version 6 is found here: <https://github.com/2sic/app-gallery/tree/v6-fancybox3>
   * Removed _ from Filenames
   * Replaced turnOn Tag with `Kit.Page.TurnOn`
   * Code in one file the bs5, less duplicated code
-* v07.05.00 2023-07
+* v07.05.00 2023-08
   * 2sxc 16.02 coding conventions
   * everything typed
   * changed image metadata to use new standard image metadata incl. crop features
+  * add ability to set crop on all images
