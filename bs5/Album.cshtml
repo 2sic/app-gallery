@@ -1,12 +1,11 @@
 @inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade;
 @using ToSic.Sxc.Adam;
+@* 1. Pre-Flight: Determine which Album to show *@
 @{
-  /* 1. Pre-Flight: Determine which Album to show or show error
-   * This will check if the url specifies a specific album, and if yes, use that
-   * If not, use the one configured in the module (for single-album scenarios)
-   * If nothing is found, it will stop after this code block (see `return` below)
-   */
+  // This will check if the url specifies a specific album, and if yes, use that
+  // If not, use the one configured in the module (for single-album scenarios)
+  // If nothing is found, it will stop after this code block (see `return` below)
 
   // Get page Parameter for album=... (works on Dnn & Oqtane)
   var albumInUrl = MyPage.Parameters["Album"];
@@ -16,48 +15,36 @@
   var album = showingSubAlbum
     ? MyItems.FirstOrDefault(a => a.String("Path") == albumInUrl)
     : MyItem;
+}
   
-  // If no album found, show error and stop processing this template using return
-  if (album == null) {
-    <h1>@App.Resources.String("AlbumNotFound")</h1>
-    <a href="@Link.To()" class="btn btn-outline-primary btn-sm">@App.Resources.String("BackToOverview")</a>
-    Kit.Page.SetHttpStatus(404);
-    return;
-  }
+@* 2. If no album found, show error and stop processing this template using return *@
+@if (album == null) {
+  <h1>@App.Resources.String("AlbumNotFound")</h1>
+  <a href="@Link.To()" class="btn btn-outline-primary btn-sm">@App.Resources.String("BackToOverview")</a>
+  Kit.Page.SetHttpStatus(404);
+  return;
 }
+
+@* 3. The album is now known - let's prepare some stuff *@
 @{
-  /* 2. The album is now known - let's prepare some stuff */
+  // Set the title of the page - this will prepend to the existing title
+  Kit.Page.SetTitle(album.String("Title") + " | ");
 
-  // 2.1 Set the title of the page
-  Kit.Page.SetTitle(album.String("Title") + " | ");       // will prepend to the existing title
-  // Kit.Page.SetTitle(album.String("Title"), "[album]"); // Alternative: this would replace a placeholder [album] in the title with the title
+  // Determine if we should show as Masonry based on Presentation-settings or the View Identifier
+  var useMasonry = "masonry" == Text.First(album.Presentation.String("TileStructure"), MyView.Identifier);
 
-  // 2.2 Determine if we should show as Masonry
-  var albumTiling = Text.First(album.Presentation.String("TileStructure"), MyView.Identifier);
-  var useMasonry = albumTiling == "masonry";
+  // Prepare image resize settings - they vary by use case (Masonry or not)
+  var imageSettings = Kit.Image.Settings(
+    useMasonry ? "GalleryMasonry" : "Content",  // Masonry has different resize settings
+    factor: useMasonry ? "4:12" : "3:12"        // Determine the widths based on 12 Bootstrap Cols
+  );
 
-  // visual effect for mouse interaction
-  var effect = "effect-zoom"; // alternative: "effect-darken"; 
-
-  // 2.3 Determine the widths of each part, based on 12 Bootstrap Cols; 
-  var imgResizeFactor = useMasonry ? "4:12" : "3:12";
-
-  // 2.5 Other stuff like class to use on the container-div etc.
-  var classForMainDiv = useMasonry ? "app-ga7-masonry" : "row mb-4";
-
-  // Use different image settings based ot the expected output
-  var imageSettings = Kit.Image.Settings(useMasonry ? "GalleryMasonry" : "Content", factor: imgResizeFactor);
-
-  // define dom attribute for fancybox
+  // Define dom attribute-marker for fancybox links + effect + helpers
   var fancyboxMarker = "app-gallery7-fancybox-" + UniqueKey; 
-
-  // 2.6 Prepare the toolbar to use on each picture for adding metadata
-  // note that it won't show when a demo-gallery is shown, to ensure that the user doesn't modify demo data
-  var picToolbar = Kit.Toolbar.Empty().DetectDemo(album);
-
-  // 2.9 Helpers used later in the Template
-  var helpers = GetCode("SortImages.cs");        // Has helper code for sorting
+  var effect = "effect-zoom";                   // effect on mouse-over; alternative: "effect-darken"; 
+  var sortHelper = GetCode("SortImages.cs");    // Has helper code for sorting images
 }
+
 @* 4. Show the Album *@
 <div class="app-ga7-main" @Kit.Toolbar.Default(album)>
 
@@ -65,32 +52,32 @@
   @Html.Partial("Album.Part-Title-Description.cshtml", new { album })
 
   @* 4.1 Display the images *@
-  <div class="@classForMainDiv">
-    @foreach (IFile pic in helpers.GetImagesSorted(album)) {
+  <div class='@(useMasonry ? "app-ga7-masonry" : "row mb-4")'>
+    @foreach (IFile pic in sortHelper.GetImagesSorted(album)) {
       @* 4.2 Prepare caption, tooltip, toolbar etc. for showing the image afterwards *@
 
       // Get image title and description from metadata - make sure it has no HTML inside
       var picTitle = pic.Metadata.String("Description", scrubHtml: true);
       var picDescr = pic.Metadata.String("DescriptionExtended");
 
-      // Build the Caption for the Lightbox - as a data-caption attribute with HTML encoded
-      var lbCaption = (album.Presentation.Bool("ShowImageTitle") && Text.Has(picTitle))
-        ? Tag.H6(picTitle) + (Text.Has(picDescr) ? Tag.P(picDescr) : null)
-        : null;
-
       // prepare the <picture> tag because we'll need it 2x (for toolbar and output)
       var picTag = Kit.Image.Picture(pic, settings: imageSettings);
 
+      // Build the Caption for the Lightbox - as a data-caption attribute with HTML encoded
+      var lightboxCaption = album.Presentation.Bool("ShowImageTitle") && Text.Has(picTitle)
+        ? Tag.H6(picTitle) + picDescr
+        : null;
+
       // Generate the picture object for telling the lightbox the src, srcset etc.
-      var lbPic = Kit.Image.Picture(pic, settings: "Lightbox");
+      var lightboxPic = Kit.Image.Picture(pic, settings: "Lightbox");
 
       var tags = Kit.HtmlTags;
       var fancyboxData = tags.RawHtml(
-        tags.Attr("data-srcset", lbPic.SrcSet),
-        tags.Attr("data-sizes", lbPic.Sizes),
-        tags.Attr("data-src", lbPic.Src),
+        tags.Attr("data-srcset", lightboxPic.SrcSet),
+        tags.Attr("data-sizes", lightboxPic.Sizes),
+        tags.Attr("data-src", lightboxPic.Src),
         tags.Attr("data-preload", false),
-        tags.Attr("data-caption", lbCaption)
+        tags.Attr("data-caption", lightboxCaption)
       );
 
       @* 4.3 If not Masonry, add some responsive classes to the div *@
@@ -98,12 +85,11 @@
         @* 4.4 Now show each image *@
         <a class="app-ga7" @fancyboxMarker @fancyboxData>
           <figure class="app-ga7-image @effect" @picTag.Toolbar()>
-            @picTag
             @* 4.5 Show the Overlay, an optional title (based on settings) and the image itself *@
+            @picTag
             <figcaption class="overlay d-flex align-items-end">
               @if (Text.Has(picTitle)) { <div class="caption">@picTitle</div> }
             </figcaption>
-
           </figure>
         </a>
       </div>

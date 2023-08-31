@@ -1,17 +1,20 @@
 @inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade;
+@* This part shows album title and introduction *@
 @{
-  /* This part shows album title and introduction */
-  // The album information as passed in from the caller
   var album = MyModel.Item("Album");
+  var settings = album.Presentation;
+  var headingType = settings.String("HeadingType");
 }
 
-@if (album.Presentation.String("HeadingType") != "hidden") {
-  @Tag.Custom(album.Presentation.String("HeadingType")).Wrap(album.String("Title"))
+@* Show title unless configured as "hidden" *@
+@if (headingType != "hidden") {
+  @Tag.Custom(headingType, album.String("Title"))
 } else if (MyUser.IsContentAdmin) {
-  <h2>(@App.Resources.String("TitleNotDisplayed"))</h2>
+  <h2>@App.Resources.String("TitleNotDisplayed")</h2>
 }
-@if (album.Presentation.Bool("ShowDescription") != false) {
-    @album.Html("Introduction").Class("mb-4")
 
+@* Show description if desired *@
+@if (settings.Bool("ShowDescription")) {
+  @album.Html("Introduction").Class("mb-4")
 }
