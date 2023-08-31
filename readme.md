@@ -73,3 +73,4 @@ Version 6 is found here: https://github.com/2sic/app-gallery/tree/v6-fancybox3
 * v07.05.00 2023-07
   * 2sxc 16.02 coding conventions
   * everything typed
+  * changed image metadata to use new standard image metadata incl. crop features

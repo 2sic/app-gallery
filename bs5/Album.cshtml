@@ -70,8 +70,8 @@
       @* 4.2 Prepare caption, tooltip, toolbar etc. for showing the image afterwards *@
 
       // Get image title and description from metadata - make sure it has no HTML inside
-      var picTitle = pic.Metadata.String("Title", scrubHtml: true);
-      var picDescr = pic.Metadata.String("Description", scrubHtml: true);
+      var picTitle = pic.Metadata.String("Description", scrubHtml: true);
+      var picDescr = pic.Metadata.String("DescriptionExtended");
 
       // Build the Caption for the Lightbox - as a data-caption attribute with HTML encoded
       var lbCaption = (album.Presentation.Bool("ShowImageTitle") && Text.Has(picTitle))
@@ -88,7 +88,7 @@
       <div class='@(useMasonry ? "" : "col-12 col-sm-6 col-md-4 col-lg-3 mb-4" )'>
         @* 4.4 Now show each image *@
         <a class="app-ga7" @fancyboxAttribute data-src="@lbPic.Src" data-srcset="@lbPic.SrcSet" data-sizes="@lbPic.Sizes" data-preload="false" @Tag.Attr("data-caption", lbCaption)>
-          <figure class="app-ga7-image @effect" @picToolbar.Metadata(pic, "ImageMetadata")>
+          <figure class="app-ga7-image @effect" @picTag.Toolbar()>
             @picTag
             @* 4.5 Show the Overlay, an optional title (based on settings) and the image itself *@
             <figcaption class="overlay d-flex align-items-end">
