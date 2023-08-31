@@ -16,35 +16,26 @@
   <div class="row">
     @* Loop through all the Albums *@
     @foreach (var album in AsItems(MyData)) {
-      @* Get the main album image or if not available, the first in the images, or empty *@
-      var images = album.Folder("Images").Files;
-      var fallbackThumbnail = album.File("Images");
-      var fallbackTitle = album.String("Title");
-      var linkAlbum = Link.To(parameters: "album=" + album.String("Path"));
+      // figure out which picture to show
+      // If we have a thumbnail use that, otherwise use the first image in the album, or fall back to a default image
+      object mainPic = album.IsNotEmpty("AlbumThumbnail")
+        ? album.Field("AlbumThumbnail")
+        : album.File("Images") as object ?? App.Folder.Url + "/app-icon.png";
 
-      @* Show one Album Thumbnail with Link etc. *@
+      var mainPicTag = Kit.Image.Picture(mainPic, settings: "Content", factor: imgResizeFactor, imgAltFallback: album.String("Title"));
+
+      // Show one Album Thumbnail with Link etc.
       <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4" @Kit.Toolbar.Default(album)>
-        <a class="app-ga7" href='@linkAlbum'>
-          <figure class="app-ga7-image @effect">
+        <a class="app-ga7" href='@Link.To(parameters: "album=" + album.String("Path"))'>
+          <figure class="app-ga7-image @effect" @mainPicTag.Toolbar()>
             <figcaption class="overlay d-flex align-items-end">
               <div class="caption with-badge">
                 <span class="text-uppercase">@album.String("Title")</span>
-                <span class="badge @bsPill">@images.Count()</span>
+                <span class="badge @bsPill">@album.Folder("Images").Files.Count()</span>
               </div>
             </figcaption>
 
-            @* If we have a thumbnail use that, otherwise use the first image in the album *@
-            @if (Text.Has(album.String("AlbumThumbnail"))) {
-              @album.Picture("AlbumThumbnail", settings: "Content", factor: imgResizeFactor, imgAltFallback: fallbackTitle)
-            } else {
-              if (images.Any()) {
-                // note that fallbackThumbnail.Picture(...) wouldn't work, because it's an IFile and not an ITypedItem
-                @Kit.Image.Picture(fallbackThumbnail, settings: "Content", factor: imgResizeFactor, imgAltFallback: fallbackTitle)
-              } else {
-                // FYI: This code will probably never run, because images are a required field
-                @Kit.Image.Picture(App.Folder.Url + "/app-icon.png", settings: "Content", factor: imgResizeFactor, imgAltFallback: fallbackTitle)
-              }
-            }
+            @mainPicTag
           </figure>
         </a>
       </div>
