@@ -11,7 +11,7 @@ A Gallery App using the [fancybox4](https://fancyapps.com/) javascript library.
 | 2sxc                | ✅    | requires 2sxc v16.02
 | Dnn                 | ✅    | For v9.6.1+
 | Oqtane 2            | ✅    | Requires v3.04+
-| No jQuery           | ✅    | 
+| No jQuery           | ✅    |
 | Live Demo           | ➖    |
 | Install Checklist   | ✅    | See [Installation](https://azing.org/2sxc/r/WLu6KUI4) on [azing.org](https://azing.org/2sxc)
 | Source & License    | ✅    | included, ISC/MIT
@@ -22,13 +22,11 @@ A Gallery App using the [fancybox4](https://fancyapps.com/) javascript library.
 | Bootstrap 4         | ✅    |
 | Bootstrap 5         | ✅    |
 
-
 ## Customize the App
 
 Gallery App V7 with Fancybox4 uses the new, [standard Settings-System in 2sxc](http://r.2sxc.org/settings) to configure it. It also has app resources (i18n labels) you can customize.
 
 If you want to customize the CSS, you will usually follow the ["Create Custom Styles in a Standard 2sxc App" checklist](https://azing.org/2sxc/r/Lu5SDBqU)
-
 
 ---
 
@@ -36,7 +34,7 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
 
 ### Version 6
 
-Version 6 is found here: https://github.com/2sic/app-gallery/tree/v6-fancybox3
+Version 6 is found here: <https://github.com/2sic/app-gallery/tree/v6-fancybox3>
 
 * Updated to conventions of 2sxc 12.0 as a Hybrid Dnn/Oqtane App based on [this checklist](https://azing.org/2sxc/r/m0iSLifK)
 
