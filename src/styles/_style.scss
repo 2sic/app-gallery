@@ -9,6 +9,7 @@
     position: relative;
     display: block;
     text-decoration: none;
+    cursor: pointer;
 
     figure {
       // This is necessary because bootstrap otherwise has other margins and we can't use m-0
