@@ -8,7 +8,7 @@ A Gallery App using the [fancybox4](https://fancyapps.com/) javascript library.
 
 | Aspect              | Status | Comments or Version |
 | ------------------- | :----: | ------------------- |
-| 2sxc                | ✅    | requires 2sxc v16.04
+| 2sxc                | ✅    | requires 2sxc v16.05
 | Dnn                 | ✅    | For v9.6.1+
 | Oqtane 2            | ✅    | Requires v04.00+
 | No jQuery           | ✅    |
