@@ -13,13 +13,13 @@
     @* Loop through all the Albums *@
     @foreach (var album in AsList<Album>(MyData)) {
       // Picture: Prefer the main thumbnail, otherwise the first album image, or fallback to the app icon
-      object mainPic = album.IsNotEmpty("AlbumThumbnail")
-        ? album.Field("AlbumThumbnail")
-        @* TODO:: *@
-        : album.File("Images") as object ?? App.Folder.Url + "/app-icon.png";
 
       // prepare the picture tag
-      var mainPicTag = Kit.Image.Picture(mainPic, settings: "Content", factor: "4/12", imgAltFallback: album.Title);
+      var mainPicTag = album.IsNotEmpty("AlbumThumbnail")
+        ? Kit.Image.Picture(album.AlbumThumbnailFile, settings: "Content", factor: "4/12", imgAltFallback: album.Title)
+        : album.ImagesFile != null 
+          ? Kit.Image.Picture(album.ImagesFile, settings: "Content", factor: "4/12", imgAltFallback: album.Title)
+          : Kit.Image.Picture(App.Folder.Url + "/app-icon.png", settings: "Content", factor: "4/12", imgAltFallback: album.Title);
 
       // Show one Album Thumbnail with Link etc.
       <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4" @Kit.Toolbar.Default(album)>
@@ -29,8 +29,7 @@
             <figcaption class="overlay d-flex align-items-end">
               <div class="caption with-badge">
                 <span class="text-uppercase">@album.Title</span>
-                @* TODO:: *@
-                <span class="badge @bsPill">@album.Folder("Images").Files.Count()</span>
+                <span class="badge @bsPill">@album.ImagesFolder.Files.Count()</span>
               </div>
             </figcaption>
           </figure>

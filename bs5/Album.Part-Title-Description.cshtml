@@ -1,23 +1,21 @@
-@* @inherits AppCode.Razor.AppRazor<Album> *@
-@using ToSic.Razor.Blade
+@inherits AppCode.Razor.AppRazor<Album>
+@* @using ToSic.Razor.Blade *@
 @using AppCode.Data
 @* This part shows album title and introduction *@
 @{
-  var album = MyModel.Item("Album");
-  @* var album = MyModel; *@
-
+  var album = Model;
   var settings = album.Presentation;
-  var headingType = settings.String("HeadingType");
+  var headingType = settings.HeadingType;
 }
 
 @* Show title unless configured as "hidden" *@
 @if (headingType != "hidden") {
-  @Tag.Custom(headingType, album.String("Title"))
+  @Kit.HtmlTags.Custom(headingType, album.Title)
 } else if (MyUser.IsContentAdmin) {
-  <h2>@App.Resources.String("TitleNotDisplayed")</h2>
+  <h2>@App.Resources.TitleNotDisplayed</h2>
 }
 
 @* Show description if desired *@
-@if (settings.Bool("ShowDescription")) {
+@if (settings.ShowDescription) {
   @album.Html("Introduction").Class("mb-4")
 }
