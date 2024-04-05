@@ -1,8 +1,11 @@
-@inherits Custom.Hybrid.RazorTyped
-@using ToSic.Razor.Blade;
+@* @inherits AppCode.Razor.AppRazor<Album> *@
+@using ToSic.Razor.Blade
+@using AppCode.Data
 @* This part shows album title and introduction *@
 @{
   var album = MyModel.Item("Album");
+  @* var album = MyModel; *@
+
   var settings = album.Presentation;
   var headingType = settings.String("HeadingType");
 }

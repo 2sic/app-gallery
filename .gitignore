@@ -120,5 +120,7 @@ _TeamCity*
 ~$*
 *~
 node_modules/
-
 .temp_cache/
+.vs/
+obj/
+bin/

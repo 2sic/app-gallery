@@ -1,6 +1,8 @@
-@inherits Custom.Hybrid.RazorTyped
-@using ToSic.Razor.Blade;
+@inherits AppCode.Razor.AppRazor
+@using ToSic.Razor.Blade
 @using ToSic.Sxc.Adam;
+@using AppCode.Data
+
 @* 1. Pre-Flight: Determine which Album to show *@
 @{
   // This will check if the url specifies a specific album, and if yes, use that
@@ -13,14 +15,14 @@
 
   // If album QueryString is specified, take album with path matching Url, else take "current" album of the module
   var album = showingSubAlbum
-    ? MyItems.FirstOrDefault(a => a.String("Path") == albumInUrl)
-    : MyItem;
+    ? AsList<Album>(MyItems).FirstOrDefault(a => a.Path == albumInUrl)
+    : As<Album>(MyItem);
 }
   
 @* 2. If no album found, show error and stop processing this template using return *@
 @if (album == null) {
-  <h1>@App.Resources.String("AlbumNotFound")</h1>
-  <a href="@Link.To()" class="btn btn-outline-primary btn-sm">@App.Resources.String("BackToOverview")</a>
+  <h1>@App.Resources.AlbumNotFound</h1>
+  <a href="@Link.To()" class="btn btn-outline-primary btn-sm">@App.Resources.BackToOverview</a>
   Kit.Page.SetHttpStatus(404);
   return;
 }
@@ -28,7 +30,7 @@
 @* 3. The album is now known - let's prepare some stuff *@
 @{
   // Set the title of the page - this will prepend to the existing title
-  Kit.Page.SetTitle(album.String("Title") + " | ");
+  Kit.Page.SetTitle(album.Title + " | ");
 
   // Determine if we should show as Masonry based on Presentation-settings or the View Identifier
   var useMasonry = "masonry" == Text.First(album.Presentation.String("TileStructure"), MyView.Identifier);
@@ -42,7 +44,6 @@
   // Define dom attribute-marker for fancybox links + effect + helpers
   var fancyboxMarker = "app-gallery7-fancybox-" + UniqueKey; 
   var effect = "effect-zoom";                   // effect on mouse-over; alternative: "effect-darken"; 
-  var sortHelper = GetCode("SortImages.cs");    // Has helper code for sorting images
 }
 
 @* 4. Show the Album *@
@@ -53,7 +54,7 @@
 
   @* 4.1 Display the images *@
   <div class='@(useMasonry ? "app-ga7-masonry" : "row mb-4")'>
-    @foreach (IFile pic in sortHelper.GetImagesSorted(album)) {
+    @foreach (IFile pic in GetImagesSorted(album)) {
       @* 4.2 Prepare caption, tooltip, toolbar etc. for showing the image afterwards *@
 
       // Get image title and description from metadata - make sure it has no HTML inside
@@ -64,6 +65,7 @@
       var picTag = Kit.Image.Picture(pic, settings: imageSettings);
 
       // Build the Caption for the Lightbox - as a data-caption attribute with HTML encoded
+      @* TODO:: Text.Has to IsNotEmpty *@
       var lightboxCaption = album.Presentation.Bool("ShowImageTitle") && Text.Has(picTitle)
         ? Tag.H6(picTitle) + picDescr
         : null;
@@ -99,7 +101,7 @@
 
 @* 5. Show back button if the view is used as detail view *@
 @if (showingSubAlbum) {
-  <a href="@Link.To()" class="btn btn-outline-primary btn-sm">@App.Resources.String("BackToOverview")</a>
+  <a href="@Link.To()" class="btn btn-outline-primary btn-sm">@App.Resources.BackToOverview</a>
 }
 
 @Html.Partial("Assets.cshtml", new { fancyboxMarker })
