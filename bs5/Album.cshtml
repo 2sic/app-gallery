@@ -1,4 +1,4 @@
-@inherits AppCode.Razor.AlbumRazorBase
+@inherits AppCode.Razor.AlbumRazor
 @using ToSic.Razor.Blade
 @using ToSic.Sxc.Adam
 @using AppCode
@@ -11,7 +11,7 @@
   // If nothing is found, it will stop after this code block (see `return` below)
 
   // Get page Parameter for album=... (works on Dnn & Oqtane)
-  var albumInUrl = MyPage.Parameters["Album"];
+  var albumInUrl = MyPage.Parameters.String("Album");
 
   // If album QueryString is specified, take album with path matching Url, else take "current" album of the module
   var album = Text.Has(albumInUrl)
@@ -20,7 +20,8 @@
 }
   
 @* 2. If no album found, show error and stop processing this template using return *@
-@if (album == null) {
+@if (album == null)
+{
   <h1>@App.Resources.AlbumNotFound</h1>
   <a href="@Link.To()" class="btn btn-outline-primary btn-sm">@App.Resources.BackToOverview</a>
   Kit.Page.SetHttpStatus(404);
@@ -33,7 +34,7 @@
   Kit.Page.SetTitle(album.Title + " | ");
 
   // Determine if we should show as Masonry based on Presentation-settings or the View Identifier
-  var useMasonry = "masonry" == Text.First(album.Presentation.String("TileStructure"), MyView.Identifier);
+  var useMasonry = "masonry" == Text.First(album.Presentation.TileStructure, MyView.Identifier);
 
   // Prepare image resize settings - they vary by use case (Masonry or not)
   var imageSettings = Kit.Image.Settings(
@@ -50,22 +51,21 @@
 <div class="app-ga7-main" @Kit.Toolbar.Default(album)>
 
   @* 4.1 Display Album Title or information that title is hidden *@
-  
-  @* Show title unless configured as "hidden" *@
   @if (album.Presentation.HeadingType != "hidden") {
     @Kit.HtmlTags.Custom(album.Presentation.HeadingType, album.Title)
   } else if (MyUser.IsContentAdmin) {
     <h2>@App.Resources.TitleNotDisplayed</h2>
   }
 
-  @* Show description if desired *@
+  @* 4.2 Show description if desired *@
   @if (album.Presentation.ShowDescription) {
     @album.Html("Introduction").Class("mb-4")
   }
 
-  @* 4.2 Display the images *@
+  @* 4.3 Display the images *@
   <div class='@(useMasonry ? "app-ga7-masonry" : "row mb-4")'>
-    @foreach (IFile pic in GetImagesSorted(album)) {
+    @foreach (IFile pic in GetImagesSorted(album))
+    {
       @* 4.3 Prepare caption, tooltip, toolbar etc. for showing the image afterwards *@
 
       // Get image description from metadata - make sure it has no HTML inside

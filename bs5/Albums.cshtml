@@ -1,4 +1,4 @@
-@inherits AppCode.Razor.AlbumRazorBase
+@inherits AppCode.Razor.AlbumRazor
 @using ToSic.Razor.Blade
 @using AppCode.Data
 @{
@@ -11,14 +11,15 @@
 <div class="app-ga7-main">
   <div class="row">
     @* Loop through all the Albums *@
-    @foreach (var album in AsList<Album>(MyData)) {
-
-      // Get Album Thumbnail from the Album, Code in AlbumRazorBase.cshtml
+    @foreach (var album in AsList<Album>(MyData))
+    {
+      // Get Album Thumbnail from the Album, function is in AppCode.Razor.AlbumRazor
       var albumThumbnail = GetAlbumThumbnail(album);
 
       // Show one Album Thumbnail with Link etc.
       <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4" @Kit.Toolbar.Default(album)>
         <a class="app-ga7" href='@Link.To(parameters: "album=" + album.Path)'>
+          @* Show the figure, and attach the toolbar as it wouldn't show on hover if it's inside the figure because of overlay  *@
           <figure class="app-ga7-image @effect" @albumThumbnail.Toolbar()>
             @albumThumbnail
             <figcaption class="overlay d-flex align-items-end">

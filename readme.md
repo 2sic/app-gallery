@@ -75,5 +75,4 @@ Version 6 is found here: <https://github.com/2sic/app-gallery/tree/v6-fancybox3>
   * add ability to set crop on all images
 * v07.05.17 2024-04
   * strong typed
-    * Auto Generated Class
-    * Typed MyItem
+  * Auto Generated Class
