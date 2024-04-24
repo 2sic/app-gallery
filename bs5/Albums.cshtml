@@ -1,4 +1,4 @@
-@inherits AppCode.Razor.AppRazor
+@inherits AppCode.Razor.AlbumRazorBase
 @using ToSic.Razor.Blade
 @using AppCode.Data
 @{
@@ -12,20 +12,15 @@
   <div class="row">
     @* Loop through all the Albums *@
     @foreach (var album in AsList<Album>(MyData)) {
-      // Picture: Prefer the main thumbnail, otherwise the first album image, or fallback to the app icon
 
-      // prepare the picture tag
-      var mainPicTag = album.IsNotEmpty("AlbumThumbnail")
-        ? Kit.Image.Picture(album.AlbumThumbnailFile, settings: "Content", factor: "4/12", imgAltFallback: album.Title)
-        : album.ImagesFile != null 
-          ? Kit.Image.Picture(album.ImagesFile, settings: "Content", factor: "4/12", imgAltFallback: album.Title)
-          : Kit.Image.Picture(App.Folder.Url + "/app-icon.png", settings: "Content", factor: "4/12", imgAltFallback: album.Title);
+      // Get Album Thumbnail from the Album, Code in AlbumRazorBase.cshtml
+      var albumThumbnail = GetAlbumThumbnail(album);
 
       // Show one Album Thumbnail with Link etc.
       <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4" @Kit.Toolbar.Default(album)>
         <a class="app-ga7" href='@Link.To(parameters: "album=" + album.Path)'>
-          <figure class="app-ga7-image @effect" @mainPicTag.Toolbar()>
-            @mainPicTag
+          <figure class="app-ga7-image @effect" @albumThumbnail.Toolbar()>
+            @albumThumbnail
             <figcaption class="overlay d-flex align-items-end">
               <div class="caption with-badge">
                 <span class="text-uppercase">@album.Title</span>

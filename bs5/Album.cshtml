@@ -12,10 +12,9 @@
 
   // Get page Parameter for album=... (works on Dnn & Oqtane)
   var albumInUrl = MyPage.Parameters["Album"];
-  var showingSubAlbum = Text.Has(albumInUrl);
 
   // If album QueryString is specified, take album with path matching Url, else take "current" album of the module
-  var album = showingSubAlbum
+  var album = Text.Has(albumInUrl)
     ? AsList<Album>(MyItems).FirstOrDefault(a => a.Path == albumInUrl)
     : As<Album>(MyItem);
 }
@@ -50,13 +49,24 @@
 @* 4. Show the Album *@
 <div class="app-ga7-main" @Kit.Toolbar.Default(album)>
 
-  @* Display Album Title or information that title is hidden *@
-  @Html.Partial("Album.Part-Title-Description.cshtml", album)
+  @* 4.1 Display Album Title or information that title is hidden *@
+  
+  @* Show title unless configured as "hidden" *@
+  @if (album.Presentation.HeadingType != "hidden") {
+    @Kit.HtmlTags.Custom(album.Presentation.HeadingType, album.Title)
+  } else if (MyUser.IsContentAdmin) {
+    <h2>@App.Resources.TitleNotDisplayed</h2>
+  }
 
-  @* 4.1 Display the images *@
+  @* Show description if desired *@
+  @if (album.Presentation.ShowDescription) {
+    @album.Html("Introduction").Class("mb-4")
+  }
+
+  @* 4.2 Display the images *@
   <div class='@(useMasonry ? "app-ga7-masonry" : "row mb-4")'>
     @foreach (IFile pic in GetImagesSorted(album)) {
-      @* 4.2 Prepare caption, tooltip, toolbar etc. for showing the image afterwards *@
+      @* 4.3 Prepare caption, tooltip, toolbar etc. for showing the image afterwards *@
 
       // Get image description from metadata - make sure it has no HTML inside
       var picTitle = pic.Metadata.String("Description", scrubHtml: true);
@@ -64,12 +74,12 @@
       // prepare the <picture> tag because we'll need it 2x (for toolbar and output)
       var picTag = Kit.Image.Picture(pic, settings: imageSettings);
 
-      @* 4.3 If not Masonry, add some responsive classes to the div *@
+      @* 4.4 If not Masonry, add some responsive classes to the div *@
       <div class='@(useMasonry ? "" : "col-12 col-sm-6 col-md-4 col-lg-3 mb-4" )'>
-        @* 4.4 Now show each image *@
+        @* 4.5 Now show each image *@
         <a class="app-ga7" @fancyboxMarker @GetFancyboxData(pic, album, picTitle)>
           <figure class="app-ga7-image @effect" @picTag.Toolbar()>
-            @* 4.5 Show the Overlay, an optional title (based on settings) and the image itself *@
+            @* 4.6 Show the Overlay, an optional title (based on settings) and the image itself *@
             @picTag
             <figcaption class="overlay d-flex align-items-end">
               @if (Text.Has(picTitle)) { <div class="caption">@picTitle</div> }
@@ -82,7 +92,7 @@
 </div>
 
 @* 5. Show back button if the view is used as detail view *@
-@if (showingSubAlbum) {
+@if (Text.Has(albumInUrl)) {
   <a href="@Link.To()" class="btn btn-outline-primary btn-sm">@App.Resources.BackToOverview</a>
 }
 

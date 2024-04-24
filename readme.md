@@ -6,11 +6,11 @@
 
 A Gallery App using the [fancybox4](https://fancyapps.com/) javascript library.
 
-| Aspect              | Status | Comments or Version |
-| ------------------- | :----: | ------------------- |
+| Aspect              | Status | Comments or Version
+| ------------------- | :----: | -------------------
 | 2sxc                | ✅    | requires 2sxc v17.06.02
 | Dnn                 | ✅    | For v9.6.1+
-| Oqtane 2            | ✅    | Requires v04.00+
+| Oqtane              | ✅    | Requires v04.00+
 | No jQuery           | ✅    |
 | Live Demo           | ➖    |
 | Install Checklist   | ✅    | See [Installation](https://azing.org/2sxc/r/WLu6KUI4) on [azing.org](https://azing.org/2sxc)
@@ -75,3 +75,5 @@ Version 6 is found here: <https://github.com/2sic/app-gallery/tree/v6-fancybox3>
   * add ability to set crop on all images
 * v07.05.17 2024-04
   * strong typed
+    * Auto Generated Class
+    * Typed MyItem
