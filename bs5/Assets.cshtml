@@ -1,5 +1,5 @@
 @inherits Custom.Hybrid.RazorTyped
-
+@using AppCode
 @* 1. Include Bootstrap5 if the framework isn't known *@
 @Kit.Page.Activate(condition: Kit.Css.IsUnknown, features: "Bootstrap5")
 
@@ -16,7 +16,6 @@
 
 @* 4. Stop here unless we have a FancyboxMarker to activate a FancyBox *@
 @if (!MyModel.ContainsKey("FancyboxMarker")) { return; }
-
 
 @* 5. Prepare settings/options for fancybox integration *@
 @{
