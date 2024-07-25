@@ -76,3 +76,5 @@ Version 6 is found here: <https://github.com/2sic/app-gallery/tree/v6-fancybox3>
 * v07.17.00 2024-04
   * strong typed
   * Auto Generated Class
+* v07.17.01 2024-07
+  * Update app.sln and app.csproj
