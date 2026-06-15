@@ -80,3 +80,7 @@ Version 6 is found here: <https://github.com/2sic/app-gallery/tree/v6-fancybox3>
   - Update app.sln and app.csproj
 - v07.17.02 2025-06
   - \*.webp extension/images now uploadable
+- v07.21.00 2026-03
+  - Added intellisense Extensions for Visual Studio Code
+- v07.21.01 2026-06
+  - Switched from webpack to Vite for faster builds
