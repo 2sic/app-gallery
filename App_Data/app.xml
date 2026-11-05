@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="21.08.00" ExportDate="2026-06-15T16:34:07.6286617+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="22.01.00" ExportDate="2026-11-05T12:49:55.6636726+01:00">
   <Header>
     <App Guid="3bfab1bb-e102-4176-adcf-f70594a6bdfe" />
     <Language Default="en-us" />
@@ -927,11 +927,11 @@
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredDnnVersion" Value="09.06.01" Type="String">
+      <Value Key="RequiredDnnVersion" Value="9.11.2" Type="String">
         <Dimension DimensionID="185" ReadOnly="false" />
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredOqtaneVersion" Value="05.00.00" Type="String">
+      <Value Key="RequiredOqtaneVersion" Value="10.0.0" Type="String">
         <Dimension DimensionID="186" ReadOnly="false" />
       </Value>
       <Value Key="RequiredVersion" Value="21.05.00" Type="String">
@@ -1710,20 +1710,20 @@
     </Entity>
   </Entities>
   <PortalFiles>
-    <File Id="5986" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\AlbumThumbnail\Demo-1.jpg" />
-    <File Id="5995" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\boris-baldinger-eUFfY6cwjSU-unsplash.jpg" />
-    <File Id="5989" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\Demo-1.jpg" />
-    <File Id="5987" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\Demo-2.jpg" />
-    <File Id="5988" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\Demo-3.jpg" />
-    <File Id="5997" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\hugo-fergusson-xtQidmET07w-unsplash.jpg" />
-    <File Id="5996" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\marco-peter-Aoah4iWOKm0-unsplash.jpg" />
-    <File Id="5998" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\martin-adams-J2f1PriKFEg-unsplash.jpg" />
-    <File Id="6000" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\robert-richarz-WOhTfiB-ECs-unsplash.jpg" />
-    <File Id="5999" RelativePath="adam\Gallery7\0jPONC8CT0i06sp3dybtCw\Images\wind-tan-kcSswpJdrOI-unsplash.jpg" />
-    <File Id="6411" RelativePath="adam\Gallery7\6JpCI84PM0Kgu6n7famNzA\Images\59118.png" />
-    <File Id="6481" RelativePath="adam\Gallery7\7AZQZVki3Eig13YZXKr_Ng\Images\0057640_kugellager_350.jpeg" />
-    <File Id="6480" RelativePath="adam\Gallery7\7AZQZVki3Eig13YZXKr_Ng\Images\0057645_gleitlager_350.jpeg" />
-    <File Id="6479" RelativePath="adam\Gallery7\7AZQZVki3Eig13YZXKr_Ng\Images\0057651_gehauselager_350.jpeg" />
+    <File Id="5986" RelativePath="adam/Gallery7/0jPONC8CT0i06sp3dybtCw/AlbumThumbnail/Demo-1.jpg" />
+    <File Id="5995" RelativePath="adam/Gallery7/0jPONC8CT0i06sp3dybtCw/Images/boris-baldinger-eUFfY6cwjSU-unsplash.jpg" />
+    <File Id="5989" RelativePath="adam/Gallery7/0jPONC8CT0i06sp3dybtCw/Images/Demo-1.jpg" />
+    <File Id="5987" RelativePath="adam/Gallery7/0jPONC8CT0i06sp3dybtCw/Images/Demo-2.jpg" />
+    <File Id="5988" RelativePath="adam/Gallery7/0jPONC8CT0i06sp3dybtCw/Images/Demo-3.jpg" />
+    <File Id="5997" RelativePath="adam/Gallery7/0jPONC8CT0i06sp3dybtCw/Images/hugo-fergusson-xtQidmET07w-unsplash.jpg" />
+    <File Id="5996" RelativePath="adam/Gallery7/0jPONC8CT0i06sp3dybtCw/Images/marco-peter-Aoah4iWOKm0-unsplash.jpg" />
+    <File Id="5998" RelativePath="adam/Gallery7/0jPONC8CT0i06sp3dybtCw/Images/martin-adams-J2f1PriKFEg-unsplash.jpg" />
+    <File Id="6000" RelativePath="adam/Gallery7/0jPONC8CT0i06sp3dybtCw/Images/robert-richarz-WOhTfiB-ECs-unsplash.jpg" />
+    <File Id="5999" RelativePath="adam/Gallery7/0jPONC8CT0i06sp3dybtCw/Images/wind-tan-kcSswpJdrOI-unsplash.jpg" />
+    <File Id="6411" RelativePath="adam/Gallery7/6JpCI84PM0Kgu6n7famNzA/Images/59118.png" />
+    <File Id="6481" RelativePath="adam/Gallery7/7AZQZVki3Eig13YZXKr_Ng/Images/0057640_kugellager_350.jpeg" />
+    <File Id="6480" RelativePath="adam/Gallery7/7AZQZVki3Eig13YZXKr_Ng/Images/0057645_gleitlager_350.jpeg" />
+    <File Id="6479" RelativePath="adam/Gallery7/7AZQZVki3Eig13YZXKr_Ng/Images/0057651_gehauselager_350.jpeg" />
   </PortalFiles>
   <PortalFolders>
     <Folder Id="13238" RelativePath="adam/Gallery7/0jPONC8CT0i06sp3dybtCw/AlbumThumbnail/" />
